@@ -1,0 +1,15 @@
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\IncomeExpenseControl.DataAccess.dll.config
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\IncomeExpenseControl.DataAccess.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\IncomeExpenseControl.DataAccess.pdb
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\IncomeExpenseControl.Data.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\IncomeExpenseControl.Data.pdb
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\IncomeExpenseControl.Data.dll.config
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\obj\Debug\IncomeExpenseControl.DataAccess.csprojAssemblyReference.cache
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\obj\Debug\IncomeExpenseControl.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\obj\Debug\IncomeExpenseControl.DataAccess.csproj.CopyComplete
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\obj\Debug\IncomeExpenseControl.DataAccess.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.DataAccess\obj\Debug\IncomeExpenseControl.DataAccess.pdb

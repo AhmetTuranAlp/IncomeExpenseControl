@@ -1,0 +1,17 @@
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\IncomeExpenseControl.Services.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\IncomeExpenseControl.Services.pdb
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\AutoMapper.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\IncomeExpenseControl.Data.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\IncomeExpenseControl.DataAccess.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\EntityFramework.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\IncomeExpenseControl.DataAccess.pdb
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\IncomeExpenseControl.DataAccess.dll.config
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\IncomeExpenseControl.Data.pdb
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\IncomeExpenseControl.Data.dll.config
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\AutoMapper.xml
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\bin\Debug\EntityFramework.xml
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\obj\Debug\IncomeExpenseControl.Services.csprojAssemblyReference.cache
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\obj\Debug\IncomeExpenseControl.Services.csproj.CoreCompileInputs.cache
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\obj\Debug\IncomeExpenseControl.Services.csproj.CopyComplete
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\obj\Debug\IncomeExpenseControl.Services.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Services\obj\Debug\IncomeExpenseControl.Services.pdb

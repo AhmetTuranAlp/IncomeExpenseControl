@@ -1,0 +1,6 @@
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Common.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Common.pdb
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.CoreCompileInputs.cache
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.dll
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.pdb
+C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csprojAssemblyReference.cache
