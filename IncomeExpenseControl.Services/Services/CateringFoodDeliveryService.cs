@@ -49,11 +49,11 @@ namespace IncomeExpenseControl.Services.Services
             }
         }
 
-        public CateringFoodDelivery GetCateringFoodDelivery(int Id)
+        public CateringFoodDelivery GetCateringFoodDelivery(string code, DateTime dateTime)
         {
             try
             {
-                return _cateringFoodDeliveryRepo.GetAll().FirstOrDefault(x => x.Id == Id && x.Status == Status.Active);
+                return _cateringFoodDeliveryRepo.GetAll().FirstOrDefault(x => x.CompanyCode == code && x.ServiceDate == dateTime && x.Status == Status.Active);
 
             }
             catch (Exception ex)

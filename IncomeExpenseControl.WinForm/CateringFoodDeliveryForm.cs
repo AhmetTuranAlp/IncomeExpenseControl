@@ -24,36 +24,52 @@ namespace IncomeExpenseControl.WinForm
         IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
         private void CateringFoodDelivery_Load(object sender, EventArgs e)
         {
+            #region Catering'ler Listelenmektedir.
             UnitofWork unitofWork = new UnitofWork(ctx);
             CateringCompanyService companyService = new CateringCompanyService(unitofWork);
             cmbCampany.DataSource = companyService.GetAllCateringCompany().ToList();
             cmbCampany.ValueMember = "CompanyCode";
-            cmbCampany.DisplayMember = "Name";
-
+            cmbCampany.DisplayMember = "Name"; 
+            #endregion
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             CateringFoodDeliveryService foodDeliveryService = new CateringFoodDeliveryService(unitofWork);
-            CateringFoodDelivery cateringFoodDelivery = new CateringFoodDelivery();
-            cateringFoodDelivery.Name = cmbCampany.Text;
-            cateringFoodDelivery.CompanyCode = cmbCampany.SelectedValue.ToString();
-            cateringFoodDelivery.ServiceDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
-            cateringFoodDelivery.NumberOfPeople = Convert.ToInt32(nupNumberOfPeople.Value);
-            cateringFoodDelivery.Price = nupPrice.Value;
-            cateringFoodDelivery.Descriptions = txtDescriptions.Text;
-            if (foodDeliveryService.Insert(cateringFoodDelivery))
-            {
-                CateringIncomeStatusService cateringIncomeStatusService = new CateringIncomeStatusService(unitofWork);
-                string code = cmbCampany.SelectedValue.ToString();
-                DateTime dateTime = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
 
-                List<CateringIncomeStatus> cateringIncomes = cateringIncomeStatusService.GetAllCateringIncomeStatus().Where(x => x.CompanyCode == code && x.RelatedDay == dateTime).ToList();
+            string code = cmbCampany.SelectedValue.ToString();
+            DateTime dateTime = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
+            if (DateTime.Now > dateTime)
+            {
+                #region Yemek Servis Kontrol Edilerek Eklenmektedir.
+                CateringFoodDelivery ExistingRecord = foodDeliveryService.GetCateringFoodDelivery(code, dateTime);
+                if (ExistingRecord != null)
+                {
+                    ExistingRecord.NumberOfPeople += Convert.ToInt32(nupNumberOfPeople.Value);
+                    ExistingRecord.Price += nupPrice.Value;
+                    foodDeliveryService.Update(ExistingRecord);
+                }
+                else
+                {
+                    CateringFoodDelivery cateringFoodDelivery = new CateringFoodDelivery();
+                    cateringFoodDelivery.Name = cmbCampany.Text;
+                    cateringFoodDelivery.CompanyCode = cmbCampany.SelectedValue.ToString();
+                    cateringFoodDelivery.ServiceDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
+                    cateringFoodDelivery.NumberOfPeople = Convert.ToInt32(nupNumberOfPeople.Value);
+                    cateringFoodDelivery.Price = nupPrice.Value;
+                    cateringFoodDelivery.Descriptions = txtDescriptions.Text;
+                    foodDeliveryService.Insert(cateringFoodDelivery);
+                }
+                #endregion
+
+                #region Yemek Servisi Sonrası CateringIncomeStatus Tablosunda Toplam Tutar ve Alacak Tutar Güncellenmektedir.
+                CateringIncomeStatusService cateringIncomeStatusService = new CateringIncomeStatusService(unitofWork);
+                List<CateringIncomeStatus> cateringIncomes = cateringIncomeStatusService.GetAllCateringIncomeStatus().Where(x => x.CompanyCode == code && x.RelatedMount == dateTime.Month).ToList();
 
                 if (cateringIncomes.Count() > 0)
                 {
-                    if (cateringIncomes[0].RelatedDay == dateTime)
+                    if (cateringIncomes[0].RelatedMount == dateTime.Month)
                     {
                         cateringIncomes[0].TotalReceivables += nupPrice.Value;
                         cateringIncomeStatusService.Update(cateringIncomes[0]);
@@ -63,7 +79,7 @@ namespace IncomeExpenseControl.WinForm
                         CateringIncomeStatus cateringIncomeStatus = new CateringIncomeStatus();
                         cateringIncomeStatus.Name = cmbCampany.Text;
                         cateringIncomeStatus.CompanyCode = code;
-                        cateringIncomeStatus.RelatedDay = dateTime;
+                        cateringIncomeStatus.RelatedMount = dateTime.Month;
                         cateringIncomeStatus.TotalReceivables = nupPrice.Value;
                         cateringIncomeStatusService.Insert(cateringIncomeStatus);
                     }
@@ -73,15 +89,17 @@ namespace IncomeExpenseControl.WinForm
                     CateringIncomeStatus cateringIncomeStatus = new CateringIncomeStatus();
                     cateringIncomeStatus.Name = cmbCampany.Text;
                     cateringIncomeStatus.CompanyCode = code;
-                    cateringIncomeStatus.RelatedDay = dateTime;
+                    cateringIncomeStatus.RelatedMount = dateTime.Month;
                     cateringIncomeStatus.TotalReceivables = nupPrice.Value;
                     cateringIncomeStatusService.Insert(cateringIncomeStatus);
-                }
+                } 
+                #endregion
+
                 MessageBox.Show("Kayıt Eklendi");
             }
             else
             {
-                MessageBox.Show("Hata Oluştu.");
+                MessageBox.Show("Zamanından Önce Yemek Servisi Yapılamaz");
             }
         }
     }

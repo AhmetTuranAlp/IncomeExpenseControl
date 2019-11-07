@@ -18,5 +18,7 @@ namespace IncomeExpenseControl.Services.Interfaces
         void Update(CateringIncomeStatus cateringIncomeStatus);
 
         void Delete(int Id);
+
+        int Count();
     }
 }

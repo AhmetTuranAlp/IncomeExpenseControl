@@ -24,8 +24,8 @@ namespace IncomeExpenseControl.Data.Entity
 
         public FoodCards FoodCards { get; set; }
 
-        [Column("İlgili Gün")]
-        public DateTime RelatedDay { get; set; }
+        [Column("İlgili Ay")]
+        public DateTime RelatedMount { get; set; }
 
         private decimal _totalReceivables;
         [Column("Toplam Alınacak Tutar")]

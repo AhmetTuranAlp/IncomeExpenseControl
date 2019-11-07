@@ -21,6 +21,19 @@ namespace IncomeExpenseControl.Services.Services
             _uow = uow;
             _cateringIncomeStatusRepo = _uow.GetRepository<CateringIncomeStatus>();
         }
+
+        public int Count()
+        {
+            try
+            {
+                return _cateringIncomeStatusRepo.GetAll().Where(x => x.Status == Status.Active).ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public void Delete(int Id)
         {
             try
@@ -54,7 +67,7 @@ namespace IncomeExpenseControl.Services.Services
             {
                 if (_cateringIncomeStatusRepo.GetAll().Count() > 0)
                 {
-                    return _cateringIncomeStatusRepo.GetAll().FirstOrDefault(x => x.CompanyCode == code && x.RelatedDay == dateTime && x.Status == Status.Active);
+                    return _cateringIncomeStatusRepo.GetAll().FirstOrDefault(x => x.CompanyCode == code && x.RelatedMount == dateTime.Month && x.Status == Status.Active);
                 }
                 else
                 {

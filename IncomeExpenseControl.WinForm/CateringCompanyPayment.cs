@@ -23,21 +23,25 @@ namespace IncomeExpenseControl.WinForm
         IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
         private void CateringCompanyPayment_Load(object sender, EventArgs e)
         {
+            #region Catering'ler Listelenmektedir.
             UnitofWork unitofWork = new UnitofWork(ctx);
             CateringCompanyService companyService = new CateringCompanyService(unitofWork);
             cmbCampany.DataSource = companyService.GetAllCateringCompany().ToList();
             cmbCampany.ValueMember = "CompanyCode";
-            cmbCampany.DisplayMember = "Name";
+            cmbCampany.DisplayMember = "Name"; 
+            #endregion
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             CateringPaymentService  cateringPaymentService = new CateringPaymentService(unitofWork);
+
             string code = cmbCampany.SelectedValue.ToString();
             DateTime dateTime = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
             if (DateTime.Now > dateTime)
             {
+                #region Caterin Ödemeler Kontrol Edilerek Eklenmektedir.
                 CateringPayment ExistingRecord = cateringPaymentService.GetCateringPayment(code, dateTime);
                 if (ExistingRecord != null)
                 {
@@ -53,14 +57,18 @@ namespace IncomeExpenseControl.WinForm
                     cateringPayment.Price = nupPrice.Value;
                     cateringPayment.Descriptions = txtDescriptions.Text;
                     cateringPaymentService.Insert(cateringPayment);
-                }
+                } 
+                #endregion
 
                 CateringIncomeStatusService cateringIncomeStatusService = new CateringIncomeStatusService(unitofWork);
                 CateringIncomeStatus IncomeStatusExistingRecord = cateringIncomeStatusService.GetCateringIncomeStatus(code, dateTime);
                 if (IncomeStatusExistingRecord != null)
                 {
+                    #region Ödeme İşleminden Sonra CateringIncomeStatus Tablosu Güncellenmektedir.
                     IncomeStatusExistingRecord.TotalReceived += nupPrice.Value;
-                    cateringIncomeStatusService.Update(IncomeStatusExistingRecord);
+                    cateringIncomeStatusService.Update(IncomeStatusExistingRecord); 
+                    #endregion
+
                     MessageBox.Show("İşlem Başarılı");
                 }
                 else

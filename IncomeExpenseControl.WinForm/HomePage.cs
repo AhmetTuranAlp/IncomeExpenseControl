@@ -52,11 +52,10 @@ namespace IncomeExpenseControl.WinForm
             IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
             if (ctx.CateringCompany.Count() == 0)
             {
-                CateringCompany cateringCompany = new CateringCompany();
-                cateringCompany.Name = "Test";
-                cateringCompany.Descriptions = "Test";
-                cateringCompany.CompanyCode = "Test";
-                ctx.CateringCompany.Add(cateringCompany);
+                Coder coder = new Coder();
+                coder.Name = "Ahmet Turan";
+                coder.Surname = "Alp";
+                ctx.Coder.Add(coder);
                 ctx.SaveChanges();
             }
         }

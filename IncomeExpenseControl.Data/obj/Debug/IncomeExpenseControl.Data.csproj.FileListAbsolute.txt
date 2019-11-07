@@ -10,3 +10,15 @@ C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Data\obj\D
 C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.dll
 C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.pdb
 C:\Users\ahmet\source\repos\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.csprojAssemblyReference.cache
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\IncomeExpenseControl.Data.dll.config
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\IncomeExpenseControl.Data.dll
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\IncomeExpenseControl.Data.pdb
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\EntityFramework.dll
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\EntityFramework.xml
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.csprojAssemblyReference.cache
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.csproj.CoreCompileInputs.cache
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.csproj.CopyComplete
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.dll
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.pdb

@@ -15,6 +15,7 @@ namespace IncomeExpenseControl.Data.Entity
             this.CompanyCode = "";
             this.TotalReceived = 0;
             this.TotalReceivables = 0;
+            this.RelatedMount = DateTime.Now.Month;
         }
 
         [Column("Firma Adı")]
@@ -23,8 +24,8 @@ namespace IncomeExpenseControl.Data.Entity
         [Column("Firma Kodu")]
         public string CompanyCode { get; set; }
 
-        [Column("İlgili Gün")]
-        public DateTime RelatedDay { get; set; }
+        [Column("İlgili Ay")]
+        public int RelatedMount { get; set; }
 
         private decimal _totalReceivables;
         [Column("Toplam Alınacak Tutar")]

@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\IncomeExpenseControlDbContext.cs" />
+    <Compile Include="Entity\Coder.cs" />
     <Compile Include="Model\Base.cs" />
     <Compile Include="Entity\CateringCompany.cs" />
     <Compile Include="Entity\CateringIncomeStatus.cs" />

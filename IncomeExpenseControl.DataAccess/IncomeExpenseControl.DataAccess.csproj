@@ -55,6 +55,7 @@
     <Compile Include="Abstract\UnitofWork\IUnitofWork.cs" />
     <Compile Include="Base\Repositories\Repository.cs" />
     <Compile Include="Base\UnitofWork\UnitofWork.cs" />
+    <Compile Include="Context\IncomeExpenseControlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
