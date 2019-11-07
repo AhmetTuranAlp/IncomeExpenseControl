@@ -79,6 +79,11 @@
             // 
             this.nupPrice.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nupPrice.Location = new System.Drawing.Point(82, 92);
+            this.nupPrice.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.nupPrice.Name = "nupPrice";
             this.nupPrice.Size = new System.Drawing.Size(276, 20);
             this.nupPrice.TabIndex = 9;
@@ -97,6 +102,11 @@
             // 
             this.nupNumberOfPeople.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nupNumberOfPeople.Location = new System.Drawing.Point(82, 66);
+            this.nupNumberOfPeople.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.nupNumberOfPeople.Name = "nupNumberOfPeople";
             this.nupNumberOfPeople.Size = new System.Drawing.Size(276, 20);
             this.nupNumberOfPeople.TabIndex = 7;
@@ -150,6 +160,7 @@
             // 
             // cmbCampany
             // 
+            this.cmbCampany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCampany.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbCampany.FormattingEnabled = true;
             this.cmbCampany.Location = new System.Drawing.Point(82, 13);

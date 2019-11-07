@@ -22,3 +22,15 @@ D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpense
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.csproj.CopyComplete
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.dll
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.pdb
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\IncomeExpenseControl.Data.dll.config
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\IncomeExpenseControl.Data.dll
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\IncomeExpenseControl.Data.pdb
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\EntityFramework.dll
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\EntityFramework.xml
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.csprojAssemblyReference.cache
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.csproj.CoreCompileInputs.cache
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.csproj.CopyComplete
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.dll
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Data\obj\Debug\IncomeExpenseControl.Data.pdb

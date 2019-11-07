@@ -61,6 +61,19 @@ namespace IncomeExpenseControl.Services.Services
             }
         }
 
+        public CateringCompany GetCateringCompany(string CompanyCode)
+        {
+            try
+            {
+                return _cateringCompanyRepo.GetAll().FirstOrDefault(x => x.CompanyCode == CompanyCode && x.Status == Status.Active);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public bool Insert(CateringCompany cateringCompany)
         {
             try

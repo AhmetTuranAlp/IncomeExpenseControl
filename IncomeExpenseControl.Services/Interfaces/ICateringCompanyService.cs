@@ -11,6 +11,8 @@ namespace IncomeExpenseControl.Services.Interfaces
     {
         CateringCompany GetCateringCompany(int Id);
 
+        CateringCompany GetCateringCompany(string CompanyCode);
+
         List<CateringCompany> GetAllCateringCompany();
 
         bool Insert(CateringCompany cateringCompany);

@@ -60,10 +60,10 @@ namespace IncomeExpenseControl.WinForm
             }
         }
 
-        private void FirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CateringToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CateringCompanyAddForm cateringCompanyAdd = new CateringCompanyAddForm();
-            Subform(cateringCompanyAdd);
+            CateringCompanyPaymentForm cateringCompanyPayment = new CateringCompanyPaymentForm();
+            Subform(cateringCompanyPayment);
         }
 
         private void YemekGönderimiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,10 +72,28 @@ namespace IncomeExpenseControl.WinForm
             Subform(cateringFoodDelivery);
         }
 
-        private void ÖdemeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CateringCompanyPayment cateringCompanyPayment = new CateringCompanyPayment();
-            Subform(cateringCompanyPayment);
+            CateringCompanySettingsForm cateringCompanyAdd = new CateringCompanySettingsForm();
+            Subform(cateringCompanyAdd);
+        }
+
+        private void AylıkRaporToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CateringMonthlyTurnoverForm cateringMonthlyTurnoverForm = new CateringMonthlyTurnoverForm();
+            Subform(cateringMonthlyTurnoverForm);
+        }
+
+        private void GünlükRaporToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CateringDailyTurnoverForm cateringDailyTurnoverForm = new CateringDailyTurnoverForm();
+            Subform(cateringDailyTurnoverForm);
+        }
+
+        private void HizmetRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CateringServiceReportForm cateringServiceReportForm = new CateringServiceReportForm();
+            Subform(cateringServiceReportForm);
         }
     }
 }

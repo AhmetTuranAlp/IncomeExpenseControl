@@ -56,23 +56,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CateringCompanyAddForm.cs">
+    <Compile Include="CateringCompanySettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CateringCompanyAddForm.Designer.cs">
-      <DependentUpon>CateringCompanyAddForm.cs</DependentUpon>
+    <Compile Include="CateringCompanySettingsForm.Designer.cs">
+      <DependentUpon>CateringCompanySettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CateringCompanyPayment.cs">
+    <Compile Include="CateringCompanyPaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CateringCompanyPayment.Designer.cs">
-      <DependentUpon>CateringCompanyPayment.cs</DependentUpon>
+    <Compile Include="CateringCompanyPaymentForm.Designer.cs">
+      <DependentUpon>CateringCompanyPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CateringDailyTurnoverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CateringDailyTurnoverForm.Designer.cs">
+      <DependentUpon>CateringDailyTurnoverForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CateringFoodDeliveryForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CateringFoodDeliveryForm.Designer.cs">
       <DependentUpon>CateringFoodDeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CateringMonthlyTurnoverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CateringMonthlyTurnoverForm.Designer.cs">
+      <DependentUpon>CateringMonthlyTurnoverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CateringServiceReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CateringServiceReportForm.Designer.cs">
+      <DependentUpon>CateringServiceReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -82,14 +100,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CateringCompanyAddForm.resx">
-      <DependentUpon>CateringCompanyAddForm.cs</DependentUpon>
+    <EmbeddedResource Include="CateringCompanySettingsForm.resx">
+      <DependentUpon>CateringCompanySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CateringCompanyPayment.resx">
-      <DependentUpon>CateringCompanyPayment.cs</DependentUpon>
+    <EmbeddedResource Include="CateringCompanyPaymentForm.resx">
+      <DependentUpon>CateringCompanyPaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CateringDailyTurnoverForm.resx">
+      <DependentUpon>CateringDailyTurnoverForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CateringFoodDeliveryForm.resx">
       <DependentUpon>CateringFoodDeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CateringMonthlyTurnoverForm.resx">
+      <DependentUpon>CateringMonthlyTurnoverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CateringServiceReportForm.resx">
+      <DependentUpon>CateringServiceReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
