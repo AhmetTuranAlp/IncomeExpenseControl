@@ -48,8 +48,6 @@ D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\EntityFram
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\EntityFramework.SqlServer.xml
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\AutoMapper.xml
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.csprojAssemblyReference.cache
-D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringCompanyAddForm.resources
-D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringCompanyPayment.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringFoodDeliveryForm.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.HomePage.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Properties.Resources.resources
@@ -91,3 +89,6 @@ D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\o
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringMonthlyTurnoverForm.resources
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringDailyTurnoverForm.resources
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringServiceReportForm.resources
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringCompanySettingsForm.resources
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringCompanyPaymentForm.resources
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringServiceReportForm.resources

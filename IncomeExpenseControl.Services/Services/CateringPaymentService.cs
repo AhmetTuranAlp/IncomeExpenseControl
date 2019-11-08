@@ -21,6 +21,7 @@ namespace IncomeExpenseControl.Services.Services
             _uow = uow;
             _cateringPaymentRepo = _uow.GetRepository<CateringPayment>();
         }
+
         public void Delete(int Id)
         {
             try

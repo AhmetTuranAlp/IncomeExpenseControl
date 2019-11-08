@@ -18,6 +18,7 @@ namespace IncomeExpenseControl.Data.Entity
             this.CompanyCode = "";
             this.NumberOfPeople = 0;
             this.ServiceDate = DateTime.Now;
+            this.PaymentStatus = false;
         }
 
         [Column("Firma Adı")]
@@ -31,6 +32,9 @@ namespace IncomeExpenseControl.Data.Entity
 
         [Column("Servis Tarihi")]
         public DateTime ServiceDate { get; set; }
+
+        [Column("Ödeme Durumu")]
+        public bool PaymentStatus { get; set; }
 
         [Column("Kişi Sayısı")]
         [Required(ErrorMessage = "Zorunlu Alan")]

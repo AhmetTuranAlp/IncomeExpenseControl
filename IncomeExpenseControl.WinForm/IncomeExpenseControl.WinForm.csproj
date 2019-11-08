@@ -68,23 +68,11 @@
     <Compile Include="CateringCompanyPaymentForm.Designer.cs">
       <DependentUpon>CateringCompanyPaymentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CateringDailyTurnoverForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CateringDailyTurnoverForm.Designer.cs">
-      <DependentUpon>CateringDailyTurnoverForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="CateringFoodDeliveryForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CateringFoodDeliveryForm.Designer.cs">
       <DependentUpon>CateringFoodDeliveryForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CateringMonthlyTurnoverForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CateringMonthlyTurnoverForm.Designer.cs">
-      <DependentUpon>CateringMonthlyTurnoverForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CateringServiceReportForm.cs">
       <SubType>Form</SubType>
@@ -106,14 +94,8 @@
     <EmbeddedResource Include="CateringCompanyPaymentForm.resx">
       <DependentUpon>CateringCompanyPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CateringDailyTurnoverForm.resx">
-      <DependentUpon>CateringDailyTurnoverForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CateringFoodDeliveryForm.resx">
       <DependentUpon>CateringFoodDeliveryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CateringMonthlyTurnoverForm.resx">
-      <DependentUpon>CateringMonthlyTurnoverForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CateringServiceReportForm.resx">
       <DependentUpon>CateringServiceReportForm.cs</DependentUpon>

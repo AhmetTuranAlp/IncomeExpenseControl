@@ -77,20 +77,8 @@ namespace IncomeExpenseControl.WinForm
             CateringCompanySettingsForm cateringCompanyAdd = new CateringCompanySettingsForm();
             Subform(cateringCompanyAdd);
         }
-
-        private void AylıkRaporToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CateringMonthlyTurnoverForm cateringMonthlyTurnoverForm = new CateringMonthlyTurnoverForm();
-            Subform(cateringMonthlyTurnoverForm);
-        }
-
-        private void GünlükRaporToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CateringDailyTurnoverForm cateringDailyTurnoverForm = new CateringDailyTurnoverForm();
-            Subform(cateringDailyTurnoverForm);
-        }
-
-        private void HizmetRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        private void hizmetlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CateringServiceReportForm cateringServiceReportForm = new CateringServiceReportForm();
             Subform(cateringServiceReportForm);

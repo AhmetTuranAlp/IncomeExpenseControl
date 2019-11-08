@@ -9,7 +9,7 @@ namespace IncomeExpenseControl.Services.Interfaces
 {
     public interface ICateringFoodDeliveryService
     {
-        CateringFoodDelivery GetCateringFoodDelivery(string code, DateTime dateTime);
+        CateringFoodDelivery GetCateringFoodDelivery(string code, DateTime ServiceDate);
 
         List<CateringFoodDelivery> GetAllCateringFoodDelivery();
 

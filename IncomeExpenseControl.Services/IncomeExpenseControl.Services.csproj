@@ -48,11 +48,13 @@
     <Compile Include="Interfaces\ICateringFoodDeliveryService.cs" />
     <Compile Include="Interfaces\ICateringIncomeStatusService.cs" />
     <Compile Include="Interfaces\ICateringPaymentService.cs" />
+    <Compile Include="Interfaces\ITotalRevenueService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CateringCompanyService.cs" />
     <Compile Include="Services\CateringFoodDeliveryService.cs" />
     <Compile Include="Services\CateringIncomeStatusService.cs" />
     <Compile Include="Services\CateringPaymentService.cs" />
+    <Compile Include="Services\TotalRevenueService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

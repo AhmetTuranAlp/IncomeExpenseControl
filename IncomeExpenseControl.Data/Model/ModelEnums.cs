@@ -30,5 +30,15 @@ namespace IncomeExpenseControl.Data.Entity
             [Description("Kredi & Banka Kartı")]
             CreditCard = 3
         }
+
+        public enum RevenueType : int
+        {
+            [Description("Catering")]
+            Catering = 1,
+            [Description("Restaurant")]
+            Restaurant = 2,
+            [Description("Şahsi Gelir")]
+            Personal = 3
+        }
     }
 }

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Coder.cs" />
+    <Compile Include="Entity\TotalRevenue.cs" />
     <Compile Include="Model\Base.cs" />
     <Compile Include="Entity\CateringCompany.cs" />
     <Compile Include="Entity\CateringIncomeStatus.cs" />

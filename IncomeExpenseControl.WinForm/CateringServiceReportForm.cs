@@ -27,17 +27,19 @@ namespace IncomeExpenseControl.WinForm
             UnitofWork unitofWork = new UnitofWork(ctx);
             CateringFoodDeliveryService cateringFoodDeliveryService = new CateringFoodDeliveryService(unitofWork);
             dgwServiceReport.DataSource = cateringFoodDeliveryService.GetAllCateringFoodDelivery();
+            
             #region Kolon Adı Değişenler
             dgwServiceReport.Columns[0].HeaderText = "Firma Adı";
             dgwServiceReport.Columns[2].HeaderText = "Açıklama";
             dgwServiceReport.Columns[3].HeaderText = "Hizmet Tarihi";
-            dgwServiceReport.Columns[4].HeaderText = "Kişi Sayısı";
-            dgwServiceReport.Columns[5].HeaderText = "Fiyat";
+            dgwServiceReport.Columns[4].HeaderText = "Ödeme Durumu";
+            dgwServiceReport.Columns[5].HeaderText = "Kişi Sayısı";
+            dgwServiceReport.Columns[6].HeaderText = "Fiyat";
             #endregion
 
             #region Gizlenen Kolonlar
             dgwServiceReport.Columns[1].Visible = false;
-            dgwServiceReport.Columns[6].Visible = false;
+            dgwServiceReport.Columns[10].Visible = false;
             dgwServiceReport.Columns[7].Visible = false;
             dgwServiceReport.Columns[8].Visible = false;
             dgwServiceReport.Columns[9].Visible = false;
@@ -45,7 +47,7 @@ namespace IncomeExpenseControl.WinForm
 
             #region Kolon Genişlikleri Ayarlanır
             Tools tools = new Tools();
-            tools.DataGridViewResize(dgwServiceReport, 5);
+            tools.DataGridViewResize(dgwServiceReport, 6);
             #endregion
         }
     }

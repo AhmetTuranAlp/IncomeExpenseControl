@@ -22,17 +22,24 @@ namespace IncomeExpenseControl.WinForm
         }
 
         IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
+
+        #region Form Acıldıgında Anda Yapılacak İşlemler
         private void CateringFoodDelivery_Load(object sender, EventArgs e)
         {
             #region Catering'ler Listelenmektedir.
             UnitofWork unitofWork = new UnitofWork(ctx);
             CateringCompanyService companyService = new CateringCompanyService(unitofWork);
-            cmbCampany.DataSource = companyService.GetAllCateringCompany().ToList();
+            List<CateringCompany> CateringCompanyList = new List<CateringCompany>();
+            CateringCompanyList.Add(new CateringCompany() { CompanyCode = "", Name = "Firma Seçiniz..." });
+            CateringCompanyList.AddRange(companyService.GetAllCateringCompany().ToList());
+            cmbCampany.DataSource = CateringCompanyList;
             cmbCampany.ValueMember = "CompanyCode";
-            cmbCampany.DisplayMember = "Name"; 
+            cmbCampany.DisplayMember = "Name";
             #endregion
         }
+        #endregion
 
+        #region Catering Hizmet Oluşturma İşlemleri
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (cmbCampany.SelectedValue != null && nupNumberOfPeople.Value > 0 && nupPrice.Value > 0)
@@ -50,6 +57,7 @@ namespace IncomeExpenseControl.WinForm
                     {
                         ExistingRecord.NumberOfPeople += Convert.ToInt32(nupNumberOfPeople.Value);
                         ExistingRecord.Price += nupPrice.Value;
+                        ExistingRecord.PaymentStatus = false;
                         foodDeliveryService.Update(ExistingRecord);
                     }
                     else
@@ -61,6 +69,7 @@ namespace IncomeExpenseControl.WinForm
                         cateringFoodDelivery.NumberOfPeople = Convert.ToInt32(nupNumberOfPeople.Value);
                         cateringFoodDelivery.Price = nupPrice.Value;
                         cateringFoodDelivery.Descriptions = txtDescriptions.Text;
+                        cateringFoodDelivery.PaymentStatus = false;
                         foodDeliveryService.Insert(cateringFoodDelivery);
                     }
                     #endregion
@@ -102,12 +111,13 @@ namespace IncomeExpenseControl.WinForm
                 else
                 {
                     MessageBox.Show("Zamanından Önce Yemek Servisi Yapılamaz");
-                } 
+                }
             }
             else
             {
                 MessageBox.Show("Boş Geçilemez.");
             }
-        }
+        } 
+        #endregion
     }
 }
