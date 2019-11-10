@@ -21,24 +21,24 @@ namespace IncomeExpenseControl.Data.Entity
             NewRecord = 3
         }
 
-        public enum PaymentType : int
-        {
-            [Description("Nakit")]
-            Cash = 1,
-            [Description("Yemek Kartı")]
-            FoodCard = 2,
-            [Description("Kredi & Banka Kartı")]
-            CreditCard = 3
-        }
+        //public enum PaymentType : int
+        //{
+        //    [Description("Nakit")]
+        //    Cash = 1,
+        //    [Description("Yemek Kartı")]
+        //    FoodCard = 2,
+        //    [Description("Kredi & Banka Kartı")]
+        //    CreditCard = 3
+        //}
 
-        public enum RevenueType : int
-        {
-            [Description("Catering")]
-            Catering = 1,
-            [Description("Restaurant")]
-            Restaurant = 2,
-            [Description("Şahsi Gelir")]
-            Personal = 3
-        }
+        //public enum RevenueType : int
+        //{
+        //    [Description("Catering")]
+        //    Catering = 1,
+        //    [Description("Restaurant")]
+        //    Restaurant = 2,
+        //    [Description("Şahsi Gelir")]
+        //    Personal = 3
+        //}
     }
 }

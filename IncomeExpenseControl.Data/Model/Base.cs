@@ -13,14 +13,15 @@ namespace IncomeExpenseControl.Data.Entity
     {
         public Base()
         {
-            this.Status = Status.NewRecord;
+            Status = Status.NewRecord;
+            UpdateDate = DateTime.Now;
+            UploadDate = DateTime.Now;
         }
 
         [Key]
         public int Id { get; set; }
 
         private Status _status = Status.Active;
-        [Column("Durum")]
         public virtual Status Status
         {
             get
@@ -34,7 +35,6 @@ namespace IncomeExpenseControl.Data.Entity
         }
 
         private DateTime? _uploadDate = null;
-        [Column("Eklenme Tarihi")]
         public virtual DateTime UploadDate
         {
             get
@@ -48,7 +48,6 @@ namespace IncomeExpenseControl.Data.Entity
         }
 
         private DateTime? _updateDate = null;
-        [Column("Güncellenme Tarihi")]
         public virtual DateTime UpdateDate
         {
             get

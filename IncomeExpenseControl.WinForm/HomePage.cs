@@ -50,7 +50,7 @@ namespace IncomeExpenseControl.WinForm
         private void HomePage_Load(object sender, EventArgs e)
         {
             IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
-            if (ctx.CateringCompany.Count() == 0)
+            if (ctx.Coder.Count() == 0)
             {
                 Coder coder = new Coder();
                 coder.Name = "Ahmet Turan";
@@ -60,28 +60,10 @@ namespace IncomeExpenseControl.WinForm
             }
         }
 
-        private void CateringToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ŞahsiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CateringCompanyPaymentForm cateringCompanyPayment = new CateringCompanyPaymentForm();
-            Subform(cateringCompanyPayment);
-        }
-
-        private void YemekGönderimiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CateringFoodDeliveryForm cateringFoodDelivery = new CateringFoodDeliveryForm();
-            Subform(cateringFoodDelivery);
-        }
-
-        private void FirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CateringCompanySettingsForm cateringCompanyAdd = new CateringCompanySettingsForm();
-            Subform(cateringCompanyAdd);
-        }
-        
-        private void hizmetlerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CateringServiceReportForm cateringServiceReportForm = new CateringServiceReportForm();
-            Subform(cateringServiceReportForm);
+            DailyCastingEntry_Personal_Form dailyCastingEntry_Personal_Form = new DailyCastingEntry_Personal_Form();
+            Subform(dailyCastingEntry_Personal_Form);
         }
     }
 }

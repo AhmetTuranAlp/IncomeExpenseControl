@@ -10,3 +10,9 @@ D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpen
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.CoreCompileInputs.cache
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.dll
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.pdb
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Common.dll
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Common.pdb
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csprojAssemblyReference.cache
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.CoreCompileInputs.cache
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.dll
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.pdb

@@ -63,9 +63,9 @@ namespace IncomeExpenseControl.WinForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap White_Stripes_and_Red_Stripe {
+        internal static System.Drawing.Bitmap _753114_download_white_black_wallpapers_dh45_1920x1080_h {
             get {
-                object obj = ResourceManager.GetObject("White-Stripes-and-Red-Stripe", resourceCulture);
+                object obj = ResourceManager.GetObject("753114_download-white-black-wallpapers-dh45_1920x1080_h", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

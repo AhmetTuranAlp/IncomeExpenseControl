@@ -22,15 +22,14 @@ namespace IncomeExpenseControl.Data.Context
         }
 
         public virtual DbSet<Coder> Coder { get; set; }
-        public virtual DbSet<CateringCompany> CateringCompany { get; set; }
-        public virtual DbSet<CateringIncomeStatus> CateringIncomeStatus { get; set; }
-        public virtual DbSet<CateringPayment> CateringPayment { get; set; }
-        public virtual DbSet<CateringFoodDelivery> CateringService { get; set; }
-        public virtual DbSet<CreditCards> CreditCards { get; set; }
+        public virtual DbSet<Banks> Banks { get; set; }
         public virtual DbSet<FoodCards> FoodCards { get; set; }
-        public virtual DbSet<RestaurantIncomeStatus> RestaurantIncomeStatus { get; set; }
-        public virtual DbSet<RestaurantRevenues> RestaurantRevenues { get; set; }
-        public virtual DbSet<TotalRevenue> TotalRevenue { get; set; }
-
+        public virtual DbSet<CateringCompanies> CateringCompanies { get; set; }
+        public virtual DbSet<DailyCastingEntry_Catering> DailyCastingEntry_Catering { get; set; }
+        public virtual DbSet<DailyCastingEntry_Personal> DailyCastingEntry_Personal { get; set; }
+        public virtual DbSet<DailyCastingEntry_Restaurant_Bank> DailyCastingEntry_Restaurant_Bank { get; set; }
+        public virtual DbSet<DailyCastingEntry_Restaurant_Cash> DailyCastingEntry_Restaurant_Cash { get; set; }
+        public virtual DbSet<DailyCastingEntry_Restaurant_Food> DailyCastingEntry_Restaurant_Food { get; set; }
+        public virtual DbSet<DailyCastingEntry_TotalRevenue> DailyCastingEntry_TotalRevenue { get; set; }
     }   
 }

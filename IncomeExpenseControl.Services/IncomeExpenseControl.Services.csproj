@@ -36,6 +36,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,17 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ICateringCompanyService.cs" />
-    <Compile Include="Interfaces\ICateringFoodDeliveryService.cs" />
-    <Compile Include="Interfaces\ICateringIncomeStatusService.cs" />
-    <Compile Include="Interfaces\ICateringPaymentService.cs" />
-    <Compile Include="Interfaces\ITotalRevenueService.cs" />
+    <Compile Include="Interfaces\IDailyCastingEntry_Catering_Service.cs" />
+    <Compile Include="Interfaces\IDailyCastingEntry_Personal_Service.cs" />
+    <Compile Include="Interfaces\IDailyCastingEntry_TotalRevenue_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CateringCompanyService.cs" />
-    <Compile Include="Services\CateringFoodDeliveryService.cs" />
-    <Compile Include="Services\CateringIncomeStatusService.cs" />
-    <Compile Include="Services\CateringPaymentService.cs" />
-    <Compile Include="Services\TotalRevenueService.cs" />
+    <Compile Include="Services\DailyCastingEntry_Personal_Service.cs" />
+    <Compile Include="Services\DailyCastingEntry_TotalRevenue_Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -69,5 +66,6 @@
       <Name>IncomeExpenseControl.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

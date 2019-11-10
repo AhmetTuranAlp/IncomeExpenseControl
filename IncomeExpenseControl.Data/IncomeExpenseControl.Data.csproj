@@ -51,18 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Banks.cs" />
+    <Compile Include="Entity\CateringCompanies.cs" />
     <Compile Include="Entity\Coder.cs" />
-    <Compile Include="Entity\TotalRevenue.cs" />
-    <Compile Include="Model\Base.cs" />
-    <Compile Include="Entity\CateringCompany.cs" />
-    <Compile Include="Entity\CateringIncomeStatus.cs" />
-    <Compile Include="Entity\CateringPayment.cs" />
-    <Compile Include="Entity\CateringFoodDelivery.cs" />
-    <Compile Include="Entity\CreditCards.cs" />
+    <Compile Include="Entity\DailyCastingEntry_Catering.cs" />
+    <Compile Include="Entity\DailyCastingEntry_Personal.cs" />
+    <Compile Include="Entity\DailyCastingEntry_Restaurant_Bank.cs" />
+    <Compile Include="Entity\DailyCastingEntry_Restaurant_Cash.cs" />
+    <Compile Include="Entity\DailyCastingEntry_Restaurant_Food.cs" />
+    <Compile Include="Entity\DailyCastingEntry_TotalRevenue.cs" />
     <Compile Include="Entity\FoodCards.cs" />
+    <Compile Include="Model\Base.cs" />
     <Compile Include="Model\ModelEnums.cs" />
-    <Compile Include="Entity\RestaurantIncomeStatus.cs" />
-    <Compile Include="Entity\RestaurantRevenues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

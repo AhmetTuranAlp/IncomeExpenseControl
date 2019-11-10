@@ -56,29 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CateringCompanySettingsForm.cs">
+    <Compile Include="DailyCastingEntry_Personal_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CateringCompanySettingsForm.Designer.cs">
-      <DependentUpon>CateringCompanySettingsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CateringCompanyPaymentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CateringCompanyPaymentForm.Designer.cs">
-      <DependentUpon>CateringCompanyPaymentForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CateringFoodDeliveryForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CateringFoodDeliveryForm.Designer.cs">
-      <DependentUpon>CateringFoodDeliveryForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CateringServiceReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CateringServiceReportForm.Designer.cs">
-      <DependentUpon>CateringServiceReportForm.cs</DependentUpon>
+    <Compile Include="DailyCastingEntry_Personal_Form.Designer.cs">
+      <DependentUpon>DailyCastingEntry_Personal_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -88,31 +70,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CateringCompanySettingsForm.resx">
-      <DependentUpon>CateringCompanySettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CateringCompanyPaymentForm.resx">
-      <DependentUpon>CateringCompanyPaymentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CateringFoodDeliveryForm.resx">
-      <DependentUpon>CateringFoodDeliveryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CateringServiceReportForm.resx">
-      <DependentUpon>CateringServiceReportForm.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DailyCastingEntry_Personal_Form.resx">
+      <DependentUpon>DailyCastingEntry_Personal_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -126,9 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\White-Stripes-and-Red-Stripe.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IncomeExpenseControl.Common\IncomeExpenseControl.Common.csproj">
@@ -147,6 +117,10 @@
       <Project>{953450F3-A087-4334-8E1A-31CA652FF6FC}</Project>
       <Name>IncomeExpenseControl.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\753114_download-white-black-wallpapers-dh45_1920x1080_h.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
