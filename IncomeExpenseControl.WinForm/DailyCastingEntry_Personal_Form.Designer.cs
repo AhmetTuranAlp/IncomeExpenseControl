@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudPrice = new System.Windows.Forms.NumericUpDown();
-            this.txtDesciptions = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtDesciptions = new System.Windows.Forms.TextBox();
+            this.nudPrice = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
             this.SuspendLayout();
@@ -51,25 +51,25 @@
             this.panel1.Size = new System.Drawing.Size(365, 200);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // btnSave
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(36, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fiyat:";
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSave.Location = new System.Drawing.Point(272, 142);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 42);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Kaydet";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // label2
+            // txtDesciptions
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(11, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 14);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Açıklama:";
+            this.txtDesciptions.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtDesciptions.Location = new System.Drawing.Point(74, 41);
+            this.txtDesciptions.Multiline = true;
+            this.txtDesciptions.Name = "txtDesciptions";
+            this.txtDesciptions.Size = new System.Drawing.Size(273, 91);
+            this.txtDesciptions.TabIndex = 2;
             // 
             // nudPrice
             // 
@@ -84,25 +84,25 @@
             this.nudPrice.Size = new System.Drawing.Size(273, 20);
             this.nudPrice.TabIndex = 1;
             // 
-            // txtDesciptions
+            // label2
             // 
-            this.txtDesciptions.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDesciptions.Location = new System.Drawing.Point(74, 41);
-            this.txtDesciptions.Multiline = true;
-            this.txtDesciptions.Name = "txtDesciptions";
-            this.txtDesciptions.Size = new System.Drawing.Size(273, 91);
-            this.txtDesciptions.TabIndex = 2;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(11, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 14);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Açıklama:";
             // 
-            // btnSave
+            // label1
             // 
-            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSave.Location = new System.Drawing.Point(272, 142);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 42);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(36, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Fiyat:";
             // 
             // DailyCastingEntry_Personal_Form
             // 
@@ -114,6 +114,7 @@
             this.Name = "DailyCastingEntry_Personal_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Şahsi Gelirler";
+            this.Load += new System.EventHandler(this.DailyCastingEntry_Personal_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).EndInit();

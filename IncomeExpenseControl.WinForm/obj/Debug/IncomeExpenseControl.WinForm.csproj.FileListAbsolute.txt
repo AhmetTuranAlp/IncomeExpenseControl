@@ -48,7 +48,6 @@ D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\EntityFram
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\EntityFramework.SqlServer.xml
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\AutoMapper.xml
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.csprojAssemblyReference.cache
-D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringFoodDeliveryForm.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.HomePage.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Properties.Resources.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.csproj.GenerateResource.cache
@@ -81,9 +80,8 @@ D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\o
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.csproj.CopyComplete
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.exe
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.pdb
-D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringCompanySettingsForm.resources
-D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringCompanyPaymentForm.resources
-D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringServiceReportForm.resources
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\AutoMapper.dll
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\AutoMapper.xml
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Personal_Form.resources
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Personal_Form.resources
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Catering_Form.resources

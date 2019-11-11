@@ -65,5 +65,11 @@ namespace IncomeExpenseControl.WinForm
             DailyCastingEntry_Personal_Form dailyCastingEntry_Personal_Form = new DailyCastingEntry_Personal_Form();
             Subform(dailyCastingEntry_Personal_Form);
         }
+
+        private void cateringToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DailyCastingEntry_Catering_Form dailyCastingEntry_Catering_Form = new DailyCastingEntry_Catering_Form();
+            Subform(dailyCastingEntry_Catering_Form);
+        }
     }
 }

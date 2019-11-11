@@ -92,5 +92,10 @@ namespace IncomeExpenseControl.WinForm
                 MessageBox.Show("Fiyat Alanı Boş Geçilemez.");
             }
         }
+
+        private void DailyCastingEntry_Personal_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

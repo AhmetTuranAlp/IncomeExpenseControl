@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DailyCastingEntry_Catering_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyCastingEntry_Catering_Form.Designer.cs">
+      <DependentUpon>DailyCastingEntry_Catering_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="DailyCastingEntry_Personal_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DailyCastingEntry_Catering_Form.resx">
+      <DependentUpon>DailyCastingEntry_Catering_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DailyCastingEntry_Personal_Form.resx">
       <DependentUpon>DailyCastingEntry_Personal_Form.cs</DependentUpon>
     </EmbeddedResource>
