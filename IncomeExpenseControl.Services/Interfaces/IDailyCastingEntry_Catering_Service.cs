@@ -11,7 +11,7 @@ namespace IncomeExpenseControl.Services.Interfaces
     {
         bool Insert(DailyCastingEntry_Catering cateringPayment);
 
-        void Update(DailyCastingEntry_Catering cateringPayment);
+        bool Update(DailyCastingEntry_Catering cateringPayment);
 
         List<DailyCastingEntry_Catering> GetAllCateringPaymentCasting();
 

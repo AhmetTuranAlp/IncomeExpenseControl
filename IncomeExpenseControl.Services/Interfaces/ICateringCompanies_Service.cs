@@ -11,7 +11,7 @@ namespace IncomeExpenseControl.Services.Interfaces
     {
         bool Insert(CateringCompanies cateringCompanies);
 
-        void Update(CateringCompanies cateringCompanies);
+        bool Update(CateringCompanies cateringCompanies);
 
         List<CateringCompanies> GetAllCateringCompanies();
 

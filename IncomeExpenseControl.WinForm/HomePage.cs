@@ -71,5 +71,17 @@ namespace IncomeExpenseControl.WinForm
             DailyCastingEntry_Catering_Form dailyCastingEntry_Catering_Form = new DailyCastingEntry_Catering_Form();
             Subform(dailyCastingEntry_Catering_Form);
         }
+
+        private void CateringFirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CateringCompanies_Form cateringCompanies_Form = new CateringCompanies_Form();
+            Subform(cateringCompanies_Form);
+        }
+
+        private void NakitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DailyCastingEntry_Restaurant_Cash_Form dailyCastingEntry_Restaurant_Cash_Form = new DailyCastingEntry_Restaurant_Cash_Form();
+            Subform(dailyCastingEntry_Restaurant_Cash_Form);
+        }
     }
 }

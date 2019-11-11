@@ -17,8 +17,8 @@ namespace IncomeExpenseControl.Data.Context
             //Değişiklik Oldugu Taktirde İçerikler ile Beraber Veritabanını Drop Etmektedir.
             Database.SetInitializer<IncomeExpenseControlDbContext>(new DropCreateDatabaseIfModelChanges<IncomeExpenseControlDbContext>());
             //ConnString Belirleniyor.
-            Database.Connection.ConnectionString = @"Server=AHMETTURANALP; Database=ElmasAnneEvYemekleriDB; Integrated Security=True;";
-            //Database.Connection.ConnectionString = @"Server=DESKTOP-SUR4ILI; Database=ElmasAnneEvYemekleriDB; Integrated Security=True;";
+            // Database.Connection.ConnectionString = @"Server=AHMETTURANALP; Database=ElmasAnneEvYemekleriDB; Integrated Security=True;";
+            Database.Connection.ConnectionString = @"Server=DESKTOP-SUR4ILI; Database=ElmasAnneEvYemekleriDB; Integrated Security=True;";
         }
 
         public virtual DbSet<Coder> Coder { get; set; }

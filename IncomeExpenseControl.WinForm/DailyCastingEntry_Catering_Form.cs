@@ -27,11 +27,18 @@ namespace IncomeExpenseControl.WinForm
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             CateringCompanies_Service cateringCompanies_Service = new CateringCompanies_Service(unitofWork);
-            cmbNewCateringCustomers.DataSource = cateringCompanies_Service.GetAllCateringCompanies();
+
+
+            List<CateringCompanies> CateringCompanyList = new List<CateringCompanies>();
+            CateringCompanyList.Add(new CateringCompanies() { Code = "", Name = "Firma Seçiniz..." });
+            CateringCompanyList.AddRange(cateringCompanies_Service.GetAllCateringCompanies());
+
+
+            cmbNewCateringCustomers.DataSource = CateringCompanyList;
             cmbNewCateringCustomers.DisplayMember = "Name";
             cmbNewCateringCustomers.ValueMember = "Code";
 
-            cmbOldCateringCompany.DataSource = cateringCompanies_Service.GetAllCateringCompanies();
+            cmbOldCateringCompany.DataSource = CateringCompanyList;
             cmbOldCateringCompany.DisplayMember = "Name";
             cmbOldCateringCompany.ValueMember = "Code";
         }
@@ -43,88 +50,42 @@ namespace IncomeExpenseControl.WinForm
             decimal Price = nudPrice.Value;
             int NumberOfPeople = Convert.ToInt32(nudNumberOfPeople.Value);
             string CateringCode = cmbNewCateringCustomers.SelectedValue.ToString();
+            bool PaymentMade = cmbPaymentStatus.Text == "Yapıldı" ? true : false;
+            bool InvoiceCut = cmbInvoice.Text == "Kesildi" ? true : false;
+
             #endregion
 
             #region Service Instance
             UnitofWork unitofWork = new UnitofWork(ctx);
             CateringCompanies_Service cateringCompanies_Service = new CateringCompanies_Service(unitofWork);
             DailyCastingEntry_Catering_Service dailyCastingEntry_Catering_Service = new DailyCastingEntry_Catering_Service(unitofWork);
-            DailyCastingEntry_TotalRevenue_Service dailyCastingEntry_TotalRevenue_Service = new DailyCastingEntry_TotalRevenue_Service(unitofWork); 
+            DailyCastingEntry_TotalRevenue_Service dailyCastingEntry_TotalRevenue_Service = new DailyCastingEntry_TotalRevenue_Service(unitofWork);
             #endregion
 
-            DailyCastingEntry_Catering dailyCastingEntry_Catering = dailyCastingEntry_Catering_Service.GetCateringPaymentCasting(CastingDate, CateringCode);
-            if (dailyCastingEntry_Catering != null)
+            if (Price > 0 && NumberOfPeople > 0 && !string.IsNullOrEmpty(CateringCode) && !string.IsNullOrEmpty(cmbInvoice.Text) && !string.IsNullOrEmpty(cmbPaymentStatus.Text))
             {
-
-            }
-            else
-            {
-                #region DailyCastingEntry_Catering Modeli Dolduruluyor
-                dailyCastingEntry_Catering = new DailyCastingEntry_Catering()
+                DailyCastingEntry_Catering dailyCastingEntry_Catering = new DailyCastingEntry_Catering()
                 {
                     CastingDate = CastingDate,
                     CateringCompany = cateringCompanies_Service.GetCateringCompanies(CateringCode),
                     NumberOfPeople = NumberOfPeople,
                     Price = Price,
                     Status = Status.Active,
+                    PaymentMade = PaymentMade,
+                    InvoiceCut = InvoiceCut
                 };
-                if (cmbPaymentStatus.SelectedText == "Yapıldı")
-                {
-                    dailyCastingEntry_Catering.PaymentMade = true;
-                }
-                else if (cmbPaymentStatus.SelectedText == "Yapılmadı")
-                {
-                    dailyCastingEntry_Catering.PaymentMade = false;
-                }
-
-                if (rbInvoiceFalse.Checked)
-                {
-                    dailyCastingEntry_Catering.InvoiceCut = true;
-                }
-                else
-                {
-                    dailyCastingEntry_Catering.InvoiceCut = false;
-                }
-                #endregion
-
                 if (dailyCastingEntry_Catering_Service.Insert(dailyCastingEntry_Catering))
                 {
                     DailyCastingEntry_TotalRevenue dailyCastingEntry_TotalRevenue = dailyCastingEntry_TotalRevenue_Service.GetTotalRevenue(CastingDate);
                     if (dailyCastingEntry_TotalRevenue != null)
                     {
-                        #region DailyCastingEntry_TotalRevenue Modelinde Catering Bilgileri Güncellenir.
-                        #region Catering_TotalPrice
-                        if (dailyCastingEntry_TotalRevenue.Catering_TotalPrice > 0)
+                        if (PaymentMade)
                         {
-                            dailyCastingEntry_TotalRevenue.Catering_TotalPrice += Price;
+                            dailyCastingEntry_TotalRevenue.Catering_ReelPrice = dailyCastingEntry_TotalRevenue.Catering_ReelPrice > 0 ? dailyCastingEntry_TotalRevenue.Catering_ReelPrice + Price : Price;
                         }
-                        else
-                        {
-                            dailyCastingEntry_TotalRevenue.Catering_TotalPrice = Price;
-                        }
-                        #endregion
-
-                        #region Catering_ReelPrice
-                        if (dailyCastingEntry_TotalRevenue.Catering_ReelPrice > 0)
-                        {
-                            dailyCastingEntry_TotalRevenue.Catering_ReelPrice += Price;
-                        }
-                        else
-                        {
-                            dailyCastingEntry_TotalRevenue.Catering_ReelPrice = Price;
-                        }
-                        #endregion
-
-                        #region Catering_NumberOfPeople
-                        if (dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople > 0)
-                        {
-                            dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople += NumberOfPeople;
-                        }
-                        else
-                        {
-                            dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople = NumberOfPeople;
-                        }
-                        #endregion
+                        dailyCastingEntry_TotalRevenue.Catering_TotalPrice = dailyCastingEntry_TotalRevenue.Catering_TotalPrice > 0 ? dailyCastingEntry_TotalRevenue.Catering_TotalPrice + Price : Price;
+                 
+                        dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople = dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople > 0 ? dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople + NumberOfPeople : NumberOfPeople;
 
                         if (dailyCastingEntry_TotalRevenue_Service.Update(dailyCastingEntry_TotalRevenue))
                         {
@@ -133,8 +94,7 @@ namespace IncomeExpenseControl.WinForm
                         else
                         {
                             MessageBox.Show("İşlem Başarısız");
-                        } 
-                        #endregion
+                        }
                     }
                     else
                     {
@@ -142,10 +102,7 @@ namespace IncomeExpenseControl.WinForm
                         dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue();
                         dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople = NumberOfPeople;
                         dailyCastingEntry_TotalRevenue.Catering_TotalPrice = Price;
-                        if (cmbPaymentStatus.SelectedText == "Yapıldı")
-                        {
-                            dailyCastingEntry_TotalRevenue.Catering_ReelPrice = Price;
-                        }
+                        dailyCastingEntry_TotalRevenue.Catering_ReelPrice = PaymentMade == true ? Price : 0;
 
                         if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
                         {
@@ -154,11 +111,17 @@ namespace IncomeExpenseControl.WinForm
                         else
                         {
                             MessageBox.Show("İşlem Başarısız");
-                        } 
+                        }
                         #endregion
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Boş Geçilemez");
+            }
+
+
         }
     }
 }

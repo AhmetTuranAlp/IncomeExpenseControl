@@ -24,7 +24,14 @@ namespace IncomeExpenseControl.Services.Services
 
         public List<DailyCastingEntry_Catering> GetAllCateringPaymentCasting()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _cateringPaymentRepo.GetAll().Where(x => x.Status == Status.Active ).OrderBy(c=>c.CastingDate).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public DailyCastingEntry_Catering GetCateringPaymentCasting(DateTime CastingDate, string CateringCode)
@@ -41,12 +48,34 @@ namespace IncomeExpenseControl.Services.Services
 
         public bool Insert(DailyCastingEntry_Catering cateringPayment)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var newEntity = AutoMapper.Mapper.DynamicMap<DailyCastingEntry_Catering>(cateringPayment);
+                newEntity.Status = Status.Active;
+                _cateringPaymentRepo.Insert(newEntity);
+                _uow.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
-        public void Update(DailyCastingEntry_Catering cateringPayment)
+        public bool Update(DailyCastingEntry_Catering cateringPayment)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var updateEntity = _cateringPaymentRepo.Find(cateringPayment.Id);
+                AutoMapper.Mapper.DynamicMap(cateringPayment, updateEntity);
+                _cateringPaymentRepo.Update(updateEntity);
+                _uow.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

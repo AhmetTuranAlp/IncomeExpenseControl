@@ -48,12 +48,34 @@ namespace IncomeExpenseControl.Services.Services
 
         public bool Insert(CateringCompanies cateringCompanies)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var newEntity = AutoMapper.Mapper.DynamicMap<CateringCompanies>(cateringCompanies);
+                newEntity.Status = Status.Active;
+                _cateringCompaniesRepo.Insert(newEntity);
+                _uow.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
-        public void Update(CateringCompanies cateringCompanies)
+        public bool Update(CateringCompanies cateringCompanies)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var updateEntity = _cateringCompaniesRepo.Find(cateringCompanies.Id);
+                AutoMapper.Mapper.DynamicMap(cateringCompanies, updateEntity);
+                _cateringCompaniesRepo.Update(updateEntity);
+                _uow.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
