@@ -29,5 +29,6 @@ namespace IncomeExpenseControl.Data.Entity
             get { return _price; }
             set { _price = Math.Round(value, 2); }
         } //Fiyat
+        
     }
 }

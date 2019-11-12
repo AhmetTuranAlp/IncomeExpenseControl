@@ -13,8 +13,8 @@ namespace IncomeExpenseControl.Services.Interfaces
 
         bool Update(DailyCastingEntry_Restaurant_Cash dailyCastingEntry_Restaurant_Cash);
 
-        List<DailyCastingEntry_Restaurant_Cash> GetAllCateringPaymentCasting();
+        List<DailyCastingEntry_Restaurant_Cash> GetAllRestaurantCashPaymentCasting();
 
-        DailyCastingEntry_Restaurant_Cash GetCateringPaymentCasting(DateTime CastingDate);
+        DailyCastingEntry_Restaurant_Cash GetRestaurantCashPaymentCasting(DateTime CastingDate);
     }
 }

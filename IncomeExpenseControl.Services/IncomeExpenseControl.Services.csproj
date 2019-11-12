@@ -46,17 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IBanks_Service.cs" />
     <Compile Include="Interfaces\ICateringCompanies_Service.cs" />
     <Compile Include="Interfaces\IDailyCastingEntry_Catering_Service.cs" />
     <Compile Include="Interfaces\IDailyCastingEntry_Personal_Service.cs" />
+    <Compile Include="Interfaces\IDailyCastingEntry_Restaurant_Bank_Service.cs" />
     <Compile Include="Interfaces\IDailyCastingEntry_Restaurant_Cash_Service.cs" />
+    <Compile Include="Interfaces\IDailyCastingEntry_Restaurant_Food_Service.cs" />
     <Compile Include="Interfaces\IDailyCastingEntry_TotalRevenue_Service.cs" />
+    <Compile Include="Interfaces\IFoodCards_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Banks_Service.cs" />
     <Compile Include="Services\CateringCompanies_Service.cs" />
     <Compile Include="Services\DailyCastingEntry_Catering_Service.cs" />
     <Compile Include="Services\DailyCastingEntry_Personal_Service.cs" />
+    <Compile Include="Services\DailyCastingEntry_Restaurant_Bank_Service.cs" />
     <Compile Include="Services\DailyCastingEntry_Restaurant_Cash_Service.cs" />
+    <Compile Include="Services\DailyCastingEntry_Restaurant_Food_Service.cs" />
     <Compile Include="Services\DailyCastingEntry_TotalRevenue_Service.cs" />
+    <Compile Include="Services\FoodCards_Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

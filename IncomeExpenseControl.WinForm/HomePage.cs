@@ -83,5 +83,29 @@ namespace IncomeExpenseControl.WinForm
             DailyCastingEntry_Restaurant_Cash_Form dailyCastingEntry_Restaurant_Cash_Form = new DailyCastingEntry_Restaurant_Cash_Form();
             Subform(dailyCastingEntry_Restaurant_Cash_Form);
         }
+
+        private void bankaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Banks_Form banks_Form = new Banks_Form();
+            Subform(banks_Form);
+        }
+
+        private void krediKartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DailyCastingEntry_Restaurant_Bank_Form dailyCastingEntry_Restaurant_Bank_Form = new DailyCastingEntry_Restaurant_Bank_Form();
+            Subform(dailyCastingEntry_Restaurant_Bank_Form);
+        }
+
+        private void yemekKartıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FoodCards_Form foodCards_Form = new FoodCards_Form();
+            Subform(foodCards_Form);
+        }
+
+        private void yemekKarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DailyCastingEntry_Restaurant_Food_Form dailyCastingEntry_Restaurant_Food_Form = new DailyCastingEntry_Restaurant_Food_Form();
+            Subform(dailyCastingEntry_Restaurant_Food_Form);
+        }
     }
 }

@@ -106,19 +106,28 @@ namespace IncomeExpenseControl.WinForm
 
                         if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
                         {
-                            MessageBox.Show("İşlem Başarılı");
+                            MessageBox.Show("İşlem Başarılı.");
                         }
                         else
                         {
-                            MessageBox.Show("İşlem Başarısız");
+                            MessageBox.Show("İşlem Başarısız.");
                         }
                         #endregion
                     }
+
+                    nudPrice.Value = 0;
+                    nudNumberOfPeople.Value = 0;
+                    cmbNewCateringCustomers.SelectedIndex = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show("İşlem Başarısız.");
                 }
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez");
+                MessageBox.Show("Boş Geçilemez.");
             }
 
 

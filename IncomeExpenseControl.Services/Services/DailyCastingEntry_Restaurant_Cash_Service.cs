@@ -22,7 +22,7 @@ namespace IncomeExpenseControl.Services.Services
             _restaurantCashRepo = _uow.GetRepository<DailyCastingEntry_Restaurant_Cash>();
         }
 
-        public List<DailyCastingEntry_Restaurant_Cash> GetAllCateringPaymentCasting()
+        public List<DailyCastingEntry_Restaurant_Cash> GetAllRestaurantCashPaymentCasting()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace IncomeExpenseControl.Services.Services
             }
         }
 
-        public DailyCastingEntry_Restaurant_Cash GetCateringPaymentCasting(DateTime CastingDate)
+        public DailyCastingEntry_Restaurant_Cash GetRestaurantCashPaymentCasting(DateTime CastingDate)
         {
             try
             {

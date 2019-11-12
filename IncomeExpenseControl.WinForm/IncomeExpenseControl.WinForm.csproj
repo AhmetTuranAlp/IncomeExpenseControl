@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banks_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banks_Form.Designer.cs">
+      <DependentUpon>Banks_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="CateringCompanies_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +80,29 @@
     <Compile Include="DailyCastingEntry_Personal_Form.Designer.cs">
       <DependentUpon>DailyCastingEntry_Personal_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="DailyCastingEntry_Restaurant_Bank_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyCastingEntry_Restaurant_Bank_Form.Designer.cs">
+      <DependentUpon>DailyCastingEntry_Restaurant_Bank_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="DailyCastingEntry_Restaurant_Cash_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DailyCastingEntry_Restaurant_Cash_Form.Designer.cs">
       <DependentUpon>DailyCastingEntry_Restaurant_Cash_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyCastingEntry_Restaurant_Food_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyCastingEntry_Restaurant_Food_Form.Designer.cs">
+      <DependentUpon>DailyCastingEntry_Restaurant_Food_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodCards_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodCards_Form.Designer.cs">
+      <DependentUpon>FoodCards_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -93,6 +117,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Banks_Form.resx">
+      <DependentUpon>Banks_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CateringCompanies_Form.resx">
       <DependentUpon>CateringCompanies_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,8 +129,17 @@
     <EmbeddedResource Include="DailyCastingEntry_Personal_Form.resx">
       <DependentUpon>DailyCastingEntry_Personal_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DailyCastingEntry_Restaurant_Bank_Form.resx">
+      <DependentUpon>DailyCastingEntry_Restaurant_Bank_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DailyCastingEntry_Restaurant_Cash_Form.resx">
       <DependentUpon>DailyCastingEntry_Restaurant_Cash_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyCastingEntry_Restaurant_Food_Form.resx">
+      <DependentUpon>DailyCastingEntry_Restaurant_Food_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodCards_Form.resx">
+      <DependentUpon>FoodCards_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>

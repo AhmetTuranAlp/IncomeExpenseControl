@@ -56,7 +56,7 @@ namespace IncomeExpenseControl.Services.Services
                 _uow.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
