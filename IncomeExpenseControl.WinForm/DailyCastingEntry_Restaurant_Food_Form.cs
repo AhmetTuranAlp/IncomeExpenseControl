@@ -86,10 +86,13 @@ namespace IncomeExpenseControl.WinForm
                     }
                     else
                     {
-                        dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue();
-                        dailyCastingEntry_TotalRevenue.RestaurantFood_NumberOfPeople = NumberOfPeople;
-                        dailyCastingEntry_TotalRevenue.RestaurantFood_TotalPrice = Price;
-                        dailyCastingEntry_TotalRevenue.RestaurantFood_ReelPrice = Price;
+                        dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue
+                        {
+                            RestaurantFood_NumberOfPeople = NumberOfPeople,
+                            RestaurantFood_TotalPrice = Price,
+                            RestaurantFood_ReelPrice = Price,
+                            CastingDate = CastingDate
+                        };
 
                         if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
                         {

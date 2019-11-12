@@ -12,21 +12,21 @@ using static IncomeExpenseControl.Data.Entity.ModelEnums;
 
 namespace IncomeExpenseControl.Services.Services
 {
-    public class DailyCastingEntry_TotalRevenue_Service : IDailyCastingEntry_TotalRevenue_Service
+    public class SupplierCompanies_Service : ISupplierCompanies_Service
     {
-        private readonly IRepository<DailyCastingEntry_TotalRevenue> _totalRevenueRepo;
+        private readonly IRepository<SupplierCompanies> _supplierCompaniesRepo;
         private readonly IUnitofWork _uow;
-        public DailyCastingEntry_TotalRevenue_Service(UnitofWork uow)
+        public SupplierCompanies_Service(UnitofWork uow)
         {
             _uow = uow;
-            _totalRevenueRepo = _uow.GetRepository<DailyCastingEntry_TotalRevenue>();
+            _supplierCompaniesRepo = _uow.GetRepository<SupplierCompanies>();
         }
 
-        public List<DailyCastingEntry_TotalRevenue> GetAllTotalRevenue()
+        public List<SupplierCompanies> GetAllSupplierCompanies()
         {
             try
             {
-                return _totalRevenueRepo.GetAll().Where(x => x.Status == Status.Active).OrderBy(x => x.UploadDate).ToList();
+                return _supplierCompaniesRepo.GetAll().Where(x => x.Status == Status.Active).OrderBy(x => x.UploadDate).ToList();
             }
             catch (Exception ex)
             {
@@ -34,11 +34,11 @@ namespace IncomeExpenseControl.Services.Services
             }
         }
 
-        public DailyCastingEntry_TotalRevenue GetTotalRevenue(DateTime CastingDate)
+        public SupplierCompanies GetSupplierCompanies(string Code)
         {
             try
             {
-                return _totalRevenueRepo.GetAll().FirstOrDefault(x => x.CastingDate == CastingDate && x.Status == Status.Active);
+                return _supplierCompaniesRepo.GetAll().FirstOrDefault(x => x.Status == Status.Active && x.Code == Code);
             }
             catch (Exception ex)
             {
@@ -46,29 +46,29 @@ namespace IncomeExpenseControl.Services.Services
             }
         }
 
-        public bool Insert(DailyCastingEntry_TotalRevenue DailyCastingEntry_TotalRevenue)
+        public bool Insert(SupplierCompanies supplierCompanies)
         {
             try
             {
-                var newEntity = AutoMapper.Mapper.DynamicMap<DailyCastingEntry_TotalRevenue>(DailyCastingEntry_TotalRevenue);
+                var newEntity = AutoMapper.Mapper.DynamicMap<SupplierCompanies>(supplierCompanies);
                 newEntity.Status = Status.Active;
-                _totalRevenueRepo.Insert(newEntity);
+                _supplierCompaniesRepo.Insert(newEntity);
                 _uow.SaveChanges();
                 return true;
             }
-            catch (Exception )
+            catch (Exception)
             {
                 return false;
             }
         }
 
-        public bool Update(DailyCastingEntry_TotalRevenue DailyCastingEntry_TotalRevenue)
+        public bool Update(SupplierCompanies supplierCompanies)
         {
             try
             {
-                var updateEntity = _totalRevenueRepo.Find(DailyCastingEntry_TotalRevenue.Id);
-                AutoMapper.Mapper.DynamicMap(DailyCastingEntry_TotalRevenue, updateEntity);
-                _totalRevenueRepo.Update(updateEntity);
+                var updateEntity = _supplierCompaniesRepo.Find(supplierCompanies.Id);
+                AutoMapper.Mapper.DynamicMap(supplierCompanies, updateEntity);
+                _supplierCompaniesRepo.Update(updateEntity);
                 _uow.SaveChanges();
                 return true;
             }

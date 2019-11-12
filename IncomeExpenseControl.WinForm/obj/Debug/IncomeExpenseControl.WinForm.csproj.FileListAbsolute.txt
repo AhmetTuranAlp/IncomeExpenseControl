@@ -94,3 +94,8 @@ D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpe
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Restaurant_Bank_Form.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Restaurant_Food_Form.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.FoodCards_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Banks_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Restaurant_Bank_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Restaurant_Food_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.FoodCards_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.SupplierCompanies_Form.resources

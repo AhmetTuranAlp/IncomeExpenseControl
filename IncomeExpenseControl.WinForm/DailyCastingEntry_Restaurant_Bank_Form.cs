@@ -86,10 +86,13 @@ namespace IncomeExpenseControl.WinForm
                     }
                     else
                     {
-                        dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue();
-                        dailyCastingEntry_TotalRevenue.RestaurantBank_NumberOfPeople = NumberOfPeople;
-                        dailyCastingEntry_TotalRevenue.RestaurantBank_TotalPrice = Price;
-                        dailyCastingEntry_TotalRevenue.RestaurantBank_ReelPrice = Price;
+                        dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue
+                        {
+                            RestaurantBank_NumberOfPeople = NumberOfPeople,
+                            RestaurantBank_TotalPrice = Price,
+                            RestaurantBank_ReelPrice = Price,
+                            CastingDate = CastingDate
+                        };
 
                         if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
                         {
@@ -99,7 +102,9 @@ namespace IncomeExpenseControl.WinForm
                         {
                             MessageBox.Show("İşlem Başarısız");
                         }
-                    }
+                    };
+
+
                 }
                 else
                 {
@@ -110,6 +115,7 @@ namespace IncomeExpenseControl.WinForm
             {
                 MessageBox.Show("Boş Geçilemez.");
             }
+
         }
     }
 }

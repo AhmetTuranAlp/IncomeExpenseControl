@@ -43,6 +43,8 @@
             this.bankaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yemekKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giderlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tedarikçilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +52,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.günlükDökümGirişiToolStripMenuItem,
+            this.giderlerToolStripMenuItem,
             this.tanımlamalarToolStripMenuItem,
             this.raporlarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -121,7 +124,7 @@
             this.bankaToolStripMenuItem,
             this.yemekKartıToolStripMenuItem});
             this.tanımlamalarToolStripMenuItem.Name = "tanımlamalarToolStripMenuItem";
-            this.tanımlamalarToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.tanımlamalarToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.tanımlamalarToolStripMenuItem.Text = "Tanımlamalar";
             // 
             // cateringFirmaEkleToolStripMenuItem
@@ -136,6 +139,7 @@
             this.tedarikçiFirmaEkleToolStripMenuItem.Name = "tedarikçiFirmaEkleToolStripMenuItem";
             this.tedarikçiFirmaEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tedarikçiFirmaEkleToolStripMenuItem.Text = "Tedarikçi Firma";
+            this.tedarikçiFirmaEkleToolStripMenuItem.Click += new System.EventHandler(this.TedarikçiFirmaEkleToolStripMenuItem_Click);
             // 
             // bankaToolStripMenuItem
             // 
@@ -156,6 +160,20 @@
             this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
             this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
+            // 
+            // giderlerToolStripMenuItem
+            // 
+            this.giderlerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tedarikçilerToolStripMenuItem});
+            this.giderlerToolStripMenuItem.Name = "giderlerToolStripMenuItem";
+            this.giderlerToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.giderlerToolStripMenuItem.Text = "Giderler";
+            // 
+            // tedarikçilerToolStripMenuItem
+            // 
+            this.tedarikçilerToolStripMenuItem.Name = "tedarikçilerToolStripMenuItem";
+            this.tedarikçilerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tedarikçilerToolStripMenuItem.Text = "Tedarikçiler";
             // 
             // HomePage
             // 
@@ -193,5 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem krediKartToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yemekKarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şahsiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem giderlerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tedarikçilerToolStripMenuItem;
     }
 }

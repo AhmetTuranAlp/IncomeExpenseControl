@@ -60,7 +60,10 @@
     <Compile Include="Entity\DailyCastingEntry_Restaurant_Cash.cs" />
     <Compile Include="Entity\DailyCastingEntry_Restaurant_Food.cs" />
     <Compile Include="Entity\DailyCastingEntry_TotalRevenue.cs" />
+    <Compile Include="Entity\Expense_Suppliers.cs" />
     <Compile Include="Entity\FoodCards.cs" />
+    <Compile Include="Entity\SupplierCompanies.cs" />
+    <Compile Include="Entity\TotalExpenses.cs" />
     <Compile Include="Model\Base.cs" />
     <Compile Include="Model\ModelEnums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

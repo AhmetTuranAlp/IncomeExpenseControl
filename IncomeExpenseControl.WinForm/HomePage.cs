@@ -107,5 +107,11 @@ namespace IncomeExpenseControl.WinForm
             DailyCastingEntry_Restaurant_Food_Form dailyCastingEntry_Restaurant_Food_Form = new DailyCastingEntry_Restaurant_Food_Form();
             Subform(dailyCastingEntry_Restaurant_Food_Form);
         }
+
+        private void TedarikçiFirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SupplierCompanies_Form supplierCompanies_Form = new SupplierCompanies_Form();
+            Subform(supplierCompanies_Form);
+        }
     }
 }

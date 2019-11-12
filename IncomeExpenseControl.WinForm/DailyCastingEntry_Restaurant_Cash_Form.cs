@@ -69,10 +69,13 @@ namespace IncomeExpenseControl.WinForm
                     else
                     {
                         #region DailyCastingEntry_TotalRevenue Yeni Kayıt Oluşturuluyor ve Catering Bilgileri Ekleniyor.
-                        dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue();
-                        dailyCastingEntry_TotalRevenue.RestaurantCash_NumberOfPeople = NumberOfPeople;
-                        dailyCastingEntry_TotalRevenue.RestaurantCash_TotalPrice = Price;
-                        dailyCastingEntry_TotalRevenue.RestaurantCash_ReelPrice = Price;
+                        dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue
+                        {
+                            RestaurantCash_NumberOfPeople = NumberOfPeople,
+                            RestaurantCash_TotalPrice = Price,
+                            RestaurantCash_ReelPrice = Price,
+                            CastingDate = CastingDate
+                        };
 
                         if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
                         {

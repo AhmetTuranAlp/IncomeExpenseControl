@@ -117,6 +117,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SupplierCompanies_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierCompanies_Form.Designer.cs">
+      <DependentUpon>SupplierCompanies_Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Banks_Form.resx">
       <DependentUpon>Banks_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +154,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierCompanies_Form.resx">
+      <DependentUpon>SupplierCompanies_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

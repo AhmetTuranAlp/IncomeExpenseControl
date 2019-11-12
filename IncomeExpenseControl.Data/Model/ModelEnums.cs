@@ -21,6 +21,20 @@ namespace IncomeExpenseControl.Data.Entity
             NewRecord = 3
         }
 
+        public enum ExpenseType
+        {
+            [Description("Tedarikçi")]
+            Suppliers = 0,
+            [Description("Fatura")]
+            Invoice = 1,
+            [Description("Personel")]
+            Staff = 2,
+            [Description("Araç")]
+            Vehicle = 3,
+            [Description("Banka")]
+            Bank = 4
+        }
+
         //public enum PaymentType : int
         //{
         //    [Description("Nakit")]
