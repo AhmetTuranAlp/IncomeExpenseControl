@@ -38,7 +38,7 @@ namespace IncomeExpenseControl.Services.Services
         {
             try
             {
-                return _cateringPaymentRepo.GetAll().FirstOrDefault(x => x.CastingDate == CastingDate && x.Status == Status.Active && x.CateringCompany.Code == CateringCode);
+                return _cateringPaymentRepo.GetAll().FirstOrDefault(x => x.CastingDate == CastingDate && x.Status == Status.Active && x.CompanyCode == CateringCode);
             }
             catch (Exception ex)
             {

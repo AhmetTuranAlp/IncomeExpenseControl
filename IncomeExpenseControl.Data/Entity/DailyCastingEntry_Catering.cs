@@ -11,7 +11,8 @@ namespace IncomeExpenseControl.Data.Entity
     {
         public DailyCastingEntry_Catering()
         {
-            CateringCompany = new CateringCompanies();
+            CateringCompany = "";
+            CompanyCode = "";            
             NumberOfPeople = 0;
             Price = 0;
             InvoiceCut = false;
@@ -19,7 +20,8 @@ namespace IncomeExpenseControl.Data.Entity
             CastingDate = DateTime.Now;
         }
         public DateTime CastingDate { get; set; } //Döküm Tarihi
-        public CateringCompanies CateringCompany { get; set; } //İlgili Firma
+        public string CateringCompany { get; set; } //İlgili Firma
+        public string CompanyCode { get; set; } //İlgili Firma
         public int NumberOfPeople { get; set; } //Kişi Sayısı
 
         private decimal _price;

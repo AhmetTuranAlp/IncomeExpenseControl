@@ -25,6 +25,26 @@ namespace IncomeExpenseControl.Data.Entity
             RevenueReelPrice = 0;
 
         }
+        public DateTime CastingDate { get; set; }  //Döküm Tarihi
+
+        #region Personal Revenue
+        private decimal _personalTotalPrice = 0;
+        [Required(ErrorMessage = "Zorunlu Alan")]
+        public decimal Personal_TotalPrice
+        {
+            get { return _personalTotalPrice; }
+            set { _personalTotalPrice = Math.Round(value, 2); }
+        } //Total Price
+
+        private decimal _personalReelPrice = 0;
+        [Required(ErrorMessage = "Zorunlu Alan")]
+        public decimal Personal_ReelPrice
+        {
+            get { return _personalReelPrice; }
+            set { _personalReelPrice = Math.Round(value, 2); }
+        } //Reel Price 
+        #endregion
+
         #region Catering Revenue
         public int Catering_NumberOfPeople { get; set; }
 
@@ -45,23 +65,7 @@ namespace IncomeExpenseControl.Data.Entity
         } //Reel Price 
         #endregion
 
-        #region Personal Revenue
-        private decimal _personalTotalPrice = 0;
-        [Required(ErrorMessage = "Zorunlu Alan")]
-        public decimal Personal_TotalPrice
-        {
-            get { return _personalTotalPrice; }
-            set { _personalTotalPrice = Math.Round(value, 2); }
-        } //Total Price
 
-        private decimal _personalReelPrice = 0;
-        [Required(ErrorMessage = "Zorunlu Alan")]
-        public decimal Personal_ReelPrice
-        {
-            get { return _personalReelPrice; }
-            set { _personalReelPrice = Math.Round(value, 2); }
-        } //Reel Price 
-        #endregion
 
         #region RestaurantCash Revenue
         public int RestaurantCash_NumberOfPeople { get; set; }
@@ -123,7 +127,7 @@ namespace IncomeExpenseControl.Data.Entity
         } //Reel Price 
         #endregion
 
-        public DateTime CastingDate { get; set; }  //Döküm Tarihi
+
 
         private decimal _revenueTotalPrice = 0;
         public decimal RevenueTotalPrice

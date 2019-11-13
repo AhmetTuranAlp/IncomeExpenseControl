@@ -26,7 +26,7 @@ namespace IncomeExpenseControl.Services.Services
         {
             try
             {
-                return _totalRevenueRepo.GetAll().Where(x => x.Status == Status.Active).OrderBy(x => x.UploadDate).ToList();
+                return _totalRevenueRepo.GetAll().Where(x => x.Status == Status.Active).OrderBy(x => x.CastingDate).ToList();
             }
             catch (Exception ex)
             {

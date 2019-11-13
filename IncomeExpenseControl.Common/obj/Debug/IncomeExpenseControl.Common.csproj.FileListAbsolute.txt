@@ -20,3 +20,7 @@ D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpen
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.pdb
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.dll.config
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.CopyComplete
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.dll
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.pdb
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.dll.config
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.CopyComplete

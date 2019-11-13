@@ -67,7 +67,8 @@ namespace IncomeExpenseControl.WinForm
                 DailyCastingEntry_Catering dailyCastingEntry_Catering = new DailyCastingEntry_Catering()
                 {
                     CastingDate = CastingDate,
-                    CateringCompany = cateringCompanies_Service.GetCateringCompanies(CateringCode),
+                    CompanyCode = cateringCompanies_Service.GetCateringCompanies(CateringCode).Code,
+                    CateringCompany = cateringCompanies_Service.GetCateringCompanies(CateringCode).Name,
                     NumberOfPeople = NumberOfPeople,
                     Price = Price,
                     Status = Status.Active,

@@ -49,6 +49,8 @@ namespace IncomeExpenseControl.WinForm
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+            Rectangle ekran = Screen.PrimaryScreen.Bounds;
+
             IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
             if (ctx.Coder.Count() == 0)
             {
@@ -130,6 +132,18 @@ namespace IncomeExpenseControl.WinForm
         {
             Expense_Invoice_Form expense_Invoice_Form = new Expense_Invoice_Form();
             Subform(expense_Invoice_Form);
+        }
+
+        private void ToplamGelirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportTotalRevenues_Form reportTotalRevenues_Form = new ReportTotalRevenues_Form();
+            Subform(reportTotalRevenues_Form);
+        }
+
+        private void CateringGelirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportCateringRevenues_Form reportCateringRevenues_Form = new ReportCateringRevenues_Form();
+            Subform(reportCateringRevenues_Form);
         }
     }
 }
