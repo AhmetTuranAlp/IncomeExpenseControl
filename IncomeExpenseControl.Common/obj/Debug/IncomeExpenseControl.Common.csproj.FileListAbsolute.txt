@@ -16,3 +16,7 @@ D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\ob
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.CoreCompileInputs.cache
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.dll
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.pdb
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.dll
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.pdb
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.dll.config
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.CopyComplete

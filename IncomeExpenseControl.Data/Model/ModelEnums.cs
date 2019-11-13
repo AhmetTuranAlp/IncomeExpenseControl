@@ -35,6 +35,21 @@ namespace IncomeExpenseControl.Data.Entity
             Bank = 4
         }
 
+
+        public enum InvoiceType
+        {
+            [Description("Su")]
+            That = 0,
+            [Description("Elektirik")]
+            Electricity = 1,
+            [Description("Doğalgaz")]
+            NaturalGas = 2,
+            [Description("İnternet")]
+            Internet = 3,
+            [Description("Diger")]
+            Other = 4
+        }
+
         //public enum PaymentType : int
         //{
         //    [Description("Nakit")]

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNewSave = new System.Windows.Forms.Button();
             this.nudNumberOfPeople = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.nudPrice = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNewSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfPeople)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
@@ -51,6 +51,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 148);
             this.panel1.TabIndex = 0;
+            // 
+            // btnNewSave
+            // 
+            this.btnNewSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnNewSave.Location = new System.Drawing.Point(90, 90);
+            this.btnNewSave.Name = "btnNewSave";
+            this.btnNewSave.Size = new System.Drawing.Size(175, 36);
+            this.btnNewSave.TabIndex = 11;
+            this.btnNewSave.Text = "Kaydet";
+            this.btnNewSave.UseVisualStyleBackColor = true;
+            this.btnNewSave.Click += new System.EventHandler(this.BtnNewSave_Click);
             // 
             // nudNumberOfPeople
             // 
@@ -97,17 +108,6 @@
             this.label1.Size = new System.Drawing.Size(35, 14);
             this.label1.TabIndex = 6;
             this.label1.Text = "Fiyat:";
-            // 
-            // btnNewSave
-            // 
-            this.btnNewSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnNewSave.Location = new System.Drawing.Point(90, 90);
-            this.btnNewSave.Name = "btnNewSave";
-            this.btnNewSave.Size = new System.Drawing.Size(175, 36);
-            this.btnNewSave.TabIndex = 11;
-            this.btnNewSave.Text = "Kaydet";
-            this.btnNewSave.UseVisualStyleBackColor = true;
-            this.btnNewSave.Click += new System.EventHandler(this.BtnNewSave_Click);
             // 
             // DailyCastingEntry_Restaurant_Cash_Form
             // 

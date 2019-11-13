@@ -9,9 +9,17 @@ namespace IncomeExpenseControl.Data.Entity
 {
     public class Expense_Suppliers : Base
     {
+        public Expense_Suppliers()
+        {
+            ExpenseDate = DateTime.Now;
+            SupplierCompanies = new SupplierCompanies();
+            Descriptions = "";
+            Price = 0;
+        }
         public DateTime ExpenseDate { get; set; }
         public SupplierCompanies SupplierCompanies { get; set; }
-        
+        public string Descriptions { get; set; }
+
         private decimal _price;
         [Required(ErrorMessage = "Zorunlu Alan")]
         public decimal Price

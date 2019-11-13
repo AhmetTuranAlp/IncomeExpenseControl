@@ -113,5 +113,23 @@ namespace IncomeExpenseControl.WinForm
             SupplierCompanies_Form supplierCompanies_Form = new SupplierCompanies_Form();
             Subform(supplierCompanies_Form);
         }
+
+        private void tedarikçilerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Expense_Suppliers_Form expense_Suppliers_Form = new Expense_Suppliers_Form();
+            Subform(expense_Suppliers_Form);
+        }
+
+        private void araçToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Expense_Vehicle_Form expense_Vehicle_Form = new Expense_Vehicle_Form();
+            Subform(expense_Vehicle_Form);
+        }
+
+        private void faturalarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Expense_Invoice_Form expense_Invoice_Form = new Expense_Invoice_Form();
+            Subform(expense_Invoice_Form);
+        }
     }
 }

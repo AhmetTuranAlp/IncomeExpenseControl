@@ -8,7 +8,7 @@ using static IncomeExpenseControl.Data.Entity.ModelEnums;
 
 namespace IncomeExpenseControl.Data.Entity
 {
-    public class TotalExpenses
+    public class TotalExpenses : Base
     {
         public DateTime ExpenseDate { get; set; }
         public ExpenseType ExpenseType { get; set; }

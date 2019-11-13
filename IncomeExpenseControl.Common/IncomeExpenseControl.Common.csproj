@@ -46,5 +46,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IncomeExpenseControl.Data\IncomeExpenseControl.Data.csproj">
+      <Project>{4B6CFA3D-30DF-4F1E-B9F2-415FDBA93B42}</Project>
+      <Name>IncomeExpenseControl.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
