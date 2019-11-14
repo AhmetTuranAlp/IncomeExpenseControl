@@ -129,6 +129,12 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportPersonal_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPersonal_Form.Designer.cs">
+      <DependentUpon>ReportPersonal_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportTotalRevenues_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportCateringRevenues_Form.resx">
       <DependentUpon>ReportCateringRevenues_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPersonal_Form.resx">
+      <DependentUpon>ReportPersonal_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportTotalRevenues_Form.resx">
       <DependentUpon>ReportTotalRevenues_Form.cs</DependentUpon>

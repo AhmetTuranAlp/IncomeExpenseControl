@@ -145,5 +145,11 @@ namespace IncomeExpenseControl.WinForm
             ReportCateringRevenues_Form reportCateringRevenues_Form = new ReportCateringRevenues_Form();
             Subform(reportCateringRevenues_Form);
         }
+
+        private void şahsiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReportPersonal_Form reportPersonal_Form = new ReportPersonal_Form();
+            Subform(reportPersonal_Form);
+        }
     }
 }

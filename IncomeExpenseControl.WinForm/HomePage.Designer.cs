@@ -138,21 +138,21 @@
             // tedarikçilerToolStripMenuItem
             // 
             this.tedarikçilerToolStripMenuItem.Name = "tedarikçilerToolStripMenuItem";
-            this.tedarikçilerToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.tedarikçilerToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.tedarikçilerToolStripMenuItem.Text = "Tedarikçiler";
             this.tedarikçilerToolStripMenuItem.Click += new System.EventHandler(this.tedarikçilerToolStripMenuItem_Click);
             // 
             // araçToolStripMenuItem
             // 
             this.araçToolStripMenuItem.Name = "araçToolStripMenuItem";
-            this.araçToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.araçToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.araçToolStripMenuItem.Text = "Araç";
             this.araçToolStripMenuItem.Click += new System.EventHandler(this.araçToolStripMenuItem_Click);
             // 
             // faturalarToolStripMenuItem
             // 
             this.faturalarToolStripMenuItem.Name = "faturalarToolStripMenuItem";
-            this.faturalarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.faturalarToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.faturalarToolStripMenuItem.Text = "Faturalar";
             this.faturalarToolStripMenuItem.Click += new System.EventHandler(this.faturalarToolStripMenuItem_Click);
             // 
@@ -164,34 +164,34 @@
             this.bankaToolStripMenuItem,
             this.yemekKartıToolStripMenuItem});
             this.tanımlamalarToolStripMenuItem.Name = "tanımlamalarToolStripMenuItem";
-            this.tanımlamalarToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.tanımlamalarToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.tanımlamalarToolStripMenuItem.Text = "Tanımlamalar";
             // 
             // cateringFirmaEkleToolStripMenuItem
             // 
             this.cateringFirmaEkleToolStripMenuItem.Name = "cateringFirmaEkleToolStripMenuItem";
-            this.cateringFirmaEkleToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.cateringFirmaEkleToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.cateringFirmaEkleToolStripMenuItem.Text = "Catering Firma";
             this.cateringFirmaEkleToolStripMenuItem.Click += new System.EventHandler(this.CateringFirmaEkleToolStripMenuItem_Click);
             // 
             // tedarikçiFirmaEkleToolStripMenuItem
             // 
             this.tedarikçiFirmaEkleToolStripMenuItem.Name = "tedarikçiFirmaEkleToolStripMenuItem";
-            this.tedarikçiFirmaEkleToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.tedarikçiFirmaEkleToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.tedarikçiFirmaEkleToolStripMenuItem.Text = "Tedarikçi Firma";
             this.tedarikçiFirmaEkleToolStripMenuItem.Click += new System.EventHandler(this.TedarikçiFirmaEkleToolStripMenuItem_Click);
             // 
             // bankaToolStripMenuItem
             // 
             this.bankaToolStripMenuItem.Name = "bankaToolStripMenuItem";
-            this.bankaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.bankaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.bankaToolStripMenuItem.Text = "Banka";
             this.bankaToolStripMenuItem.Click += new System.EventHandler(this.bankaToolStripMenuItem_Click);
             // 
             // yemekKartıToolStripMenuItem
             // 
             this.yemekKartıToolStripMenuItem.Name = "yemekKartıToolStripMenuItem";
-            this.yemekKartıToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.yemekKartıToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.yemekKartıToolStripMenuItem.Text = "Yemek Kartı";
             this.yemekKartıToolStripMenuItem.Click += new System.EventHandler(this.yemekKartıToolStripMenuItem_Click);
             // 
@@ -241,6 +241,7 @@
             this.şahsiToolStripMenuItem1.Name = "şahsiToolStripMenuItem1";
             this.şahsiToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.şahsiToolStripMenuItem1.Text = "Şahsi";
+            this.şahsiToolStripMenuItem1.Click += new System.EventHandler(this.şahsiToolStripMenuItem1_Click);
             // 
             // giderlerToolStripMenuItem1
             // 

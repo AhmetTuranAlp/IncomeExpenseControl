@@ -21,6 +21,19 @@ namespace IncomeExpenseControl.Services.Services
             _uow = uow;
             _personalPaymentRepo = _uow.GetRepository<DailyCastingEntry_Personal>();
         }
+
+        public List<DailyCastingEntry_Personal> GetAllDailyCastingEntry_Personal()
+        {
+            try
+            {
+                return _personalPaymentRepo.GetAll().Where(x => x.Status == Status.Active).OrderBy(c => c.CastingDate).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public bool Insert(DailyCastingEntry_Personal personalPayment)
         {
             try

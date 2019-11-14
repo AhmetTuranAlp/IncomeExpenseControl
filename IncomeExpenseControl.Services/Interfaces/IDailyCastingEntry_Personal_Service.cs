@@ -10,5 +10,7 @@ namespace IncomeExpenseControl.Services.Interfaces
     public interface IDailyCastingEntry_Personal_Service
     {
         bool Insert(DailyCastingEntry_Personal personalPayment);
+
+        List<DailyCastingEntry_Personal> GetAllDailyCastingEntry_Personal();
     }
 }

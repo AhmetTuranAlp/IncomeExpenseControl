@@ -108,3 +108,6 @@ D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\o
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Expense_Vehicle_Form.resources
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportCateringRevenues_Form.resources
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportTotalRevenues_Form.resources
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportCateringRevenues_Form.resources
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportTotalRevenues_Form.resources
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportPersonal_Form.resources
