@@ -56,9 +56,11 @@ namespace IncomeExpenseControl.WinForm
 
             if (!string.IsNullOrEmpty(BankCode) && Price > 0 && NumberOfPeople > 0)
             {
+                Banks banks = banks_Service.GetBanks(BankCode);
                 DailyCastingEntry_Restaurant_Bank dailyCastingEntry_Restaurant_Bank = new DailyCastingEntry_Restaurant_Bank()
                 {
-                    Banks = banks_Service.GetBanks(BankCode),
+                    BankName = banks.BankName,
+                    BankCode = banks.BankCode,
                     CastingDate = CastingDate,
                     NumberOfPeople = NumberOfPeople,
                     Price = Price,

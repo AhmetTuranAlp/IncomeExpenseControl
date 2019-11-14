@@ -151,5 +151,11 @@ namespace IncomeExpenseControl.WinForm
             ReportPersonal_Form reportPersonal_Form = new ReportPersonal_Form();
             Subform(reportPersonal_Form);
         }
+
+        private void RestaurantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportRestaurant_Form reportRestaurant_Form = new ReportRestaurant_Form();
+            Subform(reportRestaurant_Form);
+        }
     }
 }

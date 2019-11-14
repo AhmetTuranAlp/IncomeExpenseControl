@@ -6,24 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using static IncomeExpenseControl.Data.Entity.ModelEnums;
 
-namespace IncomeExpenseControl.Data.Entity
+namespace IncomeExpenseControl.Data.Model
 {
-    public class DailyCastingEntry_Restaurant_Bank : Base
+    public class RestaurantRevenueVM
     {
-        public DailyCastingEntry_Restaurant_Bank()
-        {
-            BankName = "";
-            BankCode = "";
-            Price = 0;
-            NumberOfPeople = 0;
-            CastingDate = DateTime.Now;
-        }
-
         public DateTime CastingDate { get; set; } //Döküm Tarihi
+        public string PaymentType { get; set; }
+        public string Name { get; set; }
         public int NumberOfPeople { get; set; } //Kişi Sayısı
-
-        public string BankName { get; set; }
-        public string BankCode { get; set; }
 
         private decimal _price;
         [Required(ErrorMessage = "Zorunlu Alan")]
@@ -32,6 +22,5 @@ namespace IncomeExpenseControl.Data.Entity
             get { return _price; }
             set { _price = Math.Round(value, 2); }
         } //Fiyat
-        
     }
 }

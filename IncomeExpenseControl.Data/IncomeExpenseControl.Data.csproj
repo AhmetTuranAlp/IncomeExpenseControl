@@ -68,6 +68,7 @@
     <Compile Include="Entity\TotalExpenses.cs" />
     <Compile Include="Model\Base.cs" />
     <Compile Include="Model\ModelEnums.cs" />
+    <Compile Include="Model\RestaurantRevenueVM.cs" />
     <Compile Include="Model\SelectListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

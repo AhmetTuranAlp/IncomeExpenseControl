@@ -50,15 +50,15 @@ namespace IncomeExpenseControl.Data.Entity
             Other = 4
         }
 
-        //public enum PaymentType : int
-        //{
-        //    [Description("Nakit")]
-        //    Cash = 1,
-        //    [Description("Yemek Kartı")]
-        //    FoodCard = 2,
-        //    [Description("Kredi & Banka Kartı")]
-        //    CreditCard = 3
-        //}
+        public enum PaymentType : int
+        {
+            [Description("Nakit")]
+            Cash = 1,
+            [Description("Yemek Kartı")]
+            FoodCard = 2,
+            [Description("Kredi & Banka Kartı")]
+            CreditCard = 3
+        }
 
         //public enum RevenueType : int
         //{

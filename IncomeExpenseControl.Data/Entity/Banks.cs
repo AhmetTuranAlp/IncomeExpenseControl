@@ -8,6 +8,12 @@ namespace IncomeExpenseControl.Data.Entity
 {
     public class Banks :Base
     {
+        public Banks()
+        {
+            BankName = "";
+            BankCode = "";
+            Descriptions = "";
+        }
         public string BankName { get; set; }
         public string BankCode { get; set; }
         public string Descriptions { get; set; }

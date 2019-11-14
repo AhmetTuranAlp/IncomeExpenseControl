@@ -11,14 +11,18 @@ namespace IncomeExpenseControl.Data.Entity
     {
         public DailyCastingEntry_Restaurant_Food()
         {
-            FoodCards = new FoodCards();
             NumberOfPeople = 0;
             Price = 0;
             CastingDate = DateTime.Now;
+            FoodCardName = "";
+            FoodCardCode = "";
         }
 
         public DateTime CastingDate { get; set; }
-        public FoodCards FoodCards { get; set; }
+
+        public string FoodCardName { get; set; }
+        public string FoodCardCode { get; set; }
+
         public int NumberOfPeople { get; set; } //Kişi Sayısı
 
         private decimal _price;

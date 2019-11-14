@@ -56,9 +56,11 @@ namespace IncomeExpenseControl.WinForm
 
             if (!string.IsNullOrEmpty(Code) && Price > 0 && NumberOfPeople > 0)
             {
+                FoodCards foodCards = foodCards_Service.GetFoodCards(Code);
                 DailyCastingEntry_Restaurant_Food dailyCastingEntry_Restaurant_Food = new DailyCastingEntry_Restaurant_Food()
                 {
-                    FoodCards = foodCards_Service.GetFoodCards(Code),
+                    FoodCardCode = foodCards.Code,
+                    FoodCardName = foodCards.Name,
                     CastingDate = CastingDate,
                     NumberOfPeople = NumberOfPeople,
                     Price = Price,
