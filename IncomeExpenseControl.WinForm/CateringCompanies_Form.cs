@@ -25,29 +25,34 @@ namespace IncomeExpenseControl.WinForm
         IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
         private void BtnSave_Click(object sender, EventArgs e)
         {
+      
             if (!string.IsNullOrEmpty(txtName.Text))
             {
-                Tools tools = new Tools();
-                UnitofWork unitofWork = new UnitofWork(ctx);
-                CateringCompanies_Service cateringCompanies_Service = new CateringCompanies_Service(unitofWork);
-                CateringCompanies cateringCompanies = new CateringCompanies();
-                cateringCompanies.Name = txtName.Text;
-                cateringCompanies.Descriptions = txtDescriptions.Text;
-                cateringCompanies.Code = tools.CreateCode();
-                if (cateringCompanies_Service.Insert(cateringCompanies))
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    txtName.Text = "";
-                    txtDescriptions.Text = "";
-                    MessageBox.Show("İşlem Başarılı");
-                }
-                else
-                {
-                    MessageBox.Show("Hata Oluştu");
-                }
+                    Tools tools = new Tools();
+                    UnitofWork unitofWork = new UnitofWork(ctx);
+                    CateringCompanies_Service cateringCompanies_Service = new CateringCompanies_Service(unitofWork);
+                    CateringCompanies cateringCompanies = new CateringCompanies();
+                    cateringCompanies.Name = txtName.Text;
+                    cateringCompanies.Descriptions = txtDescriptions.Text;
+                    cateringCompanies.Code = tools.CreateCode();
+                    if (cateringCompanies_Service.Insert(cateringCompanies))
+                    {
+                        txtName.Text = "";
+                        txtDescriptions.Text = "";
+                        MessageBox.Show("İşlem Başarılı", "");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hata Oluştu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }                
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez.");
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

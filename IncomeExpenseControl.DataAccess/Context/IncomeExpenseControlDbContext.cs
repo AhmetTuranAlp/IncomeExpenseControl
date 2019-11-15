@@ -17,14 +17,15 @@ namespace IncomeExpenseControl.Data.Context
             //Değişiklik Oldugu Taktirde İçerikler ile Beraber Veritabanını Drop Etmektedir.
             Database.SetInitializer<IncomeExpenseControlDbContext>(new DropCreateDatabaseIfModelChanges<IncomeExpenseControlDbContext>());
             //ConnString Belirleniyor.
-            //Database.Connection.ConnectionString = @"Server=AHMETTURANALP; Database=ElmasAnneEvYemekleriDB; Integrated Security=True;";
-            Database.Connection.ConnectionString = @"Server=DESKTOP-SUR4ILI; Database=ElmasAnneEvYemekleriDB; Integrated Security=True;";
+            Database.Connection.ConnectionString = @"Server=AHMETTURANALP; Database=ElmasAnneEvYemekleriDB; Integrated Security=True;";
+            //Database.Connection.ConnectionString = @"Server=DESKTOP-SUR4ILI; Database=ElmasAnneEvYemekleriDB; Integrated Security=True;";
         }
 
         public virtual DbSet<Coder> Coder { get; set; }
         public virtual DbSet<Banks> Banks { get; set; }
         public virtual DbSet<FoodCards> FoodCards { get; set; }
         public virtual DbSet<CateringCompanies> CateringCompanies { get; set; }
+        public virtual DbSet<Staff> Staff { get; set; }
         public virtual DbSet<DailyCastingEntry_Catering> DailyCastingEntry_Catering { get; set; }
         public virtual DbSet<DailyCastingEntry_Personal> DailyCastingEntry_Personal { get; set; }
         public virtual DbSet<DailyCastingEntry_Restaurant_Bank> DailyCastingEntry_Restaurant_Bank { get; set; }

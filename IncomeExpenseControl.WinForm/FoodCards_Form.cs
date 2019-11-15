@@ -38,27 +38,31 @@ namespace IncomeExpenseControl.WinForm
 
             if (!string.IsNullOrEmpty(FoodCardName))
             {
-                Tools tools = new Tools();
-                FoodCards banks = new FoodCards()
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    Code = tools.CreateCode(),
-                    Name = FoodCardName,
-                    Descriptions = FoodCardDescriptions
-                };
-                if (foodCard_Service.Insert(banks))
-                {
-                    MessageBox.Show("İşlem Başarılı.");
-                    txtFoodCardName.Text = "";
-                    txtFoodCardDescriptions.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("İşlem Başarısız.");
-                }
+                    Tools tools = new Tools();
+                    FoodCards banks = new FoodCards()
+                    {
+                        Code = tools.CreateCode(),
+                        Name = FoodCardName,
+                        Descriptions = FoodCardDescriptions
+                    };
+                    if (foodCard_Service.Insert(banks))
+                    {
+                        MessageBox.Show("İşlem Başarılı.");
+                        txtFoodCardName.Text = "";
+                        txtFoodCardDescriptions.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }   
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez.");
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

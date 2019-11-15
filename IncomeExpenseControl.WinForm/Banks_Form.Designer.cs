@@ -106,6 +106,7 @@
             this.Name = "Banks_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Banka Ekle";
+            this.Load += new System.EventHandler(this.Banks_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

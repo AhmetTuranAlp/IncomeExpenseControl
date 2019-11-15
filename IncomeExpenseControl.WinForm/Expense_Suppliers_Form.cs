@@ -56,64 +56,70 @@ namespace IncomeExpenseControl.WinForm
 
             if (!string.IsNullOrEmpty(SupplirsCode) && Price > 0)
             {
-                Expense_Suppliers expense_Suppliers = new Expense_Suppliers()
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    Status = Status.Active,
-                    ExpenseDate = ExpenseDate,
-                    Price = Price,
-                    Descriptions = Descriptions,
-                    SupplierCompanies = supplierCompanies_Service.GetSupplierCompanies(SupplirsCode)
-                };
-                if (expense_Suppliers_Service.Insert(expense_Suppliers))
-                {
-                    TotalExpenses totalExpenses = totalExpenses_Service.GetTotalExpenses(ExpenseDate, ExpenseType.Suppliers);
-                    if (totalExpenses != null)
+                    Expense_Suppliers expense_Suppliers = new Expense_Suppliers()
                     {
-                        totalExpenses.Price += Price;
-                        if (totalExpenses_Service.Update(totalExpenses))
+                        Status = Status.Active,
+                        ExpenseDate = ExpenseDate,
+                        Price = Price,
+                        Descriptions = Descriptions,
+                        SupplierCompanies = supplierCompanies_Service.GetSupplierCompanies(SupplirsCode)
+                    };
+                    if (expense_Suppliers_Service.Insert(expense_Suppliers))
+                    {
+                        TotalExpenses totalExpenses = totalExpenses_Service.GetTotalExpenses(ExpenseDate, ExpenseType.Suppliers);
+                        if (totalExpenses != null)
                         {
-                            MessageBox.Show("İşlem Başarılı.");
+                            totalExpenses.Price += Price;
+                            if (totalExpenses_Service.Update(totalExpenses))
+                            {
+                                MessageBox.Show("İşlem Başarılı.");
 
-                            cmbSuppliers.SelectedIndex = 0;
-                            txtDescriptions.Text = "";
-                            nudPrice.Value = 0;
+                                cmbSuppliers.SelectedIndex = 0;
+                                txtDescriptions.Text = "";
+                                nudPrice.Value = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("İşlem Başarısız.");
+                            totalExpenses = new TotalExpenses()
+                            {
+                                ExpenseDate = ExpenseDate,
+                                ExpenseType = ExpenseType.Suppliers,
+                                Price = Price,
+                                Status = Status.Active,
+                            };
+                            if (totalExpenses_Service.Insert(totalExpenses))
+                            {
+                                MessageBox.Show("İşlem Başarılı.");
+
+                                cmbSuppliers.SelectedIndex = 0;
+                                txtDescriptions.Text = "";
+                                nudPrice.Value = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                     else
                     {
-                        totalExpenses = new TotalExpenses()
-                        {
-                            ExpenseDate = ExpenseDate,
-                            ExpenseType = ExpenseType.Suppliers,
-                            Price = Price,
-                            Status = Status.Active,
-                        };
-                        if (totalExpenses_Service.Insert(totalExpenses))
-                        {
-                            MessageBox.Show("İşlem Başarılı.");
-
-                            cmbSuppliers.SelectedIndex = 0;
-                            txtDescriptions.Text = "";
-                            nudPrice.Value = 0;
-                        }
-                        else
-                        {
-                            MessageBox.Show("İşlem Başarısız.");
-                        }
+                        MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("İşlem Başarısız.");
-                }
+
+                
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez.");
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

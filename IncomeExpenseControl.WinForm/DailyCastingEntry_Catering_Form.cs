@@ -64,74 +64,79 @@ namespace IncomeExpenseControl.WinForm
 
             if (Price > 0 && NumberOfPeople > 0 && !string.IsNullOrEmpty(CateringCode) && !string.IsNullOrEmpty(cmbInvoice.Text) && !string.IsNullOrEmpty(cmbPaymentStatus.Text))
             {
-                DailyCastingEntry_Catering dailyCastingEntry_Catering = new DailyCastingEntry_Catering()
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    CastingDate = CastingDate,
-                    CompanyCode = cateringCompanies_Service.GetCateringCompanies(CateringCode).Code,
-                    CateringCompany = cateringCompanies_Service.GetCateringCompanies(CateringCode).Name,
-                    NumberOfPeople = NumberOfPeople,
-                    Price = Price,
-                    Status = Status.Active,
-                    PaymentMade = PaymentMade,
-                    InvoiceCut = InvoiceCut
-                };
-                if (dailyCastingEntry_Catering_Service.Insert(dailyCastingEntry_Catering))
-                {
-                    DailyCastingEntry_TotalRevenue dailyCastingEntry_TotalRevenue = dailyCastingEntry_TotalRevenue_Service.GetTotalRevenue(CastingDate);
-                    if (dailyCastingEntry_TotalRevenue != null)
+                    DailyCastingEntry_Catering dailyCastingEntry_Catering = new DailyCastingEntry_Catering()
                     {
-                        if (PaymentMade)
+                        CastingDate = CastingDate,
+                        CompanyCode = cateringCompanies_Service.GetCateringCompanies(CateringCode).Code,
+                        CateringCompany = cateringCompanies_Service.GetCateringCompanies(CateringCode).Name,
+                        NumberOfPeople = NumberOfPeople,
+                        Price = Price,
+                        Status = Status.Active,
+                        PaymentMade = PaymentMade,
+                        InvoiceCut = InvoiceCut
+                    };
+                    if (dailyCastingEntry_Catering_Service.Insert(dailyCastingEntry_Catering))
+                    {
+                        DailyCastingEntry_TotalRevenue dailyCastingEntry_TotalRevenue = dailyCastingEntry_TotalRevenue_Service.GetTotalRevenue(CastingDate);
+                        if (dailyCastingEntry_TotalRevenue != null)
                         {
-                            dailyCastingEntry_TotalRevenue.Catering_ReelPrice = dailyCastingEntry_TotalRevenue.Catering_ReelPrice > 0 ? dailyCastingEntry_TotalRevenue.Catering_ReelPrice + Price : Price;
-                        }
-                        dailyCastingEntry_TotalRevenue.Catering_TotalPrice = dailyCastingEntry_TotalRevenue.Catering_TotalPrice > 0 ? dailyCastingEntry_TotalRevenue.Catering_TotalPrice + Price : Price;
-                 
-                        dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople = dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople > 0 ? dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople + NumberOfPeople : NumberOfPeople;
+                            if (PaymentMade)
+                            {
+                                dailyCastingEntry_TotalRevenue.Catering_ReelPrice = dailyCastingEntry_TotalRevenue.Catering_ReelPrice > 0 ? dailyCastingEntry_TotalRevenue.Catering_ReelPrice + Price : Price;
+                            }
+                            dailyCastingEntry_TotalRevenue.Catering_TotalPrice = dailyCastingEntry_TotalRevenue.Catering_TotalPrice > 0 ? dailyCastingEntry_TotalRevenue.Catering_TotalPrice + Price : Price;
 
-                        if (dailyCastingEntry_TotalRevenue_Service.Update(dailyCastingEntry_TotalRevenue))
-                        {
-                            MessageBox.Show("İşlem Başarılı");
+                            dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople = dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople > 0 ? dailyCastingEntry_TotalRevenue.Catering_NumberOfPeople + NumberOfPeople : NumberOfPeople;
+
+                            if (dailyCastingEntry_TotalRevenue_Service.Update(dailyCastingEntry_TotalRevenue))
+                            {
+                                MessageBox.Show("İşlem Başarılı");
+                            }
+                            else
+                            {
+                                MessageBox.Show("İşlem Başarısız", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("İşlem Başarısız");
+                            #region DailyCastingEntry_TotalRevenue Yeni Kayıt Oluşturuluyor ve Catering Bilgileri Ekleniyor.
+                            dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue
+                            {
+                                CastingDate = CastingDate,
+                                Catering_NumberOfPeople = NumberOfPeople,
+                                Catering_TotalPrice = Price,
+                                Catering_ReelPrice = PaymentMade == true ? Price : 0
+                            };
+
+                            if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
+                            {
+                                MessageBox.Show("İşlem Başarılı.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            #endregion
                         }
+
+                        nudPrice.Value = 0;
+                        nudNumberOfPeople.Value = 0;
+                        cmbNewCateringCustomers.SelectedIndex = 0;
+
                     }
                     else
                     {
-                        #region DailyCastingEntry_TotalRevenue Yeni Kayıt Oluşturuluyor ve Catering Bilgileri Ekleniyor.
-                        dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue
-                        {
-                            CastingDate = CastingDate,
-                            Catering_NumberOfPeople = NumberOfPeople,
-                            Catering_TotalPrice = Price,
-                            Catering_ReelPrice = PaymentMade == true ? Price : 0
-                        };
-
-                        if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
-                        {
-                            MessageBox.Show("İşlem Başarılı.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("İşlem Başarısız.");
-                        }
-                        #endregion
+                        MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    nudPrice.Value = 0;
-                    nudNumberOfPeople.Value = 0;
-                    cmbNewCateringCustomers.SelectedIndex = 0;
-
                 }
-                else
-                {
-                    MessageBox.Show("İşlem Başarısız.");
-                }
+           
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez.");
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 

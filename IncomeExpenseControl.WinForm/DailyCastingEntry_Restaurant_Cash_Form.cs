@@ -39,59 +39,65 @@ namespace IncomeExpenseControl.WinForm
 
             if (Price > 0 && NumberOfPeople > 0)
             {
-                DailyCastingEntry_Restaurant_Cash dailyCastingEntry_Restaurant_Cash = new DailyCastingEntry_Restaurant_Cash()
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    CastingDate = CastingDate,
-                    NumberOfPeople = NumberOfPeople,
-                    Price = Price,
-                    Status = Status.Active
-                };
-                if (dailyCastingEntry_Restaurant_Cash_Service.Insert(dailyCastingEntry_Restaurant_Cash))
-                {
-                    DailyCastingEntry_TotalRevenue dailyCastingEntry_TotalRevenue = dailyCastingEntry_TotalRevenue_Service.GetTotalRevenue(CastingDate);
-                    if (dailyCastingEntry_TotalRevenue != null)
+                    DailyCastingEntry_Restaurant_Cash dailyCastingEntry_Restaurant_Cash = new DailyCastingEntry_Restaurant_Cash()
                     {
-                        dailyCastingEntry_TotalRevenue.RestaurantCash_ReelPrice = dailyCastingEntry_TotalRevenue.RestaurantCash_ReelPrice > 0 ? dailyCastingEntry_TotalRevenue.RestaurantCash_ReelPrice + Price : Price;
-
-                        dailyCastingEntry_TotalRevenue.RestaurantCash_TotalPrice = dailyCastingEntry_TotalRevenue.RestaurantCash_TotalPrice > 0 ? dailyCastingEntry_TotalRevenue.RestaurantCash_TotalPrice + Price : Price;
-
-                        dailyCastingEntry_TotalRevenue.RestaurantCash_NumberOfPeople = dailyCastingEntry_TotalRevenue.RestaurantCash_NumberOfPeople > 0 ? dailyCastingEntry_TotalRevenue.RestaurantCash_NumberOfPeople + NumberOfPeople : NumberOfPeople;
-
-                        if (dailyCastingEntry_TotalRevenue_Service.Update(dailyCastingEntry_TotalRevenue))
+                        CastingDate = CastingDate,
+                        NumberOfPeople = NumberOfPeople,
+                        Price = Price,
+                        Status = Status.Active
+                    };
+                    if (dailyCastingEntry_Restaurant_Cash_Service.Insert(dailyCastingEntry_Restaurant_Cash))
+                    {
+                        DailyCastingEntry_TotalRevenue dailyCastingEntry_TotalRevenue = dailyCastingEntry_TotalRevenue_Service.GetTotalRevenue(CastingDate);
+                        if (dailyCastingEntry_TotalRevenue != null)
                         {
-                            MessageBox.Show("İşlem Başarılı");
+                            dailyCastingEntry_TotalRevenue.RestaurantCash_ReelPrice = dailyCastingEntry_TotalRevenue.RestaurantCash_ReelPrice > 0 ? dailyCastingEntry_TotalRevenue.RestaurantCash_ReelPrice + Price : Price;
+
+                            dailyCastingEntry_TotalRevenue.RestaurantCash_TotalPrice = dailyCastingEntry_TotalRevenue.RestaurantCash_TotalPrice > 0 ? dailyCastingEntry_TotalRevenue.RestaurantCash_TotalPrice + Price : Price;
+
+                            dailyCastingEntry_TotalRevenue.RestaurantCash_NumberOfPeople = dailyCastingEntry_TotalRevenue.RestaurantCash_NumberOfPeople > 0 ? dailyCastingEntry_TotalRevenue.RestaurantCash_NumberOfPeople + NumberOfPeople : NumberOfPeople;
+
+                            if (dailyCastingEntry_TotalRevenue_Service.Update(dailyCastingEntry_TotalRevenue))
+                            {
+                                MessageBox.Show("İşlem Başarılı");
+                            }
+                            else
+                            {
+                                MessageBox.Show("İşlem Başarısız", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("İşlem Başarısız");
-                        }
-                    }
-                    else
-                    {
-                        #region DailyCastingEntry_TotalRevenue Yeni Kayıt Oluşturuluyor ve Catering Bilgileri Ekleniyor.
-                        dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue
-                        {
-                            RestaurantCash_NumberOfPeople = NumberOfPeople,
-                            RestaurantCash_TotalPrice = Price,
-                            RestaurantCash_ReelPrice = Price,
-                            CastingDate = CastingDate
-                        };
+                            #region DailyCastingEntry_TotalRevenue Yeni Kayıt Oluşturuluyor ve Catering Bilgileri Ekleniyor.
+                            dailyCastingEntry_TotalRevenue = new DailyCastingEntry_TotalRevenue
+                            {
+                                RestaurantCash_NumberOfPeople = NumberOfPeople,
+                                RestaurantCash_TotalPrice = Price,
+                                RestaurantCash_ReelPrice = Price,
+                                CastingDate = CastingDate
+                            };
 
-                        if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
-                        {
-                            MessageBox.Show("İşlem Başarılı");
+                            if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))
+                            {
+                                MessageBox.Show("İşlem Başarılı");
+                            }
+                            else
+                            {
+                                MessageBox.Show("İşlem Başarısız", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            #endregion
                         }
-                        else
-                        {
-                            MessageBox.Show("İşlem Başarısız");
-                        }
-                        #endregion
                     }
                 }
+
+
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez.");
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

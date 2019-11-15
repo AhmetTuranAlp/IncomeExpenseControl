@@ -58,6 +58,7 @@
     <Compile Include="Interfaces\IExpense_Suppliers_Service.cs" />
     <Compile Include="Interfaces\IExpense_Vehicle_Service.cs" />
     <Compile Include="Interfaces\IFoodCards_Service.cs" />
+    <Compile Include="Interfaces\IStaff_Service.cs" />
     <Compile Include="Interfaces\ISupplierCompanies_Service.cs" />
     <Compile Include="Interfaces\ITotalExpenses_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Services\Expense_Suppliers_Service.cs" />
     <Compile Include="Services\Expense_Vehicle_Service.cs" />
     <Compile Include="Services\FoodCards_Service.cs" />
+    <Compile Include="Services\Staff_Service.cs" />
     <Compile Include="Services\SupplierCompanies_Service.cs" />
     <Compile Include="Services\TotalExpenses_Service.cs" />
   </ItemGroup>

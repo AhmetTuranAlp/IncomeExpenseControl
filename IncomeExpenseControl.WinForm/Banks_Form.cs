@@ -31,35 +31,44 @@ namespace IncomeExpenseControl.WinForm
             string BankDescriptions = txtBankDescriptions.Text;
             #endregion
 
-            #region Service
-            UnitofWork unitofWork = new UnitofWork(ctx);
-            Banks_Service banks_Service = new Banks_Service(unitofWork); 
-            #endregion
-
             if (!string.IsNullOrEmpty(BankName))
             {
-                Tools tools = new Tools();
-                Banks banks = new Banks()
+
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    BankCode = tools.CreateCode(),
-                    BankName=BankName,
-                    Descriptions = BankDescriptions
-                };
-                if (banks_Service.Insert(banks))
-                {
-                    MessageBox.Show("İşlem Başarılı.");
-                    txtBankName.Text = "";
-                    txtBankDescriptions.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("İşlem Başarısız.");
-                }
+                    #region Service
+                    UnitofWork unitofWork = new UnitofWork(ctx);
+                    Banks_Service banks_Service = new Banks_Service(unitofWork);
+                    #endregion
+                    Tools tools = new Tools();
+                    Banks banks = new Banks()
+                    {
+                        BankCode = tools.CreateCode(),
+                        BankName = BankName,
+                        Descriptions = BankDescriptions
+                    };
+                    if (banks_Service.Insert(banks))
+                    {
+                        MessageBox.Show("İşlem Başarılı.");
+                        txtBankName.Text = "";
+                        txtBankDescriptions.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }          
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez.");
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void Banks_Form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -105,6 +105,12 @@
     <Compile Include="Expense_Invoice_Form.Designer.cs">
       <DependentUpon>Expense_Invoice_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expense_Staffs_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense_Staffs_Form.Designer.cs">
+      <DependentUpon>Expense_Staffs_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense_Suppliers_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     <Compile Include="ReportCateringRevenues_Form.Designer.cs">
       <DependentUpon>ReportCateringRevenues_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Form.Designer.cs">
+      <DependentUpon>Staff_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupplierCompanies_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +202,9 @@
     <EmbeddedResource Include="Expense_Invoice_Form.resx">
       <DependentUpon>Expense_Invoice_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Expense_Staffs_Form.resx">
+      <DependentUpon>Expense_Staffs_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Expense_Suppliers_Form.resx">
       <DependentUpon>Expense_Suppliers_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +233,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Form.resx">
+      <DependentUpon>Staff_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierCompanies_Form.resx">
       <DependentUpon>SupplierCompanies_Form.cs</DependentUpon>

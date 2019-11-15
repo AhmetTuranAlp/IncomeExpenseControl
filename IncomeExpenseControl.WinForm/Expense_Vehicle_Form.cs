@@ -39,60 +39,64 @@ namespace IncomeExpenseControl.WinForm
 
             if (Price > 0 && !string.IsNullOrEmpty(Descriptions))
             {
-                Expense_Vehicle expense_Vehicle = new Expense_Vehicle()
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    ExpenseDate = ExpenseDate,
-                    Descriptions = Descriptions,
-                    Price = Price
-                };
-                if (expense_Vehicle_Service.Insert(expense_Vehicle))
-                {
-                    TotalExpenses totalExpenses = totalExpenses_Service.GetTotalExpenses(ExpenseDate, ExpenseType.Vehicle);
-                    if (totalExpenses != null)
+                    Expense_Vehicle expense_Vehicle = new Expense_Vehicle()
                     {
-                        totalExpenses.Price += Price;
-                        if (totalExpenses_Service.Update(totalExpenses))
+                        ExpenseDate = ExpenseDate,
+                        Descriptions = Descriptions,
+                        Price = Price
+                    };
+                    if (expense_Vehicle_Service.Insert(expense_Vehicle))
+                    {
+                        TotalExpenses totalExpenses = totalExpenses_Service.GetTotalExpenses(ExpenseDate, ExpenseType.Vehicle);
+                        if (totalExpenses != null)
                         {
-                            MessageBox.Show("İşlem Başarılı.");
-                            
-                            txtDescriptions.Text = "";
-                            nudPrice.Value = 0;
+                            totalExpenses.Price += Price;
+                            if (totalExpenses_Service.Update(totalExpenses))
+                            {
+                                MessageBox.Show("İşlem Başarılı.");
+
+                                txtDescriptions.Text = "";
+                                nudPrice.Value = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("İşlem Başarısız.");
+                            totalExpenses = new TotalExpenses()
+                            {
+                                ExpenseDate = ExpenseDate,
+                                ExpenseType = ExpenseType.Vehicle,
+                                Price = Price,
+                                Status = Status.Active,
+                            };
+                            if (totalExpenses_Service.Insert(totalExpenses))
+                            {
+                                MessageBox.Show("İşlem Başarılı.");
+
+                                txtDescriptions.Text = "";
+                                nudPrice.Value = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                     else
                     {
-                        totalExpenses = new TotalExpenses()
-                        {
-                            ExpenseDate = ExpenseDate,
-                            ExpenseType = ExpenseType.Vehicle,
-                            Price = Price,
-                            Status = Status.Active,
-                        };
-                        if (totalExpenses_Service.Insert(totalExpenses))
-                        {
-                            MessageBox.Show("İşlem Başarılı.");
-                            
-                            txtDescriptions.Text = "";
-                            nudPrice.Value = 0;
-                        }
-                        else
-                        {
-                            MessageBox.Show("İşlem Başarısız.");
-                        }
+                        MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("İşlem Başarısız.");
                 }
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez.");
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

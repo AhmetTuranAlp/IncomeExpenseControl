@@ -27,29 +27,34 @@ namespace IncomeExpenseControl.WinForm
         {
             if (!string.IsNullOrEmpty(txtName.Text))
             {
-                Tools tools = new Tools();
-                UnitofWork unitofWork = new UnitofWork(ctx);
-                SupplierCompanies_Service supplierCompanies_Service = new SupplierCompanies_Service(unitofWork);
-                SupplierCompanies supplierCompanies = new SupplierCompanies
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    Name = txtName.Text,
-                    Descriptions = txtDescriptions.Text,
-                    Code = tools.CreateCode()
-                };
-                if (supplierCompanies_Service.Insert(supplierCompanies))
-                {
-                    txtName.Text = "";
-                    txtDescriptions.Text = "";
-                    MessageBox.Show("İşlem Başarılı");
+                    Tools tools = new Tools();
+                    UnitofWork unitofWork = new UnitofWork(ctx);
+                    SupplierCompanies_Service supplierCompanies_Service = new SupplierCompanies_Service(unitofWork);
+                    SupplierCompanies supplierCompanies = new SupplierCompanies
+                    {
+                        Name = txtName.Text,
+                        Descriptions = txtDescriptions.Text,
+                        Code = tools.CreateCode()
+                    };
+                    if (supplierCompanies_Service.Insert(supplierCompanies))
+                    {
+                        txtName.Text = "";
+                        txtDescriptions.Text = "";
+                        MessageBox.Show("İşlem Başarılı");
+                    }
+                    else
+                    {
+                        MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Hata Oluştu");
-                }
+             
             }
             else
             {
-                MessageBox.Show("Boş Geçilemez.");
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

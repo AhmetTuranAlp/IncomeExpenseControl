@@ -64,6 +64,7 @@
     <Compile Include="Entity\Expense_Suppliers.cs" />
     <Compile Include="Entity\Expense_Vehicle.cs" />
     <Compile Include="Entity\FoodCards.cs" />
+    <Compile Include="Entity\Staff.cs" />
     <Compile Include="Entity\SupplierCompanies.cs" />
     <Compile Include="Entity\TotalExpenses.cs" />
     <Compile Include="Model\Base.cs" />

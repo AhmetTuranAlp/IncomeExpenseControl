@@ -157,5 +157,17 @@ namespace IncomeExpenseControl.WinForm
             ReportRestaurant_Form reportRestaurant_Form = new ReportRestaurant_Form();
             Subform(reportRestaurant_Form);
         }
+
+        private void personelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Staff_Form staff_Form = new Staff_Form();
+            Subform(staff_Form);
+        }
+
+        private void personelToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Expense_Staffs_Form expense_Staffs_Form = new Expense_Staffs_Form();
+            Subform(expense_Staffs_Form);
+        }
     }
 }

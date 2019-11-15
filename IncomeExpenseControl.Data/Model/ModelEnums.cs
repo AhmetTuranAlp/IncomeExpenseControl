@@ -60,6 +60,16 @@ namespace IncomeExpenseControl.Data.Entity
             CreditCard = 3
         }
 
+        public enum StaffExpenseType : int
+        {
+            [Description("Maaş")]
+            Salary = 1,
+            [Description("Sigorta")]
+            Insurance = 2,
+            [Description("Diğer")]
+            Other = 3
+        }
+
         //public enum RevenueType : int
         //{
         //    [Description("Catering")]
