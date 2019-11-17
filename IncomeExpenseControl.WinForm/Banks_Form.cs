@@ -24,11 +24,17 @@ namespace IncomeExpenseControl.WinForm
 
         IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
 
-        private void btnBankSave_Click(object sender, EventArgs e)
+        private void Banks_Form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             #region Variables
-            string BankName = txtBankName.Text;
-            string BankDescriptions = txtBankDescriptions.Text;
+            string BankName = txtName.Text;
+            string BankDescriptions = txtDescriptions.Text;
             #endregion
 
             if (!string.IsNullOrEmpty(BankName))
@@ -51,14 +57,14 @@ namespace IncomeExpenseControl.WinForm
                     if (banks_Service.Insert(banks))
                     {
                         MessageBox.Show("İşlem Başarılı.");
-                        txtBankName.Text = "";
-                        txtBankDescriptions.Text = "";
+                        txtName.Text = "";
+                        txtDescriptions.Text = "";
                     }
                     else
                     {
                         MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }          
+                }
             }
             else
             {
@@ -66,9 +72,10 @@ namespace IncomeExpenseControl.WinForm
             }
         }
 
-        private void Banks_Form_Load(object sender, EventArgs e)
+        private void BtnClear_Click(object sender, EventArgs e)
         {
-
+            txtName.Text = "";
+            txtDescriptions.Text = "";
         }
     }
 }

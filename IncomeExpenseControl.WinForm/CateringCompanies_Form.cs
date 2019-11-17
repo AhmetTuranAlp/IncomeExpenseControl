@@ -55,5 +55,11 @@ namespace IncomeExpenseControl.WinForm
                 MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+            txtDescriptions.Text = "";
+        }
     }
 }

@@ -34,7 +34,6 @@
             this.cmbPaymentStatus = new System.Windows.Forms.ComboBox();
             this.cmbNewCateringCustomers = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnNewSave = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.cmbOldCateringCompany = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfPeople)).BeginInit();
@@ -135,17 +135,6 @@
             this.label6.Size = new System.Drawing.Size(41, 14);
             this.label6.TabIndex = 12;
             this.label6.Text = "Firma:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(-13, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(319, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "---------------------------------------------------------------------------------" +
-    "-----------------------";
             // 
             // btnNewSave
             // 
@@ -324,13 +313,24 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Firma:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(-13, 180);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(319, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "---------------------------------------------------------------------------------" +
+    "-----------------------";
+            // 
             // DailyCastingEntry_Catering_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(289, 279);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "DailyCastingEntry_Catering_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catering Gelirler";
@@ -352,7 +352,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox cmbNewCateringCustomers;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnNewSave;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -371,5 +370,6 @@
         private System.Windows.Forms.ComboBox cmbInvoice;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label5;
     }
 }

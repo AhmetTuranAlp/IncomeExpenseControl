@@ -60,6 +60,7 @@ namespace IncomeExpenseControl.WinForm
                 ctx.Coder.Add(coder);
                 ctx.SaveChanges();
             }
+
         }
 
         private void ŞahsiToolStripMenuItem_Click(object sender, EventArgs e)

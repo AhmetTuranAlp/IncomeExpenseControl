@@ -25,10 +25,12 @@ namespace IncomeExpenseControl.WinForm
         IncomeExpenseControlDbContext ctx = new IncomeExpenseControlDbContext();
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (dialogResult == DialogResult.Yes)
+
+
+            if (nudPrice.Value > 0)
             {
-                if (nudPrice.Value > 0)
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
                     DateTime CastingDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", DateTime.Now));
                     UnitofWork unitofWork = new UnitofWork(ctx);
@@ -84,24 +86,31 @@ namespace IncomeExpenseControl.WinForm
                                 MessageBox.Show("İşlem Başarısız", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                        nudPrice.Value = 0;
+                        txtDesciptions.Text = "";
                     }
                     else
                     {
                         MessageBox.Show("Hata Oluştu.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Fiyat Alanı Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
 
-         
+            }
+            else
+            {
+                MessageBox.Show("Fiyat Alanı Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DailyCastingEntry_Personal_Form_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            nudPrice.Value = 0;
+            txtDesciptions.Text = "";
         }
     }
 }
