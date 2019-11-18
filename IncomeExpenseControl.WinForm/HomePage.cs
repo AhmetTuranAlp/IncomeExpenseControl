@@ -63,28 +63,10 @@ namespace IncomeExpenseControl.WinForm
 
         }
 
-        private void ŞahsiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DailyCastingEntry_Personal_Form dailyCastingEntry_Personal_Form = new DailyCastingEntry_Personal_Form();
-            Subform(dailyCastingEntry_Personal_Form);
-        }
-
-        private void cateringToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DailyCastingEntry_Catering_Form dailyCastingEntry_Catering_Form = new DailyCastingEntry_Catering_Form();
-            Subform(dailyCastingEntry_Catering_Form);
-        }
-
         private void CateringFirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CateringCompanies_Form cateringCompanies_Form = new CateringCompanies_Form();
             Subform(cateringCompanies_Form);
-        }
-
-        private void NakitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DailyCastingEntry_Restaurant_Cash_Form dailyCastingEntry_Restaurant_Cash_Form = new DailyCastingEntry_Restaurant_Cash_Form();
-            Subform(dailyCastingEntry_Restaurant_Cash_Form);
         }
 
         private void bankaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,46 +75,16 @@ namespace IncomeExpenseControl.WinForm
             Subform(banks_Form);
         }
 
-        private void krediKartToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DailyCastingEntry_Restaurant_Bank_Form dailyCastingEntry_Restaurant_Bank_Form = new DailyCastingEntry_Restaurant_Bank_Form();
-            Subform(dailyCastingEntry_Restaurant_Bank_Form);
-        }
-
         private void yemekKartıToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FoodCards_Form foodCards_Form = new FoodCards_Form();
             Subform(foodCards_Form);
         }
 
-        private void yemekKarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DailyCastingEntry_Restaurant_Food_Form dailyCastingEntry_Restaurant_Food_Form = new DailyCastingEntry_Restaurant_Food_Form();
-            Subform(dailyCastingEntry_Restaurant_Food_Form);
-        }
-
         private void TedarikçiFirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SupplierCompanies_Form supplierCompanies_Form = new SupplierCompanies_Form();
             Subform(supplierCompanies_Form);
-        }
-
-        private void tedarikçilerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Expense_Suppliers_Form expense_Suppliers_Form = new Expense_Suppliers_Form();
-            Subform(expense_Suppliers_Form);
-        }
-
-        private void araçToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Expense_Vehicle_Form expense_Vehicle_Form = new Expense_Vehicle_Form();
-            Subform(expense_Vehicle_Form);
-        }
-
-        private void faturalarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Expense_Invoice_Form expense_Invoice_Form = new Expense_Invoice_Form();
-            Subform(expense_Invoice_Form);
         }
 
         private void ToplamGelirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -165,16 +117,16 @@ namespace IncomeExpenseControl.WinForm
             Subform(staff_Form);
         }
 
-        private void personelToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Expense_Staffs_Form expense_Staffs_Form = new Expense_Staffs_Form();
-            Subform(expense_Staffs_Form);
-        }
-
         private void günlükDökümGirişiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DailyCastingEntry_Form dailyCastingEntry_Form = new DailyCastingEntry_Form();
             Subform(dailyCastingEntry_Form);
+        }
+
+        private void GiderlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Expense_Form expense_Form = new Expense_Form();
+            Subform(expense_Form);
         }
     }
 }

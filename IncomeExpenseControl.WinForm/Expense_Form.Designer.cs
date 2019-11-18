@@ -1,6 +1,6 @@
 ﻿namespace IncomeExpenseControl.WinForm
 {
-    partial class DailyCastingEntry_Form
+    partial class Expense_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlInput = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -37,26 +37,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnPersonal = new System.Windows.Forms.Button();
-            this.btnRestaurantCash = new System.Windows.Forms.Button();
+            this.btnVehicle = new System.Windows.Forms.Button();
+            this.btnSuppliers = new System.Windows.Forms.Button();
             this.btnRestaurantFood = new System.Windows.Forms.Button();
-            this.btnRestaurantCredit = new System.Windows.Forms.Button();
-            this.btnCatering = new System.Windows.Forms.Button();
+            this.btnStaff = new System.Windows.Forms.Button();
+            this.btnInvoice = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.pnlInput);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Location = new System.Drawing.Point(2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(768, 419);
-            this.panel3.TabIndex = 2;
             // 
             // pnlInput
             // 
@@ -64,15 +53,26 @@
             this.pnlInput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlInput.Location = new System.Drawing.Point(307, 1);
             this.pnlInput.Name = "pnlInput";
-            this.pnlInput.Size = new System.Drawing.Size(456, 358);
+            this.pnlInput.Size = new System.Drawing.Size(455, 359);
             this.pnlInput.TabIndex = 15;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.pnlInput);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Location = new System.Drawing.Point(1, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(768, 420);
+            this.panel3.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.btnClear);
             this.panel4.Controls.Add(this.btnSave);
-            this.panel4.Location = new System.Drawing.Point(307, 360);
+            this.panel4.Location = new System.Drawing.Point(307, 361);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(459, 53);
             this.panel4.TabIndex = 15;
@@ -110,14 +110,14 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.btnPersonal);
-            this.panel2.Controls.Add(this.btnRestaurantCash);
+            this.panel2.Controls.Add(this.btnVehicle);
+            this.panel2.Controls.Add(this.btnSuppliers);
             this.panel2.Controls.Add(this.btnRestaurantFood);
-            this.panel2.Controls.Add(this.btnRestaurantCredit);
-            this.panel2.Controls.Add(this.btnCatering);
+            this.panel2.Controls.Add(this.btnStaff);
+            this.panel2.Controls.Add(this.btnInvoice);
             this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(305, 412);
+            this.panel2.Size = new System.Drawing.Size(305, 413);
             this.panel2.TabIndex = 3;
             // 
             // button3
@@ -126,7 +126,7 @@
             this.button3.Enabled = false;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(1, 357);
+            this.button3.Location = new System.Drawing.Point(0, 357);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(301, 52);
             this.button3.TabIndex = 8;
@@ -139,7 +139,7 @@
             this.button2.Enabled = false;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(1, 306);
+            this.button2.Location = new System.Drawing.Point(0, 306);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(301, 52);
             this.button2.TabIndex = 7;
@@ -159,88 +159,86 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnPersonal
+            // btnVehicle
             // 
-            this.btnPersonal.BackColor = System.Drawing.Color.LightGray;
-            this.btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnPersonal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPersonal.Location = new System.Drawing.Point(0, 0);
-            this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(301, 52);
-            this.btnPersonal.TabIndex = 1;
-            this.btnPersonal.Text = "     Şahsi Gelir";
-            this.btnPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonal.UseVisualStyleBackColor = false;
-            this.btnPersonal.Click += new System.EventHandler(this.btnPersonal_Click);
+            this.btnVehicle.BackColor = System.Drawing.Color.LightGray;
+            this.btnVehicle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnVehicle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnVehicle.Location = new System.Drawing.Point(0, 0);
+            this.btnVehicle.Name = "btnVehicle";
+            this.btnVehicle.Size = new System.Drawing.Size(301, 52);
+            this.btnVehicle.TabIndex = 1;
+            this.btnVehicle.Text = "     Araç Giderleri";
+            this.btnVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVehicle.UseVisualStyleBackColor = false;
+            this.btnVehicle.Click += new System.EventHandler(this.BtnVehicle_Click);
             // 
-            // btnRestaurantCash
+            // btnSuppliers
             // 
-            this.btnRestaurantCash.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRestaurantCash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRestaurantCash.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRestaurantCash.Location = new System.Drawing.Point(0, 102);
-            this.btnRestaurantCash.Name = "btnRestaurantCash";
-            this.btnRestaurantCash.Size = new System.Drawing.Size(301, 52);
-            this.btnRestaurantCash.TabIndex = 3;
-            this.btnRestaurantCash.Text = "     Restaurant > Nakit Gelir";
-            this.btnRestaurantCash.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestaurantCash.UseVisualStyleBackColor = false;
-            this.btnRestaurantCash.Click += new System.EventHandler(this.btnRestaurantCash_Click);
+            this.btnSuppliers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSuppliers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSuppliers.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSuppliers.Location = new System.Drawing.Point(0, 102);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Size = new System.Drawing.Size(301, 52);
+            this.btnSuppliers.TabIndex = 3;
+            this.btnSuppliers.Text = "     Tedarikçi Giderleri";
+            this.btnSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuppliers.UseVisualStyleBackColor = false;
+            this.btnSuppliers.Click += new System.EventHandler(this.BtnSuppliers_Click);
             // 
             // btnRestaurantFood
             // 
             this.btnRestaurantFood.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRestaurantFood.Enabled = false;
             this.btnRestaurantFood.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRestaurantFood.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRestaurantFood.Location = new System.Drawing.Point(0, 204);
             this.btnRestaurantFood.Name = "btnRestaurantFood";
             this.btnRestaurantFood.Size = new System.Drawing.Size(301, 52);
             this.btnRestaurantFood.TabIndex = 5;
-            this.btnRestaurantFood.Text = "     Restaurant > Yemek Kartı Gelir";
             this.btnRestaurantFood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRestaurantFood.UseVisualStyleBackColor = false;
-            this.btnRestaurantFood.Click += new System.EventHandler(this.btnRestaurantFood_Click);
             // 
-            // btnRestaurantCredit
+            // btnStaff
             // 
-            this.btnRestaurantCredit.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRestaurantCredit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRestaurantCredit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRestaurantCredit.Location = new System.Drawing.Point(0, 153);
-            this.btnRestaurantCredit.Name = "btnRestaurantCredit";
-            this.btnRestaurantCredit.Size = new System.Drawing.Size(301, 52);
-            this.btnRestaurantCredit.TabIndex = 4;
-            this.btnRestaurantCredit.Text = "     Restaurant > Kredi Kartı Gelir";
-            this.btnRestaurantCredit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestaurantCredit.UseVisualStyleBackColor = false;
-            this.btnRestaurantCredit.Click += new System.EventHandler(this.btnRestaurantCredit_Click);
+            this.btnStaff.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStaff.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnStaff.Location = new System.Drawing.Point(0, 153);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(301, 52);
+            this.btnStaff.TabIndex = 4;
+            this.btnStaff.Text = "     Personel Giderleri";
+            this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStaff.UseVisualStyleBackColor = false;
+            this.btnStaff.Click += new System.EventHandler(this.BtnStaff_Click);
             // 
-            // btnCatering
+            // btnInvoice
             // 
-            this.btnCatering.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCatering.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCatering.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCatering.Location = new System.Drawing.Point(0, 51);
-            this.btnCatering.Name = "btnCatering";
-            this.btnCatering.Size = new System.Drawing.Size(301, 52);
-            this.btnCatering.TabIndex = 2;
-            this.btnCatering.Text = "     Catering Gelir";
-            this.btnCatering.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCatering.UseVisualStyleBackColor = false;
-            this.btnCatering.Click += new System.EventHandler(this.btnCatering_Click);
+            this.btnInvoice.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnInvoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnInvoice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnInvoice.Location = new System.Drawing.Point(0, 51);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(301, 52);
+            this.btnInvoice.TabIndex = 2;
+            this.btnInvoice.Text = "     Fatura Giderleri";
+            this.btnInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInvoice.UseVisualStyleBackColor = false;
+            this.btnInvoice.Click += new System.EventHandler(this.BtnInvoice_Click);
             // 
-            // DailyCastingEntry_Form
+            // Expense_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(771, 421);
+            this.ClientSize = new System.Drawing.Size(771, 420);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "DailyCastingEntry_Form";
+            this.Name = "Expense_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Günlük Gelir Dökümü";
-            this.Load += new System.EventHandler(this.DailyCastingEntry_Form_Load);
+            this.Text = "Gider Ekle";
+            this.Load += new System.EventHandler(this.Expense_Form_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -250,17 +248,17 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel pnlInput;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnPersonal;
-        private System.Windows.Forms.Button btnRestaurantCash;
-        private System.Windows.Forms.Button btnRestaurantFood;
-        private System.Windows.Forms.Button btnRestaurantCredit;
-        private System.Windows.Forms.Button btnCatering;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Panel pnlInput;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnVehicle;
+        private System.Windows.Forms.Button btnSuppliers;
+        private System.Windows.Forms.Button btnRestaurantFood;
+        private System.Windows.Forms.Button btnStaff;
+        private System.Windows.Forms.Button btnInvoice;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

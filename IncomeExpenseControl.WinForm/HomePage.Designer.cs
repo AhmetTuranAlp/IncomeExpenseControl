@@ -31,17 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.günlükDökümGirişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cateringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restoranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nakitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.krediKartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yemekKarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.şahsiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giderlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tedarikçilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.araçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.faturalarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geliirleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.şahsiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,100 +68,19 @@
             // 
             // günlükDökümGirişiToolStripMenuItem
             // 
-            this.günlükDökümGirişiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cateringToolStripMenuItem,
-            this.restoranToolStripMenuItem,
-            this.şahsiToolStripMenuItem});
             this.günlükDökümGirişiToolStripMenuItem.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.günlükDökümGirişiToolStripMenuItem.Name = "günlükDökümGirişiToolStripMenuItem";
             this.günlükDökümGirişiToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
             this.günlükDökümGirişiToolStripMenuItem.Text = "Günlük Döküm Girişi";
             this.günlükDökümGirişiToolStripMenuItem.Click += new System.EventHandler(this.günlükDökümGirişiToolStripMenuItem_Click);
             // 
-            // cateringToolStripMenuItem
-            // 
-            this.cateringToolStripMenuItem.Name = "cateringToolStripMenuItem";
-            this.cateringToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cateringToolStripMenuItem.Text = "Catering";
-            this.cateringToolStripMenuItem.Click += new System.EventHandler(this.cateringToolStripMenuItem_Click);
-            // 
-            // restoranToolStripMenuItem
-            // 
-            this.restoranToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nakitToolStripMenuItem,
-            this.krediKartToolStripMenuItem,
-            this.yemekKarToolStripMenuItem});
-            this.restoranToolStripMenuItem.Name = "restoranToolStripMenuItem";
-            this.restoranToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.restoranToolStripMenuItem.Text = "Restaurant";
-            // 
-            // nakitToolStripMenuItem
-            // 
-            this.nakitToolStripMenuItem.Name = "nakitToolStripMenuItem";
-            this.nakitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.nakitToolStripMenuItem.Text = "Nakit";
-            this.nakitToolStripMenuItem.Click += new System.EventHandler(this.NakitToolStripMenuItem_Click);
-            // 
-            // krediKartToolStripMenuItem
-            // 
-            this.krediKartToolStripMenuItem.Name = "krediKartToolStripMenuItem";
-            this.krediKartToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.krediKartToolStripMenuItem.Text = "Kredi Kart";
-            this.krediKartToolStripMenuItem.Click += new System.EventHandler(this.krediKartToolStripMenuItem_Click);
-            // 
-            // yemekKarToolStripMenuItem
-            // 
-            this.yemekKarToolStripMenuItem.Name = "yemekKarToolStripMenuItem";
-            this.yemekKarToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.yemekKarToolStripMenuItem.Text = "Yemek Kart";
-            this.yemekKarToolStripMenuItem.Click += new System.EventHandler(this.yemekKarToolStripMenuItem_Click);
-            // 
-            // şahsiToolStripMenuItem
-            // 
-            this.şahsiToolStripMenuItem.Name = "şahsiToolStripMenuItem";
-            this.şahsiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.şahsiToolStripMenuItem.Text = "Şahsi";
-            this.şahsiToolStripMenuItem.Click += new System.EventHandler(this.ŞahsiToolStripMenuItem_Click);
-            // 
             // giderlerToolStripMenuItem
             // 
-            this.giderlerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tedarikçilerToolStripMenuItem,
-            this.araçToolStripMenuItem,
-            this.faturalarToolStripMenuItem,
-            this.personelToolStripMenuItem1});
             this.giderlerToolStripMenuItem.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.giderlerToolStripMenuItem.Name = "giderlerToolStripMenuItem";
             this.giderlerToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.giderlerToolStripMenuItem.Text = "Giderler";
-            // 
-            // tedarikçilerToolStripMenuItem
-            // 
-            this.tedarikçilerToolStripMenuItem.Name = "tedarikçilerToolStripMenuItem";
-            this.tedarikçilerToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.tedarikçilerToolStripMenuItem.Text = "Tedarikçi";
-            this.tedarikçilerToolStripMenuItem.Click += new System.EventHandler(this.tedarikçilerToolStripMenuItem_Click);
-            // 
-            // araçToolStripMenuItem
-            // 
-            this.araçToolStripMenuItem.Name = "araçToolStripMenuItem";
-            this.araçToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.araçToolStripMenuItem.Text = "Araç";
-            this.araçToolStripMenuItem.Click += new System.EventHandler(this.araçToolStripMenuItem_Click);
-            // 
-            // faturalarToolStripMenuItem
-            // 
-            this.faturalarToolStripMenuItem.Name = "faturalarToolStripMenuItem";
-            this.faturalarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.faturalarToolStripMenuItem.Text = "Fatura";
-            this.faturalarToolStripMenuItem.Click += new System.EventHandler(this.faturalarToolStripMenuItem_Click);
-            // 
-            // personelToolStripMenuItem1
-            // 
-            this.personelToolStripMenuItem1.Name = "personelToolStripMenuItem1";
-            this.personelToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
-            this.personelToolStripMenuItem1.Text = "Personel";
-            this.personelToolStripMenuItem1.Click += new System.EventHandler(this.personelToolStripMenuItem1_Click);
+            this.giderlerToolStripMenuItem.Click += new System.EventHandler(this.GiderlerToolStripMenuItem_Click);
             // 
             // raporlarToolStripMenuItem
             // 
@@ -336,22 +245,13 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem günlükDökümGirişiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cateringToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restoranToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tanımlamalarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cateringFirmaEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tedarikçiFirmaEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bankaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yemekKartıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nakitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem krediKartToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yemekKarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem şahsiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giderlerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tedarikçilerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem araçToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem faturalarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem geliirleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giderlerToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tanımlamalarToolStripMenuItem1;
@@ -360,7 +260,6 @@
         private System.Windows.Forms.ToolStripMenuItem restaurantToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şahsiToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem personelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem personelToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tedarikçilerToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem personellerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem faturalarToolStripMenuItem1;
