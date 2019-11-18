@@ -119,3 +119,5 @@ D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpe
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Expense_Staffs_Form.resources
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Staff_Form.resources
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\MetroSet UI.dll
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\MetroSet UI.dll
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Form.resources

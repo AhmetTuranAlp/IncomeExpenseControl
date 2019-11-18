@@ -86,6 +86,7 @@
             this.günlükDökümGirişiToolStripMenuItem.Name = "günlükDökümGirişiToolStripMenuItem";
             this.günlükDökümGirişiToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
             this.günlükDökümGirişiToolStripMenuItem.Text = "Günlük Döküm Girişi";
+            this.günlükDökümGirişiToolStripMenuItem.Click += new System.EventHandler(this.günlükDökümGirişiToolStripMenuItem_Click);
             // 
             // cateringToolStripMenuItem
             // 

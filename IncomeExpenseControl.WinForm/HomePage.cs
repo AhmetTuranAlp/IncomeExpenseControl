@@ -170,5 +170,11 @@ namespace IncomeExpenseControl.WinForm
             Expense_Staffs_Form expense_Staffs_Form = new Expense_Staffs_Form();
             Subform(expense_Staffs_Form);
         }
+
+        private void günlükDökümGirişiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DailyCastingEntry_Form dailyCastingEntry_Form = new DailyCastingEntry_Form();
+            Subform(dailyCastingEntry_Form);
+        }
     }
 }
