@@ -239,7 +239,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DailyCastingEntry_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Günlük Gelir Dökümü";
+            this.Text = "Günlük Gelir Döküm";
             this.Load += new System.EventHandler(this.DailyCastingEntry_Form_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

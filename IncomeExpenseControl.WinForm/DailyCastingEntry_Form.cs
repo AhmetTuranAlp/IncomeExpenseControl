@@ -59,6 +59,7 @@ namespace IncomeExpenseControl.WinForm
                 Location = new Point(X, Y),
                 Maximum = 10000000,
                 Font = new Font("Arial", 8, FontStyle.Bold),
+                BackColor = Color.FromArgb(224, 224, 224)
             };
             panel.Controls.Add(nud);
             return nud;
@@ -76,6 +77,7 @@ namespace IncomeExpenseControl.WinForm
                 WordWrap = true,
                 Height = Height,
                 Font = new Font("Arial", 8, FontStyle.Bold),
+                BackColor = Color.FromArgb(224, 224, 224)
             };
             panel.Controls.Add(txt);
             return txt;
@@ -88,7 +90,8 @@ namespace IncomeExpenseControl.WinForm
                 Width = 380,
                 Name = text,
                 Location = new Point(X, Y),
-                Font = new Font("Arial", 8, FontStyle.Bold)
+                Font = new Font("Arial", 8, FontStyle.Bold),
+                BackColor = Color.FromArgb(224, 224, 224)
             };
             panel.Controls.Add(comboBox);
             return comboBox;
@@ -105,7 +108,7 @@ namespace IncomeExpenseControl.WinForm
             nudPrice = NumericUpDown(pnlInput, "nudPrice", 40, 45);
 
             Label(pnlInput, "Açıklama", 38, 75);
-            txtDesciptions = MultiLineTextBox(pnlInput, "txtDesciptions", 40, 100, 150);
+            txtDesciptions = MultiLineTextBox(pnlInput, "txtDesciptions", 40, 100, 200);
             #endregion
         }
 
@@ -128,7 +131,7 @@ namespace IncomeExpenseControl.WinForm
             nudPrice = NumericUpDown(pnlInput, "nudPrice", 40, 45);
 
             Label(pnlInput, "Açıklama", 38, 75);
-            txtDesciptions = MultiLineTextBox(pnlInput, "txtDesciptions", 40, 100, 150);
+            txtDesciptions = MultiLineTextBox(pnlInput, "txtDesciptions", 40, 100, 200);
             #endregion
 
         }
@@ -379,8 +382,8 @@ namespace IncomeExpenseControl.WinForm
                 decimal Price = nudPrice.Value;
                 int NumberOfPeople = Convert.ToInt32(nudNumberOfPeope.Value);
                 string CateringCode = cmbCateringCustomer.SelectedValue.ToString();
-                bool PaymentMade = cmbCateringPayment.Text == "Yapıldı" ? true : false;
-                bool InvoiceCut = cmbCateringInvoice.Text == "Kesildi" ? true : false;
+                string PaymentMade = cmbCateringPayment.Text;
+                string InvoiceCut = cmbCateringInvoice.Text;
                 #endregion
 
                 #region Service Instance
@@ -409,7 +412,7 @@ namespace IncomeExpenseControl.WinForm
                             DailyCastingEntry_TotalRevenue dailyCastingEntry_TotalRevenue = dailyCastingEntry_TotalRevenue_Service.GetTotalRevenue(CastingDate);
                             if (dailyCastingEntry_TotalRevenue != null)
                             {
-                                if (PaymentMade)
+                                if (PaymentMade == "Yapıldı")
                                 {
                                     dailyCastingEntry_TotalRevenue.Catering_ReelPrice = dailyCastingEntry_TotalRevenue.Catering_ReelPrice > 0 ? dailyCastingEntry_TotalRevenue.Catering_ReelPrice + Price : Price;
                                 }
@@ -434,7 +437,7 @@ namespace IncomeExpenseControl.WinForm
                                     CastingDate = CastingDate,
                                     Catering_NumberOfPeople = NumberOfPeople,
                                     Catering_TotalPrice = Price,
-                                    Catering_ReelPrice = PaymentMade == true ? Price : 0
+                                    Catering_ReelPrice = PaymentMade == "Yapıldı" ? Price : 0
                                 };
 
                                 if (dailyCastingEntry_TotalRevenue_Service.Insert(dailyCastingEntry_TotalRevenue))

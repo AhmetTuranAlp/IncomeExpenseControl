@@ -38,7 +38,7 @@ namespace IncomeExpenseControl.Services.Services
         {
             try
             {
-                return _expenseSuppliersRepo.GetAll().FirstOrDefault(x => x.ExpenseDate == ExpenseDate && x.Status == Status.Active && x.SupplierCompanies.Code == SupplierCode);
+                return _expenseSuppliersRepo.GetAll().FirstOrDefault(x => x.ExpenseDate == ExpenseDate && x.Status == Status.Active && x.SupplierCode == SupplierCode);
             }
             catch (Exception ex)
             {

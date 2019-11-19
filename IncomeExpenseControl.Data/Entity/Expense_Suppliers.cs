@@ -12,12 +12,11 @@ namespace IncomeExpenseControl.Data.Entity
         public Expense_Suppliers()
         {
             ExpenseDate = DateTime.Now;
-            SupplierCompanies = new SupplierCompanies();
             Descriptions = "";
             Price = 0;
         }
         public DateTime ExpenseDate { get; set; }
-        public SupplierCompanies SupplierCompanies { get; set; }
+        public string SupplierName { get; set; }
         public string Descriptions { get; set; }
 
         private decimal _price;
@@ -27,6 +26,6 @@ namespace IncomeExpenseControl.Data.Entity
             get { return _price; }
             set { _price = Math.Round(value, 2); }
         } //Fiyat
-
+        public string SupplierCode { get; set; }
     }
 }

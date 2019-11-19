@@ -16,9 +16,8 @@ namespace IncomeExpenseControl.Data.Entity
             Descriptions = "";
             Price = 0;
         }
-
-        public InvoiceType InvoiceType { get; set; }
         public DateTime ExpenseDate { get; set; }
+        public string InvoiceType { get; set; }
         public string Descriptions { get; set; }
 
         private decimal _price;

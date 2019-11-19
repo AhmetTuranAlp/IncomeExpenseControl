@@ -24,3 +24,4 @@ D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\bi
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.pdb
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\bin\Debug\IncomeExpenseControl.Data.dll.config
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.CopyComplete
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.ResolveComReference.cache

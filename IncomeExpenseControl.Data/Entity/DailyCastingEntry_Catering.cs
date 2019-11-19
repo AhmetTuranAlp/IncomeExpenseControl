@@ -15,13 +15,13 @@ namespace IncomeExpenseControl.Data.Entity
             CompanyCode = "";            
             NumberOfPeople = 0;
             Price = 0;
-            InvoiceCut = false;
-            PaymentMade = false;
+            InvoiceCut = "";
+            PaymentMade = "";
             CastingDate = DateTime.Now;
         }
         public DateTime CastingDate { get; set; } //Döküm Tarihi
         public string CateringCompany { get; set; } //İlgili Firma
-        public string CompanyCode { get; set; } //İlgili Firma
+
         public int NumberOfPeople { get; set; } //Kişi Sayısı
 
         private decimal _price;
@@ -31,8 +31,9 @@ namespace IncomeExpenseControl.Data.Entity
             get { return _price; }
             set { _price = Math.Round(value, 2); }
         } //Fiyat
-        public bool InvoiceCut { get; set; } //Fatura Kesildimi
-        public bool PaymentMade { get; set; } //Ödeme Yapıldımı
-    
+        public string InvoiceCut { get; set; } //Fatura Kesildimi
+        public string PaymentMade { get; set; } //Ödeme Yapıldımı
+        public string CompanyCode { get; set; } //İlgili Firma
+
     }
 }

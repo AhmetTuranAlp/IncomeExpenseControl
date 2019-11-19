@@ -65,55 +65,55 @@ namespace IncomeExpenseControl.WinForm
 
         private void CateringFirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CateringCompanies_Form cateringCompanies_Form = new CateringCompanies_Form();
+            Definition_CateringCompanies_Form cateringCompanies_Form = new Definition_CateringCompanies_Form();
             Subform(cateringCompanies_Form);
         }
 
         private void bankaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Banks_Form banks_Form = new Banks_Form();
+            Definition_Banks_Form banks_Form = new Definition_Banks_Form();
             Subform(banks_Form);
         }
 
         private void yemekKartıToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FoodCards_Form foodCards_Form = new FoodCards_Form();
+            Definition_FoodCards_Form foodCards_Form = new Definition_FoodCards_Form();
             Subform(foodCards_Form);
         }
 
         private void TedarikçiFirmaEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SupplierCompanies_Form supplierCompanies_Form = new SupplierCompanies_Form();
+            Definition_SupplierCompanies_Form supplierCompanies_Form = new Definition_SupplierCompanies_Form();
             Subform(supplierCompanies_Form);
         }
 
         private void ToplamGelirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportTotalRevenues_Form reportTotalRevenues_Form = new ReportTotalRevenues_Form();
+            ReportRevenue_TotalRevenues_Form reportTotalRevenues_Form = new ReportRevenue_TotalRevenues_Form();
             Subform(reportTotalRevenues_Form);
         }
 
         private void CateringGelirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportCateringRevenues_Form reportCateringRevenues_Form = new ReportCateringRevenues_Form();
+            ReportRevenue_CateringRevenues_Form reportCateringRevenues_Form = new ReportRevenue_CateringRevenues_Form();
             Subform(reportCateringRevenues_Form);
         }
 
         private void şahsiToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ReportPersonal_Form reportPersonal_Form = new ReportPersonal_Form();
+            ReportRevenue_Personal_Form reportPersonal_Form = new ReportRevenue_Personal_Form();
             Subform(reportPersonal_Form);
         }
 
         private void RestaurantToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportRestaurant_Form reportRestaurant_Form = new ReportRestaurant_Form();
+            ReportRevenue_Restaurant_Form reportRestaurant_Form = new ReportRevenue_Restaurant_Form();
             Subform(reportRestaurant_Form);
         }
 
         private void personelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Staff_Form staff_Form = new Staff_Form();
+            Definition_Staff_Form staff_Form = new Definition_Staff_Form();
             Subform(staff_Form);
         }
 
@@ -127,6 +127,24 @@ namespace IncomeExpenseControl.WinForm
         {
             Expense_Form expense_Form = new Expense_Form();
             Subform(expense_Form);
+        }
+
+        private void tedarikçilerToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReportExpense_SupplierCompanies_Form reportExpense_SupplierCompanies_Form = new ReportExpense_SupplierCompanies_Form();
+            Subform(reportExpense_SupplierCompanies_Form);
+        }
+
+        private void araçToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReportExpense_Vehicle_Form reportExpense_Vehicle_Form = new ReportExpense_Vehicle_Form();
+            Subform(reportExpense_Vehicle_Form);
+        }
+
+        private void faturalarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReportExpense_Invoice_Form reportExpense_Invoice_Form = new ReportExpense_Invoice_Form();
+            Subform(reportExpense_Invoice_Form);
         }
     }
 }

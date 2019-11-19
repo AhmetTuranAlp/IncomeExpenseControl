@@ -45,6 +45,9 @@
     <Reference Include="MetroSet UI, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroSet_UI.1.0.5\lib\net45\MetroSet UI.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -66,17 +69,17 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Banks_Form.cs">
+    <Compile Include="Definition_Banks_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Banks_Form.Designer.cs">
-      <DependentUpon>Banks_Form.cs</DependentUpon>
+    <Compile Include="Definition_Banks_Form.Designer.cs">
+      <DependentUpon>Definition_Banks_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="CateringCompanies_Form.cs">
+    <Compile Include="Definition_CateringCompanies_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CateringCompanies_Form.Designer.cs">
-      <DependentUpon>CateringCompanies_Form.cs</DependentUpon>
+    <Compile Include="Definition_CateringCompanies_Form.Designer.cs">
+      <DependentUpon>Definition_CateringCompanies_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="DailyCastingEntry_Form.cs">
       <SubType>Form</SubType>
@@ -90,11 +93,11 @@
     <Compile Include="Expense_Form.Designer.cs">
       <DependentUpon>Expense_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="FoodCards_Form.cs">
+    <Compile Include="Definition_FoodCards_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FoodCards_Form.Designer.cs">
-      <DependentUpon>FoodCards_Form.cs</DependentUpon>
+    <Compile Include="Definition_FoodCards_Form.Designer.cs">
+      <DependentUpon>Definition_FoodCards_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -102,23 +105,41 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportPersonal_Form.cs">
+    <Compile Include="ReportExpense_Invoice_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportPersonal_Form.Designer.cs">
-      <DependentUpon>ReportPersonal_Form.cs</DependentUpon>
+    <Compile Include="ReportExpense_Invoice_Form.Designer.cs">
+      <DependentUpon>ReportExpense_Invoice_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportRestaurant_Form.cs">
+    <Compile Include="ReportExpense_SupplierCompanies_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportRestaurant_Form.Designer.cs">
-      <DependentUpon>ReportRestaurant_Form.cs</DependentUpon>
+    <Compile Include="ReportExpense_SupplierCompanies_Form.Designer.cs">
+      <DependentUpon>ReportExpense_SupplierCompanies_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportTotalRevenues_Form.cs">
+    <Compile Include="ReportExpense_Vehicle_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportTotalRevenues_Form.Designer.cs">
-      <DependentUpon>ReportTotalRevenues_Form.cs</DependentUpon>
+    <Compile Include="ReportExpense_Vehicle_Form.Designer.cs">
+      <DependentUpon>ReportExpense_Vehicle_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportRevenue_Personal_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportRevenue_Personal_Form.Designer.cs">
+      <DependentUpon>ReportRevenue_Personal_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportRevenue_Restaurant_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportRevenue_Restaurant_Form.Designer.cs">
+      <DependentUpon>ReportRevenue_Restaurant_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportRevenue_TotalRevenues_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportRevenue_TotalRevenues_Form.Designer.cs">
+      <DependentUpon>ReportRevenue_TotalRevenues_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,29 +148,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ReportCateringRevenues_Form.cs">
+    <Compile Include="ReportRevenue_CateringRevenues_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportCateringRevenues_Form.Designer.cs">
-      <DependentUpon>ReportCateringRevenues_Form.cs</DependentUpon>
+    <Compile Include="ReportRevenue_CateringRevenues_Form.Designer.cs">
+      <DependentUpon>ReportRevenue_CateringRevenues_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Staff_Form.cs">
+    <Compile Include="Definition_Staff_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Staff_Form.Designer.cs">
-      <DependentUpon>Staff_Form.cs</DependentUpon>
+    <Compile Include="Definition_Staff_Form.Designer.cs">
+      <DependentUpon>Definition_Staff_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="SupplierCompanies_Form.cs">
+    <Compile Include="Definition_SupplierCompanies_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SupplierCompanies_Form.Designer.cs">
-      <DependentUpon>SupplierCompanies_Form.cs</DependentUpon>
+    <Compile Include="Definition_SupplierCompanies_Form.Designer.cs">
+      <DependentUpon>Definition_SupplierCompanies_Form.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Banks_Form.resx">
-      <DependentUpon>Banks_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Definition_Banks_Form.resx">
+      <DependentUpon>Definition_Banks_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CateringCompanies_Form.resx">
-      <DependentUpon>CateringCompanies_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Definition_CateringCompanies_Form.resx">
+      <DependentUpon>Definition_CateringCompanies_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DailyCastingEntry_Form.resx">
       <DependentUpon>DailyCastingEntry_Form.cs</DependentUpon>
@@ -157,34 +178,43 @@
     <EmbeddedResource Include="Expense_Form.resx">
       <DependentUpon>Expense_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FoodCards_Form.resx">
-      <DependentUpon>FoodCards_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Definition_FoodCards_Form.resx">
+      <DependentUpon>Definition_FoodCards_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportCateringRevenues_Form.resx">
-      <DependentUpon>ReportCateringRevenues_Form.cs</DependentUpon>
+    <EmbeddedResource Include="ReportExpense_Invoice_Form.resx">
+      <DependentUpon>ReportExpense_Invoice_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportPersonal_Form.resx">
-      <DependentUpon>ReportPersonal_Form.cs</DependentUpon>
+    <EmbeddedResource Include="ReportExpense_SupplierCompanies_Form.resx">
+      <DependentUpon>ReportExpense_SupplierCompanies_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportRestaurant_Form.resx">
-      <DependentUpon>ReportRestaurant_Form.cs</DependentUpon>
+    <EmbeddedResource Include="ReportExpense_Vehicle_Form.resx">
+      <DependentUpon>ReportExpense_Vehicle_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportTotalRevenues_Form.resx">
-      <DependentUpon>ReportTotalRevenues_Form.cs</DependentUpon>
+    <EmbeddedResource Include="ReportRevenue_CateringRevenues_Form.resx">
+      <DependentUpon>ReportRevenue_CateringRevenues_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportRevenue_Personal_Form.resx">
+      <DependentUpon>ReportRevenue_Personal_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportRevenue_Restaurant_Form.resx">
+      <DependentUpon>ReportRevenue_Restaurant_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportRevenue_TotalRevenues_Form.resx">
+      <DependentUpon>ReportRevenue_TotalRevenues_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Staff_Form.resx">
-      <DependentUpon>Staff_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Definition_Staff_Form.resx">
+      <DependentUpon>Definition_Staff_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SupplierCompanies_Form.resx">
-      <DependentUpon>SupplierCompanies_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Definition_SupplierCompanies_Form.resx">
+      <DependentUpon>Definition_SupplierCompanies_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -218,7 +248,6 @@
       <Name>IncomeExpenseControl.Services</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\753114_download-white-black-wallpapers-dh45_1920x1080_h.jpg" />
   </ItemGroup>

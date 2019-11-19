@@ -60,6 +60,7 @@ namespace IncomeExpenseControl.WinForm
                 Location = new Point(X, Y),
                 Maximum = 10000000,
                 Font = new Font("Arial", 8, FontStyle.Bold),
+                BackColor = Color.FromArgb(224, 224, 224)
             };
             panel.Controls.Add(nud);
             return nud;
@@ -77,6 +78,7 @@ namespace IncomeExpenseControl.WinForm
                 WordWrap = true,
                 Height = Height,
                 Font = new Font("Arial", 8, FontStyle.Bold),
+                BackColor = Color.FromArgb(224, 224, 224)
             };
             panel.Controls.Add(txt);
             return txt;
@@ -89,7 +91,8 @@ namespace IncomeExpenseControl.WinForm
                 Width = 380,
                 Name = text,
                 Location = new Point(X, Y),
-                Font = new Font("Arial", 8, FontStyle.Bold)
+                Font = new Font("Arial", 8, FontStyle.Bold),
+                BackColor = Color.FromArgb(224, 224, 224)
             };
             panel.Controls.Add(comboBox);
             return comboBox;
@@ -106,7 +109,7 @@ namespace IncomeExpenseControl.WinForm
             nudPrice = NumericUpDown(pnlInput, "nudPrice", 40, 45);
 
             Label(pnlInput, "Açıklama", 38, 75);
-            txtDesciptions = MultiLineTextBox(pnlInput, "txtDesciptions", 40, 100, 150);
+            txtDesciptions = MultiLineTextBox(pnlInput, "txtDesciptions", 40, 100, 200);
             #endregion
         }
 
@@ -128,7 +131,7 @@ namespace IncomeExpenseControl.WinForm
             nudPrice = NumericUpDown(pnlInput, "nudPrice", 40, 45);
 
             Label(pnlInput, "Açıklama", 38, 75);
-            txtDesciptions = MultiLineTextBox(pnlInput, "txtDesciptions", 40, 100, 150);
+            txtDesciptions = MultiLineTextBox(pnlInput, "txtDesciptions", 40, 100, 200);
             #endregion
         }
 
@@ -357,7 +360,7 @@ namespace IncomeExpenseControl.WinForm
                         Expense_Invoice expense_Invoice = new Expense_Invoice()
                         {
                             ExpenseDate = ExpenseDate,
-                            InvoiceType = invoiceType,
+                            InvoiceType = enumHelper.GetEnumDescription(invoiceType),
                             Descriptions = Descriptions,
                             Price = Price,
                             Status = Status.Active
@@ -436,13 +439,15 @@ namespace IncomeExpenseControl.WinForm
                     DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.Yes)
                     {
+                        SupplierCompanies supplierCompanies = supplierCompanies_Service.GetSupplierCompanies(SupplirsCode);
                         Expense_Suppliers expense_Suppliers = new Expense_Suppliers()
                         {
                             Status = Status.Active,
                             ExpenseDate = ExpenseDate,
                             Price = Price,
                             Descriptions = Descriptions,
-                            SupplierCompanies = supplierCompanies_Service.GetSupplierCompanies(SupplirsCode)
+                            SupplierCode = supplierCompanies.Code,
+                            SupplierName = supplierCompanies.Name
                         };
                         if (expense_Suppliers_Service.Insert(expense_Suppliers))
                         {
