@@ -33,6 +33,7 @@ namespace IncomeExpenseControl.WinForm
         ComboBox cmbCateringPayment = new ComboBox();
         ComboBox cmbBanks = new ComboBox();
         ComboBox cmbFoods = new ComboBox();
+        CheckedListBox checkedListBox = new CheckedListBox();
         int DailyCastingEntryType = 1;
         #endregion
 
@@ -42,7 +43,7 @@ namespace IncomeExpenseControl.WinForm
             Label label = new Label()
             {
                 Text = text + ":",
-                Width = 100,
+                Width = 300,
                 Font = new Font("Arial", 8, FontStyle.Bold),
                 TextAlign = ContentAlignment.MiddleLeft,
                 Location = new Point(X, Y)
@@ -97,6 +98,21 @@ namespace IncomeExpenseControl.WinForm
             return comboBox;
         }
 
+        public CheckedListBox CheckedListBox(Panel panel, string text, int X, int Y, int Height)
+        {
+            CheckedListBox checkedListBox = new CheckedListBox()
+            {
+                Width = 380,
+                Name = text,
+                Location = new Point(X, Y),
+                Font = new Font("Arial", 8, FontStyle.Bold),
+                BackColor = Color.FromArgb(224, 224, 224),
+                Height = Height
+            };
+            panel.Controls.Add(checkedListBox);
+            return checkedListBox;
+        }
+
         #endregion
 
         private void DailyCastingEntry_Form_Load(object sender, EventArgs e)
@@ -122,6 +138,7 @@ namespace IncomeExpenseControl.WinForm
             btnRestaurantCash.BackColor = Color.WhiteSmoke;
             btnRestaurantCredit.BackColor = Color.WhiteSmoke;
             btnRestaurantFood.BackColor = Color.WhiteSmoke;
+            btnCateringAssets.BackColor = Color.WhiteSmoke;
             #endregion
 
             #region Personal Control Inputs
@@ -146,6 +163,7 @@ namespace IncomeExpenseControl.WinForm
             btnRestaurantCash.BackColor = Color.WhiteSmoke;
             btnRestaurantCredit.BackColor = Color.WhiteSmoke;
             btnRestaurantFood.BackColor = Color.WhiteSmoke;
+            btnCateringAssets.BackColor = Color.WhiteSmoke;
             #endregion
 
             #region Catering Control Inputs
@@ -192,9 +210,61 @@ namespace IncomeExpenseControl.WinForm
 
         }
 
-        private void btnRestaurantCash_Click(object sender, EventArgs e)
+        private void btnCateringAssets_Click(object sender, EventArgs e)
         {
             DailyCastingEntryType = 3;
+
+            #region Left Menu Color Change
+            btnCateringAssets.BackColor = Color.LightGray;
+            btnRestaurantCash.BackColor = Color.WhiteSmoke;
+            btnCatering.BackColor = Color.WhiteSmoke;
+            btnPersonal.BackColor = Color.WhiteSmoke;
+            btnRestaurantCredit.BackColor = Color.WhiteSmoke;
+            btnRestaurantFood.BackColor = Color.WhiteSmoke;
+            #endregion
+
+            #region Catering Assets Control Items
+            pnlInput.Controls.Clear();
+            Label(pnlInput, "Firma", 38, 20);
+            cmbCateringCustomer = Combobox(pnlInput, "cmbCateringCustomer", 40, 45);
+
+            cmbCateringCustomer.SelectedIndexChanged += new EventHandler(cmbCateringCustomer_SelectedIndexChanged);
+
+            UnitofWork unitofWork = new UnitofWork(ctx);
+            CateringCompanies_Service cateringCompanies_Service = new CateringCompanies_Service(unitofWork);
+            List<CateringCompanies> CateringCompanyList = new List<CateringCompanies>();
+            CateringCompanyList.Add(new CateringCompanies() { Code = "", Name = "Firma Seçiniz..." });
+            CateringCompanyList.AddRange(cateringCompanies_Service.GetAllCateringCompanies());
+            cmbCateringCustomer.DataSource = CateringCompanyList;
+            cmbCateringCustomer.DisplayMember = "Name";
+            cmbCateringCustomer.ValueMember = "Code";
+
+            Label(pnlInput, "Ödenmemiş Günler", 38, 75);
+            checkedListBox = CheckedListBox(pnlInput, "clbAssetDays", 40, 100, 220);
+
+            #endregion
+
+        }
+
+        private void cmbCateringCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            checkedListBox.Items.Clear();
+            var CateringCode = cmbCateringCustomer.SelectedValue.ToString();
+            UnitofWork unitofWork = new UnitofWork(ctx);
+            DailyCastingEntry_Catering_Service dailyCastingEntry_Catering_Service = new DailyCastingEntry_Catering_Service(unitofWork);
+            List<DailyCastingEntry_Catering> dailyCastingEntry_Caterings = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting().Where(x => x.CompanyCode == CateringCode && x.PaymentMade == "Yapılmadı").ToList();
+            if (dailyCastingEntry_Caterings.Count > 0)
+            {
+                dailyCastingEntry_Caterings.ForEach(x =>
+                {
+                    checkedListBox.Items.Add(string.Format("{0: dd/MM/yyyy}", x.CastingDate) + " ( Tutar: " + x.Price + " )");
+                });
+            }
+        }
+
+        private void btnRestaurantCash_Click(object sender, EventArgs e)
+        {
+            DailyCastingEntryType = 4;
 
             #region Left Menu Color Change
             btnRestaurantCash.BackColor = Color.LightGray;
@@ -202,6 +272,7 @@ namespace IncomeExpenseControl.WinForm
             btnPersonal.BackColor = Color.WhiteSmoke;
             btnRestaurantCredit.BackColor = Color.WhiteSmoke;
             btnRestaurantFood.BackColor = Color.WhiteSmoke;
+            btnCateringAssets.BackColor = Color.WhiteSmoke;
             #endregion
 
             #region Restaurant Cash Control Items
@@ -218,7 +289,7 @@ namespace IncomeExpenseControl.WinForm
 
         private void btnRestaurantCredit_Click(object sender, EventArgs e)
         {
-            DailyCastingEntryType = 4;
+            DailyCastingEntryType = 5;
 
             #region Left Menu Color Change
             btnRestaurantCredit.BackColor = Color.LightGray;
@@ -226,6 +297,7 @@ namespace IncomeExpenseControl.WinForm
             btnPersonal.BackColor = Color.WhiteSmoke;
             btnRestaurantFood.BackColor = Color.WhiteSmoke;
             btnRestaurantCash.BackColor = Color.WhiteSmoke;
+            btnCateringAssets.BackColor = Color.WhiteSmoke;
             #endregion
 
             #region Restaurant Credit Card Control Items
@@ -256,7 +328,7 @@ namespace IncomeExpenseControl.WinForm
 
         private void btnRestaurantFood_Click(object sender, EventArgs e)
         {
-            DailyCastingEntryType = 5;
+            DailyCastingEntryType = 6;
 
             #region Left Menu Color Change
             btnRestaurantFood.BackColor = Color.LightGray;
@@ -264,6 +336,7 @@ namespace IncomeExpenseControl.WinForm
             btnPersonal.BackColor = Color.WhiteSmoke;
             btnRestaurantCash.BackColor = Color.WhiteSmoke;
             btnRestaurantCredit.BackColor = Color.WhiteSmoke;
+            btnCateringAssets.BackColor = Color.WhiteSmoke;
             #endregion
 
             #region Restaurant Food Card Control Items
@@ -471,6 +544,62 @@ namespace IncomeExpenseControl.WinForm
             else if (DailyCastingEntryType == 3)
             {
                 #region Variables
+                var CateringCustomerCode = cmbCateringCustomer.SelectedValue.ToString();
+                #endregion
+
+                #region Service Instance
+                CateringCompanies_Service cateringCompanies_Service = new CateringCompanies_Service(unitofWork);
+                DailyCastingEntry_Catering_Service dailyCastingEntry_Catering_Service = new DailyCastingEntry_Catering_Service(unitofWork);
+                #endregion
+
+                if (checkedListBox.CheckedItems.Count > 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        for (int i = 0; i < checkedListBox.CheckedItems.Count; i++)
+                        {
+                            DateTime Date = Convert.ToDateTime(checkedListBox.CheckedItems[i].ToString().Split('(')[0].Trim());
+                            decimal Price = Convert.ToDecimal(checkedListBox.CheckedItems[i].ToString().Split(':')[1].Replace(")", "").Trim());
+
+                            List<DailyCastingEntry_Catering> dailyCastingEntry_CateringList = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting().Where(x => x.CastingDate == Date && x.CompanyCode == CateringCustomerCode && x.Price == Price && x.PaymentMade == "Yapılmadı").ToList();
+                            if (dailyCastingEntry_CateringList.Count > 0)
+                            {
+                                dailyCastingEntry_CateringList[0].PaymentMade = "Yapıldı";
+                                if (dailyCastingEntry_Catering_Service.Update(dailyCastingEntry_CateringList[0]))
+                                {
+                                    DailyCastingEntry_TotalRevenue dailyCastingEntry_TotalRevenue = dailyCastingEntry_TotalRevenue_Service.GetTotalRevenue(Date);
+                                    if (dailyCastingEntry_TotalRevenue != null)
+                                    {
+                                        dailyCastingEntry_TotalRevenue.Catering_ReelPrice = dailyCastingEntry_TotalRevenue.Catering_ReelPrice > 0 ? dailyCastingEntry_TotalRevenue.Catering_ReelPrice + dailyCastingEntry_CateringList[0].Price : dailyCastingEntry_CateringList[0].Price;
+
+                                        dailyCastingEntry_TotalRevenue_Service.Update(dailyCastingEntry_TotalRevenue);
+                                    }
+                                }
+                            }
+                            MessageBox.Show("İşlem Başarılı");
+                            checkedListBox.Items.Clear();
+                            var CateringCode = cmbCateringCustomer.SelectedValue.ToString();
+                            List<DailyCastingEntry_Catering> dailyCastingEntry_Caterings = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting().Where(x => x.CompanyCode == CateringCode && x.PaymentMade == "Yapılmadı").ToList();
+                            if (dailyCastingEntry_Caterings.Count > 0)
+                            {
+                                dailyCastingEntry_Caterings.ForEach(x =>
+                                {
+                                    checkedListBox.Items.Add(string.Format("{0: dd/MM/yyyy}", x.CastingDate) + " ( Tutar: " + x.Price + " )");
+                                });
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }       
+            }
+            else if (DailyCastingEntryType == 4)
+            {
+                #region Variables
                 DateTime CastingDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", DateTime.Now));
                 decimal Price = nudPrice.Value;
                 int NumberOfPeople = Convert.ToInt32(nudNumberOfPeope.Value);
@@ -545,7 +674,7 @@ namespace IncomeExpenseControl.WinForm
                     MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else if (DailyCastingEntryType == 4)
+            else if (DailyCastingEntryType == 5)
             {
                 #region Variables
                 DateTime CastingDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", DateTime.Now));
@@ -632,7 +761,7 @@ namespace IncomeExpenseControl.WinForm
                 }
 
             }
-            else if (DailyCastingEntryType == 5)
+            else if (DailyCastingEntryType == 6)
             {
                 #region Variables
                 DateTime CastingDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", DateTime.Now));

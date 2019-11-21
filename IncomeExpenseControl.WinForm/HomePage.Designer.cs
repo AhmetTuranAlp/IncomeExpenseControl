@@ -43,6 +43,7 @@
             this.personellerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.faturalarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.araçToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toplamGiderlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tanımlamalarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tanımlamalarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cateringFirmaEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,6 @@
             this.bankaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yemekKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toplamGiderlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,6 +172,13 @@
             this.araçToolStripMenuItem1.Text = "Araç";
             this.araçToolStripMenuItem1.Click += new System.EventHandler(this.araçToolStripMenuItem1_Click);
             // 
+            // toplamGiderlerToolStripMenuItem
+            // 
+            this.toplamGiderlerToolStripMenuItem.Name = "toplamGiderlerToolStripMenuItem";
+            this.toplamGiderlerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.toplamGiderlerToolStripMenuItem.Text = "Toplam Giderler";
+            this.toplamGiderlerToolStripMenuItem.Click += new System.EventHandler(this.toplamGiderlerToolStripMenuItem_Click);
+            // 
             // tanımlamalarToolStripMenuItem1
             // 
             this.tanımlamalarToolStripMenuItem1.Name = "tanımlamalarToolStripMenuItem1";
@@ -225,12 +232,6 @@
             this.personelToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.personelToolStripMenuItem.Text = "Personel";
             this.personelToolStripMenuItem.Click += new System.EventHandler(this.personelToolStripMenuItem_Click);
-            // 
-            // toplamGiderlerToolStripMenuItem
-            // 
-            this.toplamGiderlerToolStripMenuItem.Name = "toplamGiderlerToolStripMenuItem";
-            this.toplamGiderlerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.toplamGiderlerToolStripMenuItem.Text = "Toplam Giderler";
             // 
             // HomePage
             // 

@@ -14,5 +14,6 @@ namespace IncomeExpenseControl.Services.Interfaces
         bool Update(Staff staff);
 
         List<Staff> GetAllStaffs();
+
     }
 }

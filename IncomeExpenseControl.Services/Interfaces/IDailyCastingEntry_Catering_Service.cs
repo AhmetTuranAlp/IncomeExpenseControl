@@ -16,6 +16,5 @@ namespace IncomeExpenseControl.Services.Interfaces
         List<DailyCastingEntry_Catering> GetAllCateringPaymentCasting();
 
         DailyCastingEntry_Catering GetCateringPaymentCasting(DateTime CastingDate, string CateringCode);
-
     }
 }

@@ -36,6 +36,7 @@ namespace IncomeExpenseControl.Data.Context
         public virtual DbSet<Expense_Suppliers> Expense_Suppliers { get; set; }
         public virtual DbSet<Expense_Vehicle> Expense_Vehicle { get; set; }
         public virtual DbSet<Expense_Invoice> Expense_Invoice { get; set; }
+        public virtual DbSet<Expense_Staff> Expense_Staff { get; set; }
         public virtual DbSet<TotalExpenses> TotalExpenses { get; set; }
 
     }   

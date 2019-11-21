@@ -36,7 +36,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCateringAssets = new System.Windows.Forms.Button();
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnRestaurantCash = new System.Windows.Forms.Button();
             this.btnRestaurantFood = new System.Windows.Forms.Button();
@@ -107,9 +107,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnCateringAssets);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnPersonal);
             this.panel2.Controls.Add(this.btnRestaurantCash);
             this.panel2.Controls.Add(this.btnRestaurantFood);
@@ -139,25 +139,26 @@
             this.button2.Enabled = false;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(1, 306);
+            this.button2.Location = new System.Drawing.Point(0, 306);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(301, 52);
             this.button2.TabIndex = 7;
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnCateringAssets
             // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(0, 255);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(301, 52);
-            this.button1.TabIndex = 6;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCateringAssets.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCateringAssets.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCateringAssets.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCateringAssets.Location = new System.Drawing.Point(0, 102);
+            this.btnCateringAssets.Name = "btnCateringAssets";
+            this.btnCateringAssets.Size = new System.Drawing.Size(301, 52);
+            this.btnCateringAssets.TabIndex = 6;
+            this.btnCateringAssets.Text = "     Catering Alacaklar";
+            this.btnCateringAssets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCateringAssets.UseVisualStyleBackColor = false;
+            this.btnCateringAssets.Click += new System.EventHandler(this.btnCateringAssets_Click);
             // 
             // btnPersonal
             // 
@@ -178,7 +179,7 @@
             this.btnRestaurantCash.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnRestaurantCash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRestaurantCash.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRestaurantCash.Location = new System.Drawing.Point(0, 102);
+            this.btnRestaurantCash.Location = new System.Drawing.Point(0, 153);
             this.btnRestaurantCash.Name = "btnRestaurantCash";
             this.btnRestaurantCash.Size = new System.Drawing.Size(301, 52);
             this.btnRestaurantCash.TabIndex = 3;
@@ -192,7 +193,7 @@
             this.btnRestaurantFood.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnRestaurantFood.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRestaurantFood.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRestaurantFood.Location = new System.Drawing.Point(0, 204);
+            this.btnRestaurantFood.Location = new System.Drawing.Point(0, 255);
             this.btnRestaurantFood.Name = "btnRestaurantFood";
             this.btnRestaurantFood.Size = new System.Drawing.Size(301, 52);
             this.btnRestaurantFood.TabIndex = 5;
@@ -206,7 +207,7 @@
             this.btnRestaurantCredit.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnRestaurantCredit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRestaurantCredit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRestaurantCredit.Location = new System.Drawing.Point(0, 153);
+            this.btnRestaurantCredit.Location = new System.Drawing.Point(0, 204);
             this.btnRestaurantCredit.Name = "btnRestaurantCredit";
             this.btnRestaurantCredit.Size = new System.Drawing.Size(301, 52);
             this.btnRestaurantCredit.TabIndex = 4;
@@ -263,6 +264,6 @@
         private System.Windows.Forms.Panel pnlInput;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCateringAssets;
     }
 }

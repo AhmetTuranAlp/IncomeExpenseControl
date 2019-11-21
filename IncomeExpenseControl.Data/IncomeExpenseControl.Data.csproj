@@ -61,6 +61,7 @@
     <Compile Include="Entity\DailyCastingEntry_Restaurant_Food.cs" />
     <Compile Include="Entity\DailyCastingEntry_TotalRevenue.cs" />
     <Compile Include="Entity\Expense_Invoice.cs" />
+    <Compile Include="Entity\Expense_Staff.cs" />
     <Compile Include="Entity\Expense_Suppliers.cs" />
     <Compile Include="Entity\Expense_Vehicle.cs" />
     <Compile Include="Entity\FoodCards.cs" />

@@ -111,11 +111,23 @@
     <Compile Include="ReportExpense_Invoice_Form.Designer.cs">
       <DependentUpon>ReportExpense_Invoice_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportExpense_Staff_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportExpense_Staff_Form.Designer.cs">
+      <DependentUpon>ReportExpense_Staff_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportExpense_SupplierCompanies_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportExpense_SupplierCompanies_Form.Designer.cs">
       <DependentUpon>ReportExpense_SupplierCompanies_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportExpense_TotalExpenses_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportExpense_TotalExpenses_Form.Designer.cs">
+      <DependentUpon>ReportExpense_TotalExpenses_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportExpense_Vehicle_Form.cs">
       <SubType>Form</SubType>
@@ -187,8 +199,14 @@
     <EmbeddedResource Include="ReportExpense_Invoice_Form.resx">
       <DependentUpon>ReportExpense_Invoice_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportExpense_Staff_Form.resx">
+      <DependentUpon>ReportExpense_Staff_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportExpense_SupplierCompanies_Form.resx">
       <DependentUpon>ReportExpense_SupplierCompanies_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportExpense_TotalExpenses_Form.resx">
+      <DependentUpon>ReportExpense_TotalExpenses_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportExpense_Vehicle_Form.resx">
       <DependentUpon>ReportExpense_Vehicle_Form.cs</DependentUpon>

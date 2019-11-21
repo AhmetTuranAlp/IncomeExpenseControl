@@ -12,21 +12,22 @@ using static IncomeExpenseControl.Data.Entity.ModelEnums;
 
 namespace IncomeExpenseControl.Services.Services
 {
-    public class DailyCastingEntry_Catering_Service : IDailyCastingEntry_Catering_Service
+    public class Expense_Staff_Service : IExpense_Staff_Service
     {
-        private readonly IRepository<DailyCastingEntry_Catering> _cateringPaymentRepo;
+        private readonly IRepository<Expense_Staff> _expenseStaffRepo;
         private readonly IUnitofWork _uow;
-        public DailyCastingEntry_Catering_Service(UnitofWork uow)
+        public Expense_Staff_Service(UnitofWork uow)
         {
             _uow = uow;
-            _cateringPaymentRepo = _uow.GetRepository<DailyCastingEntry_Catering>();
+            _expenseStaffRepo = _uow.GetRepository<Expense_Staff>();
         }
 
-        public List<DailyCastingEntry_Catering> GetAllCateringPaymentCasting()
+
+        public List<Expense_Staff> GetAllExpense_Staff()
         {
             try
             {
-                return _cateringPaymentRepo.GetAll().Where(x => x.Status == Status.Active ).OrderBy(c=>c.CastingDate).ToList();
+                return _expenseStaffRepo.GetAll().Where(x => x.Status == Status.Active).OrderBy(c => c.ExpenseDate).ToList();
             }
             catch (Exception ex)
             {
@@ -34,25 +35,25 @@ namespace IncomeExpenseControl.Services.Services
             }
         }
 
-        public DailyCastingEntry_Catering GetCateringPaymentCasting(DateTime CastingDate, string CateringCode)
+        public Expense_Staff GetExpense_Staff(DateTime ExpenseDate, string FullName)
         {
             try
             {
-                return _cateringPaymentRepo.GetAll().FirstOrDefault(x => x.CastingDate == CastingDate && x.Status == Status.Active && x.CompanyCode == CateringCode);
+                return _expenseStaffRepo.GetAll().FirstOrDefault(x => x.ExpenseDate == ExpenseDate && x.Status == Status.Active && x.FullName == FullName);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-        }        
+        }
 
-        public bool Insert(DailyCastingEntry_Catering cateringPayment)
+        public bool Insert(Expense_Staff expense_Staff)
         {
             try
             {
-                var newEntity = AutoMapper.Mapper.DynamicMap<DailyCastingEntry_Catering>(cateringPayment);
+                var newEntity = AutoMapper.Mapper.DynamicMap<Expense_Staff>(expense_Staff);
                 newEntity.Status = Status.Active;
-                _cateringPaymentRepo.Insert(newEntity);
+                _expenseStaffRepo.Insert(newEntity);
                 _uow.SaveChanges();
                 return true;
             }
@@ -62,13 +63,13 @@ namespace IncomeExpenseControl.Services.Services
             }
         }
 
-        public bool Update(DailyCastingEntry_Catering cateringPayment)
+        public bool Update(Expense_Staff expense_Staff)
         {
             try
             {
-                var updateEntity = _cateringPaymentRepo.Find(cateringPayment.Id);
-                AutoMapper.Mapper.DynamicMap(cateringPayment, updateEntity);
-                _cateringPaymentRepo.Update(updateEntity);
+                var updateEntity = _expenseStaffRepo.Find(expense_Staff.Id);
+                AutoMapper.Mapper.DynamicMap(expense_Staff, updateEntity);
+                _expenseStaffRepo.Update(updateEntity);
                 _uow.SaveChanges();
                 return true;
             }

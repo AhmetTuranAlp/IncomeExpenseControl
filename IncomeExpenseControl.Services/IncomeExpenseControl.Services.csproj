@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\IDailyCastingEntry_Restaurant_Food_Service.cs" />
     <Compile Include="Interfaces\IDailyCastingEntry_TotalRevenue_Service.cs" />
     <Compile Include="Interfaces\IExpense_Invoice_Service.cs" />
+    <Compile Include="Interfaces\IExpense_Staff_Service.cs" />
     <Compile Include="Interfaces\IExpense_Suppliers_Service.cs" />
     <Compile Include="Interfaces\IExpense_Vehicle_Service.cs" />
     <Compile Include="Interfaces\IFoodCards_Service.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Services\DailyCastingEntry_Restaurant_Food_Service.cs" />
     <Compile Include="Services\DailyCastingEntry_TotalRevenue_Service.cs" />
     <Compile Include="Services\Expense_Invoice_Service.cs" />
+    <Compile Include="Services\Expense_Staff_Service.cs" />
     <Compile Include="Services\Expense_Suppliers_Service.cs" />
     <Compile Include="Services\Expense_Vehicle_Service.cs" />
     <Compile Include="Services\FoodCards_Service.cs" />

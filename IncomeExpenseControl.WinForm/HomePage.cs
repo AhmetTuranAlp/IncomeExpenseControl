@@ -146,5 +146,11 @@ namespace IncomeExpenseControl.WinForm
             ReportExpense_Invoice_Form reportExpense_Invoice_Form = new ReportExpense_Invoice_Form();
             Subform(reportExpense_Invoice_Form);
         }
+
+        private void toplamGiderlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportExpense_TotalExpenses_Form reportExpense_TotalExpenses_Form = new ReportExpense_TotalExpenses_Form();
+            Subform(reportExpense_TotalExpenses_Form);
+        }
     }
 }

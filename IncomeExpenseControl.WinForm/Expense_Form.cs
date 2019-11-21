@@ -295,6 +295,7 @@ namespace IncomeExpenseControl.WinForm
                                 {
                                     ExpenseDate = ExpenseDate,
                                     ExpenseType = ExpenseType.Vehicle,
+                                    ExpenseTypeDesciptions = "Araç",
                                     Price = Price,
                                     Status = Status.Active,
                                 };
@@ -390,6 +391,7 @@ namespace IncomeExpenseControl.WinForm
                                 {
                                     ExpenseDate = ExpenseDate,
                                     ExpenseType = ExpenseType.Invoice,
+                                    ExpenseTypeDesciptions = "Fatura",
                                     Price = Price,
                                     Status = Status.Active,
                                 };
@@ -474,6 +476,7 @@ namespace IncomeExpenseControl.WinForm
                                 {
                                     ExpenseDate = ExpenseDate,
                                     ExpenseType = ExpenseType.Suppliers,
+                                    ExpenseTypeDesciptions = "Tedarikçi",
                                     Price = Price,
                                     Status = Status.Active,
                                 };
@@ -504,7 +507,87 @@ namespace IncomeExpenseControl.WinForm
             }
             else if (DailyCastingEntryType == 4)
             {
+                #region Variables
+                DateTime ExpenseDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", DateTime.Now));
+                string FullName = cmbStaffs.Text;
+                string StaffExpenseType = cmbStaffExpense.Text;
+                decimal Price = nudPrice.Value;
+                #endregion
 
+                #region Service
+                UnitofWork unitofWork = new UnitofWork(ctx);
+                Staff_Service staff_Service = new Staff_Service(unitofWork);
+                Expense_Staff_Service expense_Staff_Service = new Expense_Staff_Service(unitofWork);
+                TotalExpenses_Service totalExpenses_Service = new TotalExpenses_Service(unitofWork);
+                #endregion
+
+                if (!string.IsNullOrEmpty(FullName) && !string.IsNullOrEmpty(StaffExpenseType) && Price > 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Expense_Staff expense_Staff = new Expense_Staff()
+                        {
+                            ExpenseDate = ExpenseDate,
+                            FullName = FullName,
+                            Price = Price,
+                            StaffExpenseType = StaffExpenseType,
+                            Status = Status.Active
+                        };
+                        if (expense_Staff_Service.Insert(expense_Staff))
+                        {
+                            TotalExpenses totalExpenses = totalExpenses_Service.GetTotalExpenses(ExpenseDate, ExpenseType.Staff);
+                            if (totalExpenses != null)
+                            {
+                                totalExpenses.Price += Price;
+                                if (totalExpenses_Service.Update(totalExpenses))
+                                {
+                                    MessageBox.Show("İşlem Başarılı.");
+
+                                    cmbStaffs.SelectedIndex = 0;
+                                    cmbStaffExpense.SelectedIndex = 0;
+                                    nudPrice.Value = 0;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                totalExpenses = new TotalExpenses()
+                                {
+                                    ExpenseDate = ExpenseDate,
+                                    ExpenseType = ExpenseType.Staff,
+                                    ExpenseTypeDesciptions = "Personel",
+                                    Price = Price,
+                                    Status = Status.Active,
+                                };
+                                if (totalExpenses_Service.Insert(totalExpenses))
+                                {
+                                    MessageBox.Show("İşlem Başarılı.");
+
+                                    cmbStaffs.SelectedIndex = 0;
+                                    cmbStaffExpense.SelectedIndex = 0;
+                                    nudPrice.Value = 0;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 

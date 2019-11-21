@@ -8,11 +8,14 @@ using static IncomeExpenseControl.Data.Entity.ModelEnums;
 
 namespace IncomeExpenseControl.Data.Entity
 {
-    public class TotalExpenses : Base
+    public class Expense_Staff : Base
     {
         public DateTime ExpenseDate { get; set; }
-        public ExpenseType ExpenseType { get; set; }
-        public string ExpenseTypeDesciptions { get; set; }
+
+        public string FullName { get; set; }
+
+        public string StaffExpenseType { get; set; }
+
         private decimal _price;
         [Required(ErrorMessage = "Zorunlu Alan")]
         public decimal Price
