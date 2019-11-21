@@ -143,14 +143,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Açıklama:";
             // 
-            // CateringCompanies_Form
+            // Definition_CateringCompanies_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 278);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "CateringCompanies_Form";
+            this.Name = "Definition_CateringCompanies_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catering Firma Ekle";
             this.panel1.ResumeLayout(false);

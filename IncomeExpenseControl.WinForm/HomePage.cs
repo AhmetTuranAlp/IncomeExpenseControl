@@ -152,5 +152,11 @@ namespace IncomeExpenseControl.WinForm
             ReportExpense_TotalExpenses_Form reportExpense_TotalExpenses_Form = new ReportExpense_TotalExpenses_Form();
             Subform(reportExpense_TotalExpenses_Form);
         }
+
+        private void PersonellerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportExpense_Staff_Form reportExpense_Staff_Form = new ReportExpense_Staff_Form();
+            Subform(reportExpense_Staff_Form);
+        }
     }
 }

@@ -82,15 +82,6 @@ D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\o
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.pdb
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\AutoMapper.dll
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\AutoMapper.xml
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.CateringCompanies_Form.resources
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Banks_Form.resources
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.FoodCards_Form.resources
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.SupplierCompanies_Form.resources
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportCateringRevenues_Form.resources
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportTotalRevenues_Form.resources
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportPersonal_Form.resources
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportRestaurant_Form.resources
-D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Staff_Form.resources
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\MetroSet UI.dll
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\bin\Debug\MetroSet UI.dll
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.DailyCastingEntry_Form.resources
@@ -111,3 +102,17 @@ D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpe
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportExpense_Invoice_Form.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportExpense_Staff_Form.resources
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportExpense_TotalExpenses_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Definition_Banks_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Definition_CateringCompanies_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Definition_FoodCards_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportExpense_Invoice_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportExpense_Staff_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportExpense_SupplierCompanies_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportExpense_TotalExpenses_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportExpense_Vehicle_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportRevenue_CateringRevenues_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportRevenue_Personal_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportRevenue_Restaurant_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.ReportRevenue_TotalRevenues_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Definition_Staff_Form.resources
+D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.WinForm\obj\Debug\IncomeExpenseControl.WinForm.Definition_SupplierCompanies_Form.resources

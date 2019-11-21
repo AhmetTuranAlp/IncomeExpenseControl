@@ -157,6 +157,7 @@
             this.personellerToolStripMenuItem.Name = "personellerToolStripMenuItem";
             this.personellerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.personellerToolStripMenuItem.Text = "Personeller";
+            this.personellerToolStripMenuItem.Click += new System.EventHandler(this.PersonellerToolStripMenuItem_Click);
             // 
             // faturalarToolStripMenuItem1
             // 
