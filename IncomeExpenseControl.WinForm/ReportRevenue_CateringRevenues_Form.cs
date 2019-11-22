@@ -29,7 +29,8 @@ namespace IncomeExpenseControl.WinForm
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             DailyCastingEntry_Catering_Service dailyCastingEntry_Catering_Service = new DailyCastingEntry_Catering_Service(unitofWork);
-            dataGridView1.DataSource = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting();
+            List<DailyCastingEntry_Catering> dailyCastingEntry_Caterings = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting();
+            dataGridView1.DataSource = dailyCastingEntry_Caterings;
 
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
@@ -46,6 +47,9 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 6);
+
+            txtRealRevenues.Text = dailyCastingEntry_Caterings.Sum(x => x.Price).ToString();
+            txtTotalRevenues.Text = dailyCastingEntry_Caterings.Sum(x => x.Price).ToString();
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -54,34 +58,12 @@ namespace IncomeExpenseControl.WinForm
             excelExport.TransferringDatagridviewtoExcel(dataGridView1, Convert.ToDateTime(string.Format("{0: dd/MM/yyyy}", DateTime.Now)).ToString().Replace("00:00:00", "").Trim() + "_Catering Gelirleri");
         }
 
-        private void dtpDate_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime CastingDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
-
-            UnitofWork unitofWork = new UnitofWork(ctx);
-            DailyCastingEntry_Catering_Service dailyCastingEntry_Catering_Service = new DailyCastingEntry_Catering_Service(unitofWork);
-            dataGridView1.DataSource = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting().Where(x => x.CastingDate == CastingDate).ToList();
-
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
-            dataGridView1.Columns[8].Visible = false;
-            dataGridView1.Columns[9].Visible = false;
-            dataGridView1.Columns[10].Visible = false;
-
-            dataGridView1.Columns[0].HeaderText = "Tarih";
-            dataGridView1.Columns[1].HeaderText = "Firma";
-            dataGridView1.Columns[2].HeaderText = "Kişi";
-            dataGridView1.Columns[3].HeaderText = "Tutar";
-            dataGridView1.Columns[4].HeaderText = "Fatura";
-            dataGridView1.Columns[5].HeaderText = "Ödeme Durumu";
-
-        }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             DailyCastingEntry_Catering_Service dailyCastingEntry_Catering_Service = new DailyCastingEntry_Catering_Service(unitofWork);
-            dataGridView1.DataSource = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting();
+            List<DailyCastingEntry_Catering> dailyCastingEntry_Caterings = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting();
+            dataGridView1.DataSource = dailyCastingEntry_Caterings;
 
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
@@ -95,6 +77,43 @@ namespace IncomeExpenseControl.WinForm
             dataGridView1.Columns[3].HeaderText = "Tutar";
             dataGridView1.Columns[4].HeaderText = "Fatura";
             dataGridView1.Columns[5].HeaderText = "Ödeme Durumu";
+
+            Tools tools = new Tools();
+            tools.DataGridViewResize(dataGridView1, 6);
+
+            txtRealRevenues.Text = dailyCastingEntry_Caterings.Sum(x => x.Price).ToString();
+            txtTotalRevenues.Text = dailyCastingEntry_Caterings.Sum(x => x.Price).ToString();
+        }
+
+        private void btnFillter_Click(object sender, EventArgs e)
+        {
+            DateTime DateStart = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDateStart.Value));
+            DateTime DateFinish = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDateFinish.Value));
+
+            UnitofWork unitofWork = new UnitofWork(ctx);
+            DailyCastingEntry_Catering_Service dailyCastingEntry_Catering_Service = new DailyCastingEntry_Catering_Service(unitofWork);
+            List<DailyCastingEntry_Catering> dailyCastingEntry_Caterings = dailyCastingEntry_Catering_Service.GetAllCateringPaymentCasting().Where(x => x.CastingDate >= DateStart && x.CastingDate <= DateFinish).ToList();
+            dataGridView1.DataSource = dailyCastingEntry_Caterings;
+
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
+
+            dataGridView1.Columns[0].HeaderText = "Tarih";
+            dataGridView1.Columns[1].HeaderText = "Firma";
+            dataGridView1.Columns[2].HeaderText = "Kişi";
+            dataGridView1.Columns[3].HeaderText = "Tutar";
+            dataGridView1.Columns[4].HeaderText = "Fatura";
+            dataGridView1.Columns[5].HeaderText = "Ödeme Durumu";
+
+            Tools tools = new Tools();
+            tools.DataGridViewResize(dataGridView1, 6);
+
+            txtRealRevenues.Text = dailyCastingEntry_Caterings.Sum(x => x.Price).ToString();
+            txtTotalRevenues.Text = dailyCastingEntry_Caterings.Sum(x => x.Price).ToString();
+
         }
     }
 }

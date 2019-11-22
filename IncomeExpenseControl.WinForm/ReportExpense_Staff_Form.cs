@@ -1,5 +1,6 @@
 ﻿using IncomeExpenseControl.Common;
 using IncomeExpenseControl.Data.Context;
+using IncomeExpenseControl.Data.Entity;
 using IncomeExpenseControl.DataAccess.Base.UnitofWork;
 using IncomeExpenseControl.Services.Services;
 using System;
@@ -26,7 +27,8 @@ namespace IncomeExpenseControl.WinForm
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             Expense_Staff_Service expense_Staff_Service = new Expense_Staff_Service(unitofWork);
-            dataGridView1.DataSource = expense_Staff_Service.GetAllExpense_Staff();
+            List<Expense_Staff> expense_Staffs = expense_Staff_Service.GetAllExpense_Staff();
+            dataGridView1.DataSource = expense_Staffs;
 
             dataGridView1.Columns[0].HeaderText = "Tarih";
             dataGridView1.Columns[1].HeaderText = "Ad Soyad";
@@ -40,6 +42,8 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 4);
+
+            txtTotalRevenues.Text = expense_Staffs.Sum(x => x.Price).ToString();
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -52,7 +56,8 @@ namespace IncomeExpenseControl.WinForm
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             Expense_Staff_Service expense_Staff_Service = new Expense_Staff_Service(unitofWork);
-            dataGridView1.DataSource = expense_Staff_Service.GetAllExpense_Staff();
+            List<Expense_Staff> expense_Staffs = expense_Staff_Service.GetAllExpense_Staff();
+            dataGridView1.DataSource = expense_Staffs;
 
             dataGridView1.Columns[0].HeaderText = "Tarih";
             dataGridView1.Columns[1].HeaderText = "Ad Soyad";
@@ -66,14 +71,20 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 4);
+
+            txtTotalRevenues.Text = expense_Staffs.Sum(x => x.Price).ToString();
         }
 
-        private void dtpDate_ValueChanged(object sender, EventArgs e)
+
+        private void btnFillter_Click(object sender, EventArgs e)
         {
-            DateTime ExpenseDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
+            DateTime DateStart = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDateStart.Value));
+            DateTime DateFinish = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDateFinish.Value));
+
             UnitofWork unitofWork = new UnitofWork(ctx);
             Expense_Staff_Service expense_Staff_Service = new Expense_Staff_Service(unitofWork);
-            dataGridView1.DataSource = expense_Staff_Service.GetAllExpense_Staff().Where(x => x.ExpenseDate == ExpenseDate).ToList();
+            List<Expense_Staff> expense_Staffs = expense_Staff_Service.GetAllExpense_Staff().Where(x => x.ExpenseDate >= DateStart && x.ExpenseDate <= DateFinish).ToList();
+            dataGridView1.DataSource = expense_Staffs;
 
             dataGridView1.Columns[0].HeaderText = "Tarih";
             dataGridView1.Columns[1].HeaderText = "Ad Soyad";
@@ -87,6 +98,8 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 4);
+            txtTotalRevenues.Text = expense_Staffs.Sum(x => x.Price).ToString();
+
         }
     }
 }

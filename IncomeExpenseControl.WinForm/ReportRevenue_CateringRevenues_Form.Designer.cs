@@ -30,78 +30,109 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportRevenue_CateringRevenues_Form));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateFinish = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnFillter = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtTotalRevenues = new System.Windows.Forms.TextBox();
+            this.txtRealRevenues = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(983, 505);
+            this.panel1.Size = new System.Drawing.Size(1242, 560);
             this.panel1.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.btnExcel);
-            this.panel3.Controls.Add(this.btnClear);
-            this.panel3.Location = new System.Drawing.Point(1, 1);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(977, 54);
-            this.panel3.TabIndex = 2;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.dtpDate);
+            this.panel2.Controls.Add(this.btnFillter);
+            this.panel2.Controls.Add(this.dtpDateFinish);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.dtpDateStart);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(-2, -2);
+            this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(289, 54);
+            this.panel2.Size = new System.Drawing.Size(359, 70);
             this.panel2.TabIndex = 3;
             // 
-            // dtpDate
+            // dtpDateFinish
             // 
-            this.dtpDate.CalendarFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpDate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpDate.Location = new System.Drawing.Point(61, 16);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(197, 21);
-            this.dtpDate.TabIndex = 0;
-            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
+            this.dtpDateFinish.CalendarFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpDateFinish.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpDateFinish.Location = new System.Drawing.Point(74, 39);
+            this.dtpDateFinish.Name = "dtpDateFinish";
+            this.dtpDateFinish.Size = new System.Drawing.Size(197, 21);
+            this.dtpDateFinish.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(37, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Bitiş:";
+            // 
+            // dtpDateStart
+            // 
+            this.dtpDateStart.CalendarFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpDateStart.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpDateStart.Location = new System.Drawing.Point(74, 5);
+            this.dtpDateStart.Name = "dtpDateStart";
+            this.dtpDateStart.Size = new System.Drawing.Size(197, 21);
+            this.dtpDateStart.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(19, 20);
+            this.label1.Location = new System.Drawing.Point(8, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tarih:";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Başlangıç:";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btnExcel);
+            this.panel3.Controls.Add(this.btnClear);
+            this.panel3.Location = new System.Drawing.Point(362, 1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(163, 70);
+            this.panel3.TabIndex = 2;
             // 
             // btnExcel
             // 
             this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnExcel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(826, 2);
+            this.btnExcel.Location = new System.Drawing.Point(6, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(71, 46);
+            this.btnExcel.Size = new System.Drawing.Size(70, 60);
             this.btnExcel.TabIndex = 2;
             this.btnExcel.Tag = "Excel Aktar";
             this.btnExcel.UseVisualStyleBackColor = false;
@@ -112,9 +143,9 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnClear.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(898, 2);
+            this.btnClear.Location = new System.Drawing.Point(82, 3);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(71, 46);
+            this.btnClear.Size = new System.Drawing.Size(70, 60);
             this.btnClear.TabIndex = 2;
             this.btnClear.Tag = "Yenile";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -123,27 +154,94 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 57);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 74);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(976, 441);
+            this.dataGridView1.Size = new System.Drawing.Size(1234, 479);
             this.dataGridView1.TabIndex = 2;
             // 
-            // ReportCateringRevenues_Form
+            // btnFillter
+            // 
+            this.btnFillter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnFillter.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnFillter.Image = ((System.Drawing.Image)(resources.GetObject("btnFillter.Image")));
+            this.btnFillter.Location = new System.Drawing.Point(277, 3);
+            this.btnFillter.Name = "btnFillter";
+            this.btnFillter.Size = new System.Drawing.Size(70, 60);
+            this.btnFillter.TabIndex = 13;
+            this.btnFillter.Tag = "Yenile";
+            this.btnFillter.UseVisualStyleBackColor = false;
+            this.btnFillter.Click += new System.EventHandler(this.btnFillter_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.txtTotalRevenues);
+            this.panel5.Controls.Add(this.txtRealRevenues);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Location = new System.Drawing.Point(527, 1);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(710, 70);
+            this.panel5.TabIndex = 9;
+            // 
+            // txtTotalRevenues
+            // 
+            this.txtTotalRevenues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtTotalRevenues.Enabled = false;
+            this.txtTotalRevenues.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtTotalRevenues.Location = new System.Drawing.Point(443, 39);
+            this.txtTotalRevenues.Name = "txtTotalRevenues";
+            this.txtTotalRevenues.Size = new System.Drawing.Size(257, 22);
+            this.txtTotalRevenues.TabIndex = 3;
+            // 
+            // txtRealRevenues
+            // 
+            this.txtRealRevenues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtRealRevenues.Enabled = false;
+            this.txtRealRevenues.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtRealRevenues.Location = new System.Drawing.Point(443, 10);
+            this.txtRealRevenues.Name = "txtRealRevenues";
+            this.txtRealRevenues.Size = new System.Drawing.Size(257, 22);
+            this.txtRealRevenues.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(378, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Real Gelir:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(360, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Toplam Gelir:";
+            // 
+            // ReportRevenue_CateringRevenues_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 508);
+            this.ClientSize = new System.Drawing.Size(1245, 563);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "ReportCateringRevenues_Form";
+            this.Name = "ReportRevenue_CateringRevenues_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catering Gelirleri";
             this.Load += new System.EventHandler(this.ReportCateringRevenues_Form_Load);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -154,9 +252,17 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DateTimePicker dtpDateFinish;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpDateStart;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFillter;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txtTotalRevenues;
+        private System.Windows.Forms.TextBox txtRealRevenues;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

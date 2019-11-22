@@ -27,3 +27,4 @@ D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\ob
 D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.ResolveComReference.cache
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\IncomeExpenseControl.Common.csproj.ResolveComReference.cache
 D:\Yazılım\GitHup-Projeler\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\Interop.ExcelAdaptorLib.dll
+D:\GitHup\IncomeExpenseControl\IncomeExpenseControl.Common\obj\Debug\Interop.ExcelAdaptorLib.dll

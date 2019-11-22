@@ -80,6 +80,9 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1,5);
+
+            txtRealRevenues.Text = restaurantRevenueVMs.Sum(x => x.Price).ToString();
+            txtTotalRevenues.Text = restaurantRevenueVMs.Sum(x => x.Price).ToString();
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -143,11 +146,15 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 5);
+
+            txtRealRevenues.Text = restaurantRevenueVMs.Sum(x => x.Price).ToString();
+            txtTotalRevenues.Text = restaurantRevenueVMs.Sum(x => x.Price).ToString();
         }
 
-        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        private void btnFillter_Click(object sender, EventArgs e)
         {
-            DateTime CastingDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
+            DateTime DateStart = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDateStart.Value));
+            DateTime DateFinish = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDateFinish.Value));
 
             EnumHelper enumHelper = new EnumHelper();
             UnitofWork unitofWork = new UnitofWork(ctx);
@@ -155,9 +162,9 @@ namespace IncomeExpenseControl.WinForm
             DailyCastingEntry_Restaurant_Cash_Service dailyCastingEntry_Restaurant_Cash_Service = new DailyCastingEntry_Restaurant_Cash_Service(unitofWork);
             DailyCastingEntry_Restaurant_Food_Service dailyCastingEntry_Restaurant_Food_Service = new DailyCastingEntry_Restaurant_Food_Service(unitofWork);
 
-            List<DailyCastingEntry_Restaurant_Bank> dailyCastingEntry_Restaurant_Bank_List = dailyCastingEntry_Restaurant_Bank_Service.GetAllRestaurantBanksPaymentCasting().Where(x => x.CastingDate == CastingDate).ToList();
-            List<DailyCastingEntry_Restaurant_Cash> dailyCastingEntry_Restaurant_Cashes_List = dailyCastingEntry_Restaurant_Cash_Service.GetAllRestaurantCashPaymentCasting().Where(x => x.CastingDate == CastingDate).ToList();
-            List<DailyCastingEntry_Restaurant_Food> dailyCastingEntry_Restaurant_Foods_List = dailyCastingEntry_Restaurant_Food_Service.GetAllRestaurantFoodPaymentCasting().Where(x => x.CastingDate == CastingDate).ToList();
+            List<DailyCastingEntry_Restaurant_Bank> dailyCastingEntry_Restaurant_Bank_List = dailyCastingEntry_Restaurant_Bank_Service.GetAllRestaurantBanksPaymentCasting().Where(x => x.CastingDate >= DateStart && x.CastingDate <= DateFinish).ToList();
+            List<DailyCastingEntry_Restaurant_Cash> dailyCastingEntry_Restaurant_Cashes_List = dailyCastingEntry_Restaurant_Cash_Service.GetAllRestaurantCashPaymentCasting().Where(x => x.CastingDate >= DateStart && x.CastingDate <= DateFinish).ToList();
+            List<DailyCastingEntry_Restaurant_Food> dailyCastingEntry_Restaurant_Foods_List = dailyCastingEntry_Restaurant_Food_Service.GetAllRestaurantFoodPaymentCasting().Where(x => x.CastingDate >= DateStart && x.CastingDate <= DateFinish).ToList();
 
             List<RestaurantRevenueVM> restaurantRevenueVMs = new List<RestaurantRevenueVM>();
             dailyCastingEntry_Restaurant_Bank_List.ForEach(x =>
@@ -202,6 +209,9 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 5);
+
+            txtRealRevenues.Text = restaurantRevenueVMs.Sum(x => x.Price).ToString();
+            txtTotalRevenues.Text = restaurantRevenueVMs.Sum(x => x.Price).ToString();
         }
     }
 }

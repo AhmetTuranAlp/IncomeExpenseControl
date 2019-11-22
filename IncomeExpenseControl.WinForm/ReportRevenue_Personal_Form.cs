@@ -1,5 +1,6 @@
 ﻿using IncomeExpenseControl.Common;
 using IncomeExpenseControl.Data.Context;
+using IncomeExpenseControl.Data.Entity;
 using IncomeExpenseControl.DataAccess.Base.UnitofWork;
 using IncomeExpenseControl.Services.Services;
 using System;
@@ -26,7 +27,8 @@ namespace IncomeExpenseControl.WinForm
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             DailyCastingEntry_Personal_Service dailyCastingEntry_Personal_Service = new DailyCastingEntry_Personal_Service(unitofWork);
-            dataGridView1.DataSource = dailyCastingEntry_Personal_Service.GetAllDailyCastingEntry_Personal();
+            List<DailyCastingEntry_Personal> dailyCastingEntry_Personals = dailyCastingEntry_Personal_Service.GetAllDailyCastingEntry_Personal();
+            dataGridView1.DataSource = dailyCastingEntry_Personals;
 
             dataGridView1.Columns[0].HeaderText = "Tarih";
             dataGridView1.Columns[1].HeaderText = "Tutar";
@@ -38,6 +40,8 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 3);
+
+            txtTotalRevenues.Text = dailyCastingEntry_Personals.Sum(x => x.Price).ToString();
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -50,7 +54,8 @@ namespace IncomeExpenseControl.WinForm
         {
             UnitofWork unitofWork = new UnitofWork(ctx);
             DailyCastingEntry_Personal_Service dailyCastingEntry_Personal_Service = new DailyCastingEntry_Personal_Service(unitofWork);
-            dataGridView1.DataSource = dailyCastingEntry_Personal_Service.GetAllDailyCastingEntry_Personal();
+            List<DailyCastingEntry_Personal> dailyCastingEntry_Personals = dailyCastingEntry_Personal_Service.GetAllDailyCastingEntry_Personal();
+            dataGridView1.DataSource = dailyCastingEntry_Personals;
 
             dataGridView1.Columns[0].HeaderText = "Tarih";
             dataGridView1.Columns[1].HeaderText = "Tutar";
@@ -62,15 +67,19 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 3);
+
+            txtTotalRevenues.Text = dailyCastingEntry_Personals.Sum(x => x.Price).ToString();
         }
 
-        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        private void btnFillter_Click(object sender, EventArgs e)
         {
-            DateTime CastingDate = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDate.Value));
+            DateTime DateStart = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDateStart.Value));
+            DateTime DateFinish = Convert.ToDateTime(string.Format("{0: dd/MM/yyyy 00:00:00}", dtpDateFinish.Value));
 
             UnitofWork unitofWork = new UnitofWork(ctx);
             DailyCastingEntry_Personal_Service dailyCastingEntry_Personal_Service = new DailyCastingEntry_Personal_Service(unitofWork);
-            dataGridView1.DataSource = dailyCastingEntry_Personal_Service.GetAllDailyCastingEntry_Personal().Where(x => x.CastingDate == CastingDate).ToList();
+            List<DailyCastingEntry_Personal> dailyCastingEntry_Personals = dailyCastingEntry_Personal_Service.GetAllDailyCastingEntry_Personal().Where(x => x.CastingDate >= DateStart && x.CastingDate <= DateFinish).ToList();
+            dataGridView1.DataSource = dailyCastingEntry_Personals;
 
             dataGridView1.Columns[0].HeaderText = "Tarih";
             dataGridView1.Columns[1].HeaderText = "Tutar";
@@ -82,6 +91,8 @@ namespace IncomeExpenseControl.WinForm
 
             Tools tools = new Tools();
             tools.DataGridViewResize(dataGridView1, 3);
+
+            txtTotalRevenues.Text = dailyCastingEntry_Personals.Sum(x => x.Price).ToString();
         }
     }
 }
