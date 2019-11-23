@@ -77,7 +77,7 @@
             this.txtTotalRevenues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTotalRevenues.Enabled = false;
             this.txtTotalRevenues.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtTotalRevenues.Location = new System.Drawing.Point(444, 23);
+            this.txtTotalRevenues.Location = new System.Drawing.Point(444, 39);
             this.txtTotalRevenues.Name = "txtTotalRevenues";
             this.txtTotalRevenues.Size = new System.Drawing.Size(257, 22);
             this.txtTotalRevenues.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(357, 27);
+            this.label4.Location = new System.Drawing.Point(357, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 2;

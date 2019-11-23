@@ -13,60 +13,75 @@ namespace IncomeExpenseControl.Common
 
         public void TransferringDatagridviewtoExcel(DataGridView dataGridView, string FileName)
         {
-            DialogResult dialogResult = MessageBox.Show("Kayıtları Excel'e Aktarılsın mı?","Excel Aktarma", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "Excel Documents (*.xls)|*.xls";
-                sfd.FileName = FileName + ".xls";
-                if (sfd.ShowDialog() == DialogResult.OK)
+                DialogResult dialogResult = MessageBox.Show("Kayıtları Excel'e Aktarılsın mı?", "Excel Aktarma", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    copyAlltoClipboard(dataGridView);
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = "Excel Documents (*.xls)|*.xls";
+                    sfd.FileName = FileName + ".xls";
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        copyAlltoClipboard(dataGridView);
 
-                    object misValue = System.Reflection.Missing.Value;
-                    Microsoft.Office.Interop.Excel.Application xlexcel = new Microsoft.Office.Interop.Excel.Application();
+                        object misValue = System.Reflection.Missing.Value;
+                        Microsoft.Office.Interop.Excel.Application xlexcel = new Microsoft.Office.Interop.Excel.Application();
 
-                    xlexcel.DisplayAlerts = false;
-                    Microsoft.Office.Interop.Excel.Workbook xlWorkBook = xlexcel.Workbooks.Add(misValue);
-                    Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                        xlexcel.DisplayAlerts = false;
+                        Microsoft.Office.Interop.Excel.Workbook xlWorkBook = xlexcel.Workbooks.Add(misValue);
+                        Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
-                    Microsoft.Office.Interop.Excel.Range rng = xlWorkSheet.get_Range("D:D").Cells;
-                    rng.NumberFormat = "@";
+                        Microsoft.Office.Interop.Excel.Range rng = xlWorkSheet.get_Range("D:D").Cells;
+                        rng.NumberFormat = "@";
 
-                    Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
-                    CR.Select();
-                    xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+                        Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+                        CR.Select();
+                        xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
 
-                    Microsoft.Office.Interop.Excel.Range delRng = xlWorkSheet.get_Range("A:A").Cells;
-                    delRng.Delete(Type.Missing);
-                    xlWorkSheet.get_Range("A1").Select();
+                        Microsoft.Office.Interop.Excel.Range delRng = xlWorkSheet.get_Range("A:A").Cells;
+                        delRng.Delete(Type.Missing);
+                        xlWorkSheet.get_Range("A1").Select();
 
-                    xlWorkBook.SaveAs(sfd.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-                    xlexcel.DisplayAlerts = true;
-                    xlWorkBook.Close(true, misValue, misValue);
-                    xlexcel.Quit();
+                        xlWorkBook.SaveAs(sfd.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                        xlexcel.DisplayAlerts = true;
+                        xlWorkBook.Close(true, misValue, misValue);
+                        xlexcel.Quit();
 
-                    releaseObject(xlWorkSheet);
-                    releaseObject(xlWorkBook);
-                    releaseObject(xlexcel);
+                        releaseObject(xlWorkSheet);
+                        releaseObject(xlWorkBook);
+                        releaseObject(xlexcel);
 
-                    Clipboard.Clear();
-                    dataGridView.ClearSelection();
+                        Clipboard.Clear();
+                        dataGridView.ClearSelection();
 
-                    if (File.Exists(sfd.FileName))
-                        System.Diagnostics.Process.Start(sfd.FileName);
+                        if (File.Exists(sfd.FileName))
+                            System.Diagnostics.Process.Start(sfd.FileName);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Excel'e Aktarılma Sırasında Hata Oluştu.");
             }
         }
 
         public void copyAlltoClipboard(DataGridView dataGridView)
         {
-            dataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridView.MultiSelect = true;
-            dataGridView.SelectAll();
-            DataObject dataObj = dataGridView.GetClipboardContent();
-            if (dataObj != null)
-                Clipboard.SetDataObject(dataObj);
+            try
+            {
+                dataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+                dataGridView.MultiSelect = true;
+                dataGridView.SelectAll();
+                DataObject dataObj = dataGridView.GetClipboardContent();
+                if (dataObj != null)
+                    Clipboard.SetDataObject(dataObj);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void releaseObject(object obj)

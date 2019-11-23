@@ -77,7 +77,7 @@
             this.txtTotalRevenues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTotalRevenues.Enabled = false;
             this.txtTotalRevenues.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtTotalRevenues.Location = new System.Drawing.Point(444, 23);
+            this.txtTotalRevenues.Location = new System.Drawing.Point(444, 38);
             this.txtTotalRevenues.Name = "txtTotalRevenues";
             this.txtTotalRevenues.Size = new System.Drawing.Size(257, 22);
             this.txtTotalRevenues.TabIndex = 3;
@@ -86,11 +86,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(361, 26);
+            this.label3.Location = new System.Drawing.Point(377, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Toplam Gelir:";
+            this.label3.Text = "Real Gelir:";
             // 
             // panel2
             // 

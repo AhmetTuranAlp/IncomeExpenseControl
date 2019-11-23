@@ -15,5 +15,7 @@ namespace IncomeExpenseControl.Services.Interfaces
 
         List<Staff> GetAllStaffs();
 
+        Staff GetStaff(string FullName);
+
     }
 }

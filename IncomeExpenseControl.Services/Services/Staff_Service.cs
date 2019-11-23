@@ -34,6 +34,18 @@ namespace IncomeExpenseControl.Services.Services
             }
         }
 
+        public Staff GetStaff(string FullName)
+        {
+            try
+            {
+                return _staffRepo.GetAll().FirstOrDefault(x => x.Status == Status.Active && x.FullName == FullName);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public bool Insert(Staff staff)
         {
             try

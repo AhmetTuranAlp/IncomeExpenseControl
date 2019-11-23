@@ -238,10 +238,27 @@ namespace IncomeExpenseControl.WinForm
             cmbStaffExpense.DisplayMember = "Text";
             cmbStaffExpense.ValueMember = "Value";
 
+            cmbStaffExpense.SelectedIndexChanged += new EventHandler(cmbStaffExpense_SelectedIndexChanged);
+
 
             Label(pnlInput, "Tutar", 38, 130);
             nudPrice = NumericUpDown(pnlInput, "nudPrice", 40, 155);
             #endregion
+        }
+
+        private void cmbStaffExpense_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cmbStaffs.Text) && cmbStaffs.Text != "Personel Seçiniz..." && cmbStaffExpense.Text == "Maaş")
+            {
+                UnitofWork unitofWork = new UnitofWork(ctx);
+                Staff_Service staff_Service = new Staff_Service(unitofWork);
+                nudPrice.Value = staff_Service.GetStaff(cmbStaffs.Text).Salary;
+            }
+            else
+            {
+                nudPrice.Value = 0;
+            }
+
         }
 
         private void BtnSave_Click(object sender, EventArgs e)

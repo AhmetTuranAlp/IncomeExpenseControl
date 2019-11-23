@@ -30,16 +30,16 @@ namespace IncomeExpenseControl.WinForm
             DateTime TimetoWork = dtpDate.Value;
             decimal Salary = nudSalary.Value;
             #endregion
+            #region Service
+            UnitofWork unitofWork = new UnitofWork(ctx);
+            Staff_Service staff_Service = new Staff_Service(unitofWork);
+            #endregion
+      
 
-            DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (dialogResult == DialogResult.Yes)
+            if (!string.IsNullOrEmpty(FullName) && Salary > 0)
             {
-                #region Service
-                UnitofWork unitofWork = new UnitofWork(ctx);
-                Staff_Service staff_Service = new Staff_Service(unitofWork);
-                #endregion
-
-                if (string.IsNullOrEmpty(FullName) && Salary > 0)
+                DialogResult dialogResult = MessageBox.Show("Kaydı Eklemek İstediğinize Emin misiniz?", "Yeni Kayıt", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
                 {
                     Staff staff = new Staff()
                     {
@@ -58,10 +58,10 @@ namespace IncomeExpenseControl.WinForm
                         MessageBox.Show("İşlem Başarısız.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Boş Geçilemez.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
